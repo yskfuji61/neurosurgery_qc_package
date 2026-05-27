@@ -1,0 +1,9 @@
+﻿condition,context,required_checks,not_to_standardize,external_check_required,facility_check_required
+受傷3時間以内,TBI / TXA,受傷時刻; 信頼性; 既投与; 禁忌; GCS/CT,受傷3時間超・不明でTXAを機械的候補化しない,yes,yes
+動脈瘤閉鎖前・原則24時間以内,aSAH / 抗線溶薬,閉鎖前後; 閉鎖予定時刻; 搬送遅延; 脳虚血リスク,閉鎖後に抗線溶薬を漫然継続しない,yes,yes
+PT-INR,抗凝固薬関連出血 / VKA,ワルファリン; PCC; ビタミンK; 手術/EVD予定,INR未確認でPCC等を候補化しない,yes,yes
+aPTT / ACT,ヘパリン関連 / 血管内治療,UFH; プロタミン; EVT; 手術,UFHとDOACを同じ検査軸で扱わない,yes,yes
+血小板数,血小板輸血 / 処置予定,血小板減少; 抗血小板薬曝露; 緊急開頭; EVD,抗血小板薬内服のみで血小板輸血にしない,yes,yes
+フィブリノゲン値,低フィブリノゲン血症 / 輸血製剤,フィブリノゲン製剤; FFP; クリオ; 大量出血,閾値を公開資料だけで固定しない,yes,yes
+血清Na・浸透圧・尿量,ICP管理 / 浸透圧療法,高張食塩液; マンニトール; 腎機能; ICU/SCU,監視条件なしに一般病棟標準運用しない,yes,yes
+腎機能 CrCl/eGFR,DOAC / TXA / 抗菌薬 / ACV / LMWH,DOAC; TXA; VCM; ACV; CFPM; MEPM; LMWH,腎機能未確認で用量・間隔を固定しない,yes,yes

@@ -1,0 +1,28 @@
+Neurosurgery QC Package Notice
+
+Copyright (c) 2026 yskfuji61.
+
+Repository owner and licensor:
+- GitHub account: yskfuji61
+- Contact: yskfuji.ai.dev@gmail.com
+
+Current licensing model:
+- As of 2026-05-27, this repository is distributed under the Neurosurgery QC Package Source-Available Evaluation and Commercial Reservation License 1.0.
+- This repository is source-available and evaluation-only unless the Licensor grants prior written commercial permission.
+
+Legacy Apache notice:
+- Certain earlier versions or copies of this repository may have been distributed under Apache License 2.0.
+- Any rights validly obtained under Apache License 2.0 for those specific earlier versions or copies are not retroactively revoked.
+- Unless a version is expressly accompanied by Apache License 2.0, no Apache License 2.0 permission applies to versions distributed under the current License.
+
+Medical and operational warning:
+- This repository is not a formal clinical guideline.
+- This repository is not a prescription order.
+- This repository is not an institutional procedure.
+- This repository is not an immediately deployable EHR or CDS specification.
+
+Commercial reservation:
+- Commercial use, redistribution, derivative publication, SaaS or API use, AI or RAG ingestion, embedding generation, vectorization, model training, and institutional deployment are prohibited unless separately licensed in writing by the Licensor.
+
+Trademark and naming notice:
+- No right is granted to use the repository name, package name, author name, or related branding to imply endorsement, approval, certification, or official affiliation.

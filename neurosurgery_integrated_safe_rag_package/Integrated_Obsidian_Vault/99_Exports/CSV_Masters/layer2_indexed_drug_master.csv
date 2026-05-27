@@ -1,0 +1,39 @@
+﻿drug_name,drug_class,group,source_section,layer,note_status,not_to_standardize,required_checks,external_check_required,facility_check_required,human_review_required,ai_misread_risk
+ワルファリン,抗凝固薬,Anticoagulants,付録S2 薬剤クラス詳細調査材料表,Layer2,indexed_note,DOAC関連出血と同列に扱わない; INR確認なしに補正候補化しない,薬剤名; 最終服用/投与時刻; 腎機能; 関連凝固検査; 手術/EVD予定; 出血重症度,yes,yes,yes,very_high
+ダビガトラン,抗凝固薬,Anticoagulants,付録S2 薬剤クラス詳細調査材料表,Layer2,indexed_note,Xa阻害薬と同じ中和薬で扱わない; 腎機能未確認で判断しない,薬剤名; 最終服用/投与時刻; 腎機能; 関連凝固検査; 手術/EVD予定; 出血重症度,yes,yes,yes,very_high
+アピキサバン,抗凝固薬,Anticoagulants,付録S2 薬剤クラス詳細調査材料表,Layer2,indexed_note,ダビガトランと同じ中和薬で扱わない; PCC代替使用を標準化しない,薬剤名; 最終服用/投与時刻; 腎機能; 関連凝固検査; 手術/EVD予定; 出血重症度,yes,yes,yes,very_high
+リバーロキサバン,抗凝固薬,Anticoagulants,付録S2 薬剤クラス詳細調査材料表,Layer2,indexed_note,ダビガトランと同じ中和薬で扱わない; PCC代替使用を標準化しない,薬剤名; 最終服用/投与時刻; 腎機能; 関連凝固検査; 手術/EVD予定; 出血重症度,yes,yes,yes,very_high
+エドキサバン,抗凝固薬,Anticoagulants,付録S2 薬剤クラス詳細調査材料表,Layer2,indexed_note,ダビガトランと同じ中和薬で扱わない; PCC代替使用を標準化しない,薬剤名; 最終服用/投与時刻; 腎機能; 関連凝固検査; 手術/EVD予定; 出血重症度,yes,yes,yes,very_high
+未分画ヘパリン,抗凝固薬,Anticoagulants,付録S2 薬剤クラス詳細調査材料表,Layer2,indexed_note,flush heparinと治療用heparinを混同しない; DOAC/ワルファリンと同じ中和薬で扱わない,薬剤名; 最終服用/投与時刻; 腎機能; 関連凝固検査; 手術/EVD予定; 出血重症度,yes,yes,yes,very_high
+低分子ヘパリン,抗凝固薬,Anticoagulants,付録S2 薬剤クラス詳細調査材料表,Layer2,indexed_note,腎機能未確認で用量・間隔を固定しない; UFHと完全同一に扱わない,薬剤名; 最終服用/投与時刻; 腎機能; 関連凝固検査; 手術/EVD予定; 出血重症度,yes,yes,yes,very_high
+アスピリン,抗血小板薬,Antiplatelets,付録S2 薬剤クラス詳細調査材料表,Layer2,indexed_note,抗血小板薬内服のみで血小板輸血を候補化しない; 抗血小板薬曝露と血小板減少を混同しない; DAPTを公開資料だけで固定候補化しない,薬剤名; DAPT有無; 最終内服時刻; 血小板数; 手術/EVD/穿刺予定,yes,yes,yes,very_high
+クロピドグレル,抗血小板薬,Antiplatelets,付録S2 薬剤クラス詳細調査材料表,Layer2,indexed_note,抗血小板薬内服のみで血小板輸血を候補化しない; 抗血小板薬曝露と血小板減少を混同しない; DAPTを公開資料だけで固定候補化しない,薬剤名; DAPT有無; 最終内服時刻; 血小板数; 手術/EVD/穿刺予定,yes,yes,yes,very_high
+プラスグレル,抗血小板薬,Antiplatelets,付録S2 薬剤クラス詳細調査材料表,Layer2,indexed_note,抗血小板薬内服のみで血小板輸血を候補化しない; 抗血小板薬曝露と血小板減少を混同しない; DAPTを公開資料だけで固定候補化しない,薬剤名; DAPT有無; 最終内服時刻; 血小板数; 手術/EVD/穿刺予定,yes,yes,yes,very_high
+チカグレロル,抗血小板薬,Antiplatelets,付録S2 薬剤クラス詳細調査材料表,Layer2,indexed_note,抗血小板薬内服のみで血小板輸血を候補化しない; 抗血小板薬曝露と血小板減少を混同しない; DAPTを公開資料だけで固定候補化しない,薬剤名; DAPT有無; 最終内服時刻; 血小板数; 手術/EVD/穿刺予定,yes,yes,yes,very_high
+シロスタゾール,抗血小板薬,Antiplatelets,付録S2 薬剤クラス詳細調査材料表,Layer2,indexed_note,抗血小板薬内服のみで血小板輸血を候補化しない; 抗血小板薬曝露と血小板減少を混同しない; DAPTを公開資料だけで固定候補化しない,薬剤名; DAPT有無; 最終内服時刻; 血小板数; 手術/EVD/穿刺予定,yes,yes,yes,very_high
+その他P2Y12阻害薬,抗血小板薬,Antiplatelets,付録S2 薬剤クラス詳細調査材料表,Layer2,indexed_note,抗血小板薬内服のみで血小板輸血を候補化しない; 抗血小板薬曝露と血小板減少を混同しない; DAPTを公開資料だけで固定候補化しない,薬剤名; DAPT有無; 最終内服時刻; 血小板数; 手術/EVD/穿刺予定,yes,yes,yes,very_high
+アルテプラーゼ,血栓溶解薬,Thrombolytics,付録S2 薬剤クラス詳細調査材料表,Layer2,indexed_note,rt-PA後24時間画像確認前に抗血小板薬・抗凝固薬を機械的開始しない; 一般ICHと同じ出血対応にしない,発症時刻; 画像; 禁忌; 凝固検査; 投与時刻; 症候性出血の有無,yes,yes,yes,very_high
+テネクテプラーゼ,血栓溶解薬,Thrombolytics,付録S2 薬剤クラス詳細調査材料表,Layer2,indexed_note,原資料に登場するものとして扱わない; アルテプラーゼと同一扱いにしない,原資料内登場有無; 国内薬事; 採用品; 脳卒中SOP,yes,yes,yes,high
+レベチラセタム,抗てんかん発作薬,Antiseizure_Medications,付録S2 薬剤クラス詳細調査材料表,Layer2,indexed_note,予防投与と治療投与を混同しない,投与目的; 発作の有無; 予防か治療か; 腎機能; 肝機能; 相互作用; 投与経路,yes,yes,yes,high
+ホスフェニトイン,抗てんかん発作薬,Antiseizure_Medications,付録S2 薬剤クラス詳細調査材料表,Layer2,indexed_note,発作重積初期対応と脳外科予防投与セットを混同しない,投与目的; 発作の有無; 予防か治療か; 腎機能; 肝機能; 相互作用; 投与経路,yes,yes,yes,high
+フェニトイン,抗てんかん発作薬,Antiseizure_Medications,付録S2 薬剤クラス詳細調査材料表,Layer2,indexed_note,TDMや相互作用確認なしに候補化しない,投与目的; 発作の有無; 予防か治療か; 腎機能; 肝機能; 相互作用; 投与経路,yes,yes,yes,high
+バルプロ酸,抗てんかん発作薬,Antiseizure_Medications,付録S2 薬剤クラス詳細調査材料表,Layer2,indexed_note,妊娠可能性や肝機能を無視して候補化しない,投与目的; 発作の有無; 予防か治療か; 腎機能; 肝機能; 相互作用; 投与経路,yes,yes,yes,high
+ラコサミド,抗てんかん発作薬,Antiseizure_Medications,付録S2 薬剤クラス詳細調査材料表,Layer2,indexed_note,心伝導・腎肝機能を無視して候補化しない,投与目的; 発作の有無; 予防か治療か; 腎機能; 肝機能; 相互作用; 投与経路,yes,yes,yes,high
+ミダゾラム,抗てんかん発作薬,Antiseizure_Medications,付録S2 薬剤クラス詳細調査材料表,Layer2,indexed_note,脳外科予防投与セットに混ぜない,投与目的; 発作の有無; 予防か治療か; 腎機能; 肝機能; 相互作用; 投与経路,yes,yes,yes,high
+ジアゼパム,抗てんかん発作薬,Antiseizure_Medications,付録S2 薬剤クラス詳細調査材料表,Layer2,indexed_note,脳外科予防投与セットに混ぜない,投与目的; 発作の有無; 予防か治療か; 腎機能; 肝機能; 相互作用; 投与経路,yes,yes,yes,high
+セファゾリン,抗菌薬,Antimicrobials,付録S2 薬剤クラス詳細調査材料表,Layer2,indexed_note,予防抗菌薬と感染治療を混同しない; 過長予防投与を標準化しない,感染分類; 予防か治療か; EVD/シャント有無; 腎機能; アレルギー; 施設アンチバイオグラム,yes,yes,yes,high
+セフトリアキソン,抗菌薬,Antimicrobials,付録S2 薬剤クラス詳細調査材料表,Layer2,indexed_note,周術期予防抗菌薬と混同しない,感染分類; 予防か治療か; EVD/シャント有無; 腎機能; アレルギー; 施設アンチバイオグラム,yes,yes,yes,high
+セフォタキシム,抗菌薬,Antimicrobials,付録S2 薬剤クラス詳細調査材料表,Layer2,indexed_note,周術期予防抗菌薬と混同しない,感染分類; 予防か治療か; EVD/シャント有無; 腎機能; アレルギー; 施設アンチバイオグラム,yes,yes,yes,high
+バンコマイシン,抗MRSA薬,Antimicrobials,付録S2 薬剤クラス詳細調査材料表,Layer2,indexed_note,TDM・腎機能確認なしに候補化しない,感染分類; 予防か治療か; EVD/シャント有無; 腎機能; アレルギー; 施設アンチバイオグラム,yes,yes,yes,high
+アンピシリン,抗菌薬,Antimicrobials,付録S2 薬剤クラス詳細調査材料表,Layer2,indexed_note,全髄膜炎疑いで一律追加としない,感染分類; 予防か治療か; EVD/シャント有無; 腎機能; アレルギー; 施設アンチバイオグラム,yes,yes,yes,high
+セフェピム,抗緑膿菌βラクタム,Antimicrobials,付録S2 薬剤クラス詳細調査材料表,Layer2,indexed_note,腎機能確認なしに候補化しない,感染分類; 予防か治療か; EVD/シャント有無; 腎機能; アレルギー; 施設アンチバイオグラム,yes,yes,yes,high
+セフタジジム,抗緑膿菌βラクタム,Antimicrobials,付録S2 薬剤クラス詳細調査材料表,Layer2,indexed_note,腎機能確認なしに候補化しない,感染分類; 予防か治療か; EVD/シャント有無; 腎機能; アレルギー; 施設アンチバイオグラム,yes,yes,yes,high
+メロペネム,カルバペネム,Antimicrobials,付録S2 薬剤クラス詳細調査材料表,Layer2,indexed_note,耐性菌・施設アンチバイオグラム確認なしに候補化しない,感染分類; 予防か治療か; EVD/シャント有無; 腎機能; アレルギー; 施設アンチバイオグラム,yes,yes,yes,high
+アシクロビル,抗ウイルス薬,Antimicrobials,付録S2 薬剤クラス詳細調査材料表,Layer2,indexed_note,腎機能確認なしに候補化しない,感染分類; 予防か治療か; EVD/シャント有無; 腎機能; アレルギー; 施設アンチバイオグラム,yes,yes,yes,high
+クリンダマイシン,抗菌薬,Antimicrobials,付録S2 薬剤クラス詳細調査材料表,Layer2,indexed_note,βラクタムアレルギー時の全感染症代替として一律化しない,感染分類; 予防か治療か; EVD/シャント有無; 腎機能; アレルギー; 施設アンチバイオグラム,yes,yes,yes,high
+VTE予防薬・方法,VTE予防,Other_Supportive,付録S2 薬剤クラス詳細調査材料表,Layer2,indexed_note,中和と再開を同一フローにしない; CDSが再開日を自動決定しない,投与目的; 禁忌; 腎肝機能; 看護観察体制; 施設採用品,yes,yes,yes,medium
+鎮静薬,鎮静,Other_Supportive,付録S2 薬剤クラス詳細調査材料表,Layer2,indexed_note,神経評価への影響を無視して候補化しない,投与目的; 禁忌; 腎肝機能; 看護観察体制; 施設採用品,yes,yes,yes,medium
+鎮痛薬,鎮痛,Other_Supportive,付録S2 薬剤クラス詳細調査材料表,Layer2,indexed_note,意識評価への影響を無視して候補化しない,投与目的; 禁忌; 腎肝機能; 看護観察体制; 施設採用品,yes,yes,yes,medium
+制吐薬,制吐,Other_Supportive,付録S2 薬剤クラス詳細調査材料表,Layer2,indexed_note,採用品・禁忌確認なしに候補化しない,投与目的; 禁忌; 腎肝機能; 看護観察体制; 施設採用品,yes,yes,yes,medium
+胃粘膜保護薬,消化管保護,Other_Supportive,付録S2 薬剤クラス詳細調査材料表,Layer2,indexed_note,目的不明の予防投与を標準化しない,投与目的; 禁忌; 腎肝機能; 看護観察体制; 施設採用品,yes,yes,yes,medium
+血糖管理薬,血糖管理,Other_Supportive,付録S2 薬剤クラス詳細調査材料表,Layer2,indexed_note,低血糖リスクや看護体制を無視して候補化しない,投与目的; 禁忌; 腎肝機能; 看護観察体制; 施設採用品,yes,yes,yes,medium

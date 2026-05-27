@@ -1,0 +1,24 @@
+---
+package_name: "neurosurgery_layer2_indexed_drug_vault"
+created_at: "2026-05-26"
+source_document: "脳神経外科領域における施設内薬物治療アルゴリズム"
+scope: "Layer2 indexed drug notes and drug class notes"
+contains:
+  layer2_indexed_drug_notes: 38
+  drug_class_notes: 15
+  negative_knowledge_notes: 1
+  ai_error_tests: 8
+  csv_masters: 1
+  jsonl_seed: 1
+not_included:
+  - "投与量・投与速度の確定"
+  - "施設内採用品・夜間在庫の確定"
+  - "正式な施設内手順"
+  - "電子カルテ即時実装仕様"
+safety_principles:
+  - "Layer2索引を処方指示として扱わない"
+  - "薬剤クラス名だけで薬剤選択しない"
+  - "同効薬を一括推奨しない"
+  - "予防投与と治療投与を混同しない"
+  - "診療支援候補を即時実装仕様として扱わない"
+---

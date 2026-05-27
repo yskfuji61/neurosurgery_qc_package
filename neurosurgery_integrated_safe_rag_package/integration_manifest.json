@@ -1,0 +1,59 @@
+{
+  "package_name": "neurosurgery_integrated_safe_rag_package",
+  "created_at": "2026-05-26",
+  "input_zips": [
+    "neurosurgery_minimal_safety_knowledge_vault.zip",
+    "neurosurgery_core_expansion_knowledge_vault.zip",
+    "neurosurgery_priority_individual_notes_vault.zip",
+    "neurosurgery_layer2_indexed_drug_vault.zip",
+    "neurosurgery_validation_audit_operations_vault.zip"
+  ],
+  "integrated_markdown_files": 175,
+  "integrated_jsonl_chunks": 242,
+  "total_files": 199,
+  "frontmatter_audit": {
+    "files_audited": 175,
+    "files_with_missing_required_keys": 3,
+    "required_keys": [
+      "note_type",
+      "not_a_guideline",
+      "not_a_prescription_order",
+      "not_an_institutional_procedure",
+      "not_immediate_cds_specification",
+      "source_document",
+      "source_section",
+      "source_quote_or_summary",
+      "gpt_structured_interpretation",
+      "evidence_certainty",
+      "recommendation_strength",
+      "domestic_regulatory_status",
+      "insurance_risk",
+      "institutional_operability",
+      "facility_candidate",
+      "cds_candidate",
+      "not_to_standardize",
+      "undetermined_from_source",
+      "external_primary_source_check_items",
+      "facility_confirmation_items",
+      "required_human_review",
+      "ai_misread_risk",
+      "rag_chunk_policy",
+      "not_to_interpret_as",
+      "audit_status"
+    ]
+  },
+  "not_included": [
+    "外部一次資料の実検索結果",
+    "施設内採用品・夜間在庫の確定値",
+    "正式な施設内手順",
+    "電子カルテ即時実装仕様"
+  ],
+  "safety_principles": [
+    "公開参考資料を施設内ガイドラインとして扱わない",
+    "候補を処方指示として扱わない",
+    "薬剤名だけで標準候補と判断しない",
+    "疾患名だけで薬剤選択しない",
+    "国内薬事・保険・施設運用をエビデンスと同一視しない",
+    "診療支援候補を即時実装仕様として扱わない"
+  ]
+}

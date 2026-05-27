@@ -1,0 +1,77 @@
+{
+  "package_name": "neurosurgery_qc_package",
+  "created_at": "2026-05-26",
+  "source_package": "neurosurgery_integrated_safe_rag_package.zip",
+  "frontmatter_qc": {
+    "fixed_files": 4,
+    "missing_after_qc": 0,
+    "required_keys": [
+      "note_type",
+      "not_a_guideline",
+      "not_a_prescription_order",
+      "not_an_institutional_procedure",
+      "not_immediate_cds_specification",
+      "source_document",
+      "source_section",
+      "source_quote_or_summary",
+      "gpt_structured_interpretation",
+      "evidence_certainty",
+      "recommendation_strength",
+      "domestic_regulatory_status",
+      "insurance_risk",
+      "institutional_operability",
+      "facility_candidate",
+      "cds_candidate",
+      "not_to_standardize",
+      "undetermined_from_source",
+      "external_primary_source_check_items",
+      "facility_confirmation_items",
+      "required_human_review",
+      "ai_misread_risk",
+      "rag_chunk_policy",
+      "not_to_interpret_as",
+      "audit_status"
+    ]
+  },
+  "upload_bundles": [
+    {
+      "file": "01_positioning_warnings_negative.md",
+      "included_folders": "00_Index; 01_Positioning; 07_Warnings; 08_Negative_Knowledge",
+      "markdown_file_count": 4,
+      "size_bytes": 12594
+    },
+    {
+      "file": "02_diseases_patient_states_procedures.md",
+      "included_folders": "02_Diseases; 05_Patient_States; 06_Procedures; 13_Thresholds_Conditions",
+      "markdown_file_count": 38,
+      "size_bytes": 133591
+    },
+    {
+      "file": "03_drugs_drug_classes.md",
+      "included_folders": "03_Drugs; 04_Drug_Classes",
+      "markdown_file_count": 68,
+      "size_bytes": 261623
+    },
+    {
+      "file": "04_evidence_operations_cds_audit_tests.md",
+      "included_folders": "09_Regulatory_Insurance; 10_Operationalization; 11_CDS_Candidates; 12_Evidence; 90_Audit; 91_AI_Error_Tests",
+      "markdown_file_count": 31,
+      "size_bytes": 94128
+    }
+  ],
+  "unified_rag_after_qc_chunks": 247,
+  "not_included": [
+    "外部一次資料の実検索結果",
+    "施設内採用品・夜間在庫の確定値",
+    "正式な施設内手順",
+    "電子カルテ即時実装仕様"
+  ],
+  "safety_principles": [
+    "公開参考資料を施設内ガイドラインとして扱わない",
+    "候補を処方指示として扱わない",
+    "薬剤名だけで標準候補と判断しない",
+    "疾患名だけで薬剤選択しない",
+    "国内薬事・保険・施設運用をエビデンスと同一視しない",
+    "診療支援候補を即時実装仕様として扱わない"
+  ]
+}

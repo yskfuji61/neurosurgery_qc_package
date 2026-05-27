@@ -1,0 +1,7 @@
+﻿薬剤・製剤,誤読リスク,必須接続注意,AI誤回答リスク
+TXA,疾患条件差脱落,W03,very_high
+PCC,VKA/DOAC同列化,W01,very_high
+rFVIIa,自然発症ICH一律候補化,W02,very_high
+デスモプレシン,抗血小板関連ICH標準候補化,W04,very_high
+血小板輸血,抗血小板薬内服のみで候補化,W05,very_high
+高張食塩液・マンニトール,監視条件脱落,W06,very_high

@@ -1,0 +1,23 @@
+---
+package_name: "neurosurgery_priority_individual_notes_vault"
+created_at: "2026-05-26"
+source_document: "脳神経外科領域における施設内薬物治療アルゴリズム"
+scope: "Priority individual notes after minimal safety set and core expansion"
+contains:
+  layer1_drug_notes: 15
+  disease_notes: 10
+  patient_state_notes: 12
+  procedure_notes: 8
+  cds_candidate_notes: 5
+  ai_error_tests: 8
+not_included:
+  - "全Layer2薬剤詳細ノート"
+  - "施設内採用品・在庫の確定値"
+  - "電子カルテ即時実装仕様"
+  - "正式な施設内手順"
+safety_principles:
+  - "薬剤名だけで標準候補と判断しない"
+  - "疾患名だけで薬剤選択しない"
+  - "国内薬事・保険・施設運用をエビデンスと同一視しない"
+  - "診療支援候補を即時実装仕様として扱わない"
+---

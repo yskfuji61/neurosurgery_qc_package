@@ -1,0 +1,5 @@
+﻿bundle_file,included_folders,markdown_file_count,size_bytes
+01_positioning_warnings_negative.md,00_Index; 01_Positioning; 07_Warnings; 08_Negative_Knowledge,4,12594
+02_diseases_patient_states_procedures.md,02_Diseases; 05_Patient_States; 06_Procedures; 13_Thresholds_Conditions,38,133591
+03_drugs_drug_classes.md,03_Drugs; 04_Drug_Classes,68,261623
+04_evidence_operations_cds_audit_tests.md,09_Regulatory_Insurance; 10_Operationalization; 11_CDS_Candidates; 12_Evidence; 90_Audit; 91_AI_Error_Tests,31,94128

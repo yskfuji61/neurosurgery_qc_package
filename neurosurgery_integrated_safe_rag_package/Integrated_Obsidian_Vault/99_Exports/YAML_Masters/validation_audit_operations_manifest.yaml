@@ -1,0 +1,26 @@
+---
+package_name: "neurosurgery_validation_audit_operations_vault"
+created_at: "2026-05-26"
+source_document: "脳神経外科領域における施設内薬物治療アルゴリズム"
+scope: "External primary source, facility confirmation, CDS readiness, thresholds, audit, and RAG validation operations"
+contains:
+  evidence_checklists: 6
+  rct_checklists: 3
+  facility_confirmation_checklists: 6
+  condition_threshold_notes: 8
+  cds_readiness_notes: 1
+  audit_templates: 4
+  ai_error_tests: 8
+  csv_masters: 7
+  jsonl_seed: 1
+not_included:
+  - "外部一次資料の実検索結果"
+  - "施設内採用品・夜間在庫の確定値"
+  - "正式な施設内手順"
+  - "電子カルテ即時実装仕様"
+safety_principles:
+  - "外部一次資料確認前に国内薬事・保険を確定しない"
+  - "施設内確認前に運用可能と回答しない"
+  - "条件・閾値を公開資料だけで固定しない"
+  - "診療支援候補を即時実装仕様として扱わない"
+---
