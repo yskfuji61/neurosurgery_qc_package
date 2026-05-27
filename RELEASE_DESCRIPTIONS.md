@@ -2,7 +2,7 @@
 
 ## Legacy Apache Final Release
 
-Use this text only for the final release that is intentionally designated as the last Apache License 2.0 release.
+Use this text only for the retrospective tag `legacy-apache-2.0-final`, which designates commit `e43af0d` as the last Apache License 2.0 point preserved in the current recreated repository history.
 
 ### Suggested Title
 
@@ -10,11 +10,11 @@ Final Apache 2.0 Release
 
 ### Release Body
 
-This release is the final release of this repository distributed under Apache License 2.0.
+This release is the retrospective tag `legacy-apache-2.0-final`, which marks commit `e43af0d` as the last Apache License 2.0 point preserved in the current recreated repository history.
 
 Important boundary:
 
-1. This release is the last Apache 2.0 release.
+1. In the current recreated repository history, this release is the last Apache 2.0 release point that remains reachable.
 2. Later releases are not distributed under Apache License 2.0 unless explicitly stated otherwise.
 3. Rights validly obtained under Apache License 2.0 for this specific release or other earlier Apache-designated releases are not retroactively revoked.
 4. This release must not be interpreted as granting Apache License 2.0 rights to later source-available or commercially reserved releases.
@@ -32,7 +32,7 @@ Even in this Apache-designated legacy release, users remain responsible for inde
 
 Future licensing notice:
 
-All later releases are expected to move to a source-available, evaluation-only, commercial-reservation model unless explicitly stated otherwise in the release itself.
+All later releases after `legacy-apache-2.0-final` are expected to move to a source-available, evaluation-only, commercial-reservation model unless explicitly stated otherwise in the release itself.
 
 ## Current Source-Available Evaluation Release
 
@@ -49,7 +49,7 @@ This release is distributed under the current source-available, evaluation-only,
 License boundary:
 
 1. Apache License 2.0 does not apply to this release unless this release explicitly says so.
-2. Earlier rights validly obtained for specifically Apache-designated legacy releases are not retroactively revoked.
+2. Earlier rights validly obtained for specifically Apache-designated legacy releases, including `legacy-apache-2.0-final`, are not retroactively revoked.
 3. Those earlier Apache rights do not extend to this release.
 4. This release is governed by the repository's current LICENSE, NOTICE, and COMMERCIAL_LICENSE.md.
 
@@ -85,4 +85,4 @@ See the repository root LICENSE, NOTICE, and COMMERCIAL_LICENSE.md for the gover
 
 ## Implementation Note
 
-This recreated repository currently contains the tag `v0.0.0.0.0` for the commercial-license release. A legacy Apache final release can only be published if a real Apache-designated historical tag or release point is restored or recreated intentionally.
+This recreated repository currently contains the tag `v0.0.0.0.0` for the commercial-license release. The retrospective tag `legacy-apache-2.0-final` is intended to identify commit `e43af0d`, where the repository still contained an Apache License 2.0 LICENSE file, as the last Apache-designated point preserved in the reachable recreated history.
