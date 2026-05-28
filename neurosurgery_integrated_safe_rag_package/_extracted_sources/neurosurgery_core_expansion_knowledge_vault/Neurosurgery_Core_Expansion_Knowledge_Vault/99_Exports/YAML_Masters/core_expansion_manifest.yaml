@@ -1,0 +1,23 @@
+vault_name: Neurosurgery_Core_Expansion_Knowledge_Vault
+version: core_expansion_v1
+source_document: 脳神経外科領域における施設内薬物治療アルゴリズム
+purpose: 最小安全セットの次工程として、疾患・患者状態・処置予定・条件・薬剤索引・監査ハブを追加する。
+not_a_guideline: true
+not_a_prescription_order: true
+not_an_institutional_procedure: true
+not_immediate_cds_specification: true
+human_review_required: true
+facility_specific_confirmation_required: true
+external_primary_sources_required: true
+included_modules:
+  - disease_hub
+  - patient_state_hub
+  - procedure_hub
+  - condition_threshold_hub
+  - layer1_drug_index
+  - layer2_drug_index
+  - external_source_checklist
+  - facility_confirmation_checklist
+  - audit_log_template
+  - csv_masters
+  - rag_seed_high_risk_jsonl

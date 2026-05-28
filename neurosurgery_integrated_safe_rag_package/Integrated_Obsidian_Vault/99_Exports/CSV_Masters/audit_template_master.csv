@@ -1,0 +1,5 @@
+﻿template_title,section,required_fields
+監査ログテンプレート,更新・監査運用,audit_id; audit_date; reviewer; target_note; trigger; change_summary; source_checked; facility_confirmation_required; medical_safety_impact; cds_impact; approval_status; unresolved_issues
+RAG Export監査チェックリスト,RAG Export,claim_type; not_to_interpret_as; required_confirmation; human_review_required; external_primary_sources_required; facility_specific_confirmation_required; ai_misread_risk
+AI誤回答テスト実行記録,AI誤回答テスト,test_id; question; expected_answer; actual_answer; pass_fail; failure_reason; fix_required; rerun_required
+更新トリガー監査表,更新トリガー,PMDA添文更新; RMP更新; GL更新; 採用品変更; 夜間在庫変更; 看護体制変更; CDS検討開始; 危険誤答検出

@@ -1,0 +1,7 @@
+﻿title,source_type,check_items,not_to_standardize,external_check_required,facility_check_required
+PMDA電子添文チェックリスト,PMDA電子添文,効能・効果; 用法・用量; 禁忌; 警告; 重要な基本的注意; 腎機能・肝機能; 妊娠可能性; 相互作用; 重大な副作用,国内適応内/外をGPTが確定しない; 海外GL記載を国内適応内と同一視しない,yes,yes
+RMP・安全性情報チェックリスト,RMP / 安全性情報,重要な特定リスク; 重要な潜在的リスク; 不足情報; 追加安全性監視; 重大安全性情報,RMP確認だけで施設内標準化しない,yes,yes
+国内脳卒中GLチェックリスト,国内診療ガイドライン,ICH; AIS; aSAH; 抗血栓薬中和; 抗血栓薬再開; rt-PA/EVT; VTE予防,国内GL記載を処方指示として扱わない,yes,yes
+海外主要GLチェックリスト,AHA/ASA ICH/aSAH等,ICH guideline; aSAH guideline; TBI関連GL; ICP管理; CDS/医療機器プログラム該当性,海外GL記載を国内適応内・保険説明可能と同一視しない,yes,yes
+輸血療法関連指針チェックリスト,輸血療法関連指針,血小板輸血; FFP; クリオプレシピテート; フィブリノゲン製剤; 輸血部基準; 夜間休日体制,血小板数閾値や輸血基準を公開資料だけで固定しない,yes,yes
+周術期抗菌薬・感染制御チェックリスト,周術期抗菌薬 / 感染制御,CEZ; VCM; CLDM; 髄膜炎初療; EVD/シャント感染; 脳炎疑い; アンチバイオグラム,予防抗菌薬と感染治療を混同しない,yes,yes
