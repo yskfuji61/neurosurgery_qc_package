@@ -19,6 +19,11 @@
 15. `manifest/summary_layer_provenance.csv` に 04、05、06、07、10、11 の `実際の考え方` section が secondary naturalized section として登録されている。
 16. Preview review の approved 判定に must-have 100% 充足、must-not-have 0 件、PHI / 施設固有未公開情報 0 件の gate がある。
 17. `pending` を使う条件が `model_identifier`、leakage 判定、normalized 境界の不確定に限定されている。
+18. Preview 実績が `tests/human_reviewed_preview_examples.md` に記録される前に `report_preview_promotion_candidates.py` や `apply_preview_promotion.py` を実行しない運用順が README / runbook / matrix で一致している。
+19. `manifest/reference_migration_decision_ledger.csv` が reference repo 全ファイルを 1 file 1 decision で cover し、`tests/validate_reference_migration_ledger.py` が PASS している。
+20. `manifest/facility_confirmation_status_ledger.csv` が crosswalk 全 chunk を cover し、実 evidence がない row を `confirmed` または `not_applicable` として扱っていない。
+21. `manifest/derived_export_candidate_ledger.csv` が summary provenance 全 chunk を cover し、source traceability または human-review status が揃わない row を `export_candidate=yes` にしていない。
+22. `manifest/integrated_origin_reclassification_summary.csv` が adapted / operator-side / unresolved / quarantine の current classification を監査補助として記録し、blind copy や external-ready 承認として扱われていない。
 
 ## export 後チェック
 
@@ -33,3 +38,8 @@
 9. summary layer を含む質問について、根拠 section を `manifest/summary_layer_provenance.csv` で辿れる。
 10. approved record で `raw_output` と `lightly_normalized_output` の区別が保たれている。
 11. secondary naturalized section を追加しなかった file も含めて、Preview review 後の decision log が残っている。
+12. approved Preview 実績がある場合だけ `tests/report_preview_promotion_candidates.py` を実行し、candidate report の結果を review log に残した。
+13. candidate が `yes` の row だけに `tests/apply_preview_promotion.py` の dry-run を行い、blocking reason の有無を記録した。
+14. dry-run が clean な row だけを `--apply` で更新し、`manifest/knowledge_chunk_review_crosswalk.csv` の state change を review log に残した。
+15. reject または red-flag が出た場合、`manifest/knowledge_quarantine_register.csv` の更新と `tests/validate_quarantine_integrity.py` / `tests/validate_release_readiness.py` の再実行結果を残した。
+16. approved Preview 実績があっても、`manifest/derived_export_candidate_ledger.csv` の export candidate state と facility confirmation state を別 gate として確認した。

@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "jsonl_rag_schema.json",
+  "title": "Integrated Safe RAG JSONL Chunk Schema",
+  "description": "Operator-side validation schema for integrated Safe RAG JSONL chunks. This schema validates required fields and safety-gate structure only; it is not a clinical source and contains no dosing, threshold, compatibility, repeat-dosing, TDM, facility availability, or production CDS values.",
+  "type": "object",
+  "required": [
+    "chunk_id",
+    "source_document",
+    "knowledge_type",
+    "claim_type",
+    "source_quote_or_summary",
+    "interpretation",
+    "not_to_interpret_as",
+    "required_confirmation",
+    "human_review_required",
+    "facility_specific_confirmation_required",
+    "external_primary_sources_required",
+    "ai_misread_risk"
+  ],
+  "properties": {
+    "chunk_id": {"type": "string"},
+    "source_document": {"type": "string"},
+    "source_version": {"type": "string"},
+    "source_section": {"type": "string"},
+    "knowledge_type": {"type": "string"},
+    "claim_type": {
+      "type": "string",
+      "enum": [
+        "source_fact",
+        "source_summary",
+        "structured_interpretation",
+        "negative_knowledge",
+        "facility_candidate",
+        "cds_candidate",
+        "regulatory_status",
+        "insurance_risk",
+        "facility_operation",
+        "threshold_condition",
+        "audit_requirement",
+        "markdown_note_frontmatter_summary"
+      ]
+    },
+    "source_quote_or_summary": {"type": "string"},
+    "interpretation": {"type": "string"},
+    "not_to_interpret_as": {"type": "array", "items": {"type": "string"}},
+    "evidence_certainty": {"type": "string"},
+    "recommendation_strength": {"type": "string"},
+    "domestic_regulatory_status": {"type": "string"},
+    "insurance_risk": {"type": "string"},
+    "institutional_operability": {"type": "string"},
+    "related_entities": {
+      "type": "object",
+      "additionalProperties": {"type": "array", "items": {"type": "string"}}
+    },
+    "negative_knowledge": {"type": "array", "items": {"type": "string"}},
+    "required_confirmation": {"type": "array", "items": {"type": "string"}},
+    "external_primary_sources_required": {"type": "boolean", "const": true},
+    "facility_specific_confirmation_required": {"type": "boolean", "const": true},
+    "human_review_required": {"type": "boolean", "const": true},
+    "ai_misread_risk": {"type": "string", "enum": ["medium", "high", "very_high"]},
+    "rag_priority": {"type": "string"},
+    "safe_answer_instruction": {"type": "string"},
+    "_source_file": {"type": "string"}
+  },
+  "additionalProperties": true
+}

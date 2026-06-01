@@ -24,6 +24,15 @@
 8. Was raw output preserved separately from lightly normalized output:
 9. If `pending` was used, which allowed reason applied:
 10. If additional secondary naturalized sections were considered, which files were evaluated and what was the decision:
+11. Which rows in `manifest/knowledge_chunk_review_crosswalk.csv` changed state during this review:
+12. What did `tests/report_preview_promotion_candidates.py` report before any state change:
+13. Which rows were dry-run checked with `tests/apply_preview_promotion.py`, and what blocking reasons remained or cleared:
+14. Which rows were actually updated by `tests/apply_preview_promotion.py --apply`:
+15. Did `tests/validate_review_state_integrity.py` pass before closeout:
+16. Which rows changed `release_readiness` or `resolution_status`, and why:
+17. Did `tests/validate_release_readiness.py` pass before closeout:
+18. Which rows were added or updated in `manifest/knowledge_quarantine_register.csv`:
+19. Did `tests/validate_quarantine_integrity.py` pass before closeout:
 
 ## Path Recording Note
 

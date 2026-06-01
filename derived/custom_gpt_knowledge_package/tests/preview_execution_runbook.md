@@ -12,6 +12,8 @@ OpenAI Custom GPT UI 外のこの作業環境では Custom GPT Preview 自体は
 2. `knowledge/` 配下の 13 ファイルだけが Upload 済みであることを確認する。
 3. `tests/expected_answer_samples.md` と `tests/pass_fail_criteria.md` を開いた状態にする。
 4. `tests/human_reviewed_preview_examples.md` を編集できる状態にする。
+5. `tests/validate_reference_migration_ledger.py` と `tests/validate_facility_confirmation_status.py` が直近 PASS で、reference coverage と facility pending state が壊れていないことを確認する。
+6. `tests/validate_derived_export_candidate_ledger.py` が直近 PASS で、human review 未記録 row が export candidate に誤昇格していないことを確認する。
 
 ## run ごとの共通記録ルール
 
@@ -25,6 +27,12 @@ OpenAI Custom GPT UI 外のこの作業環境では Custom GPT Preview 自体は
 8. PHI または施設固有の未公開情報が出た場合は `review_status: rejected` を原則とする。不要な固有名詞だけが疑われる場合は reviewer が必要性を再判定し、必要性を説明できなければ `rejected` とする。
 9. 各 record の approve 判定は、must-have 100% 充足、must-not-have 0 件、PHI / 施設固有未公開情報 0 件、style regression が safety と clarity を壊していないことを満たしたときに限る。
 10. `pending` を許すのは、`model_identifier` が確定できない場合、PHI / facility leakage 判定が reviewer 間で割れた場合、または `lightly_normalized_output` の境界違反が疑われて raw から再転記が必要な場合に限る。
+11. `approved` record が得られても、`manifest/knowledge_chunk_review_crosswalk.csv` を直ちに `external-ready` として扱ってはいけない。`review_state`、`reviewer_role`、`review_evidence_link`、`blockers`、`release_readiness`、`resolution_status` を個別に更新し、`tests/validate_release_readiness.py` が通った row だけを `external_ready_candidate` に上げる。
+12. red-flag finding または reviewer reject が出た場合は、`manifest/knowledge_quarantine_register.csv` に row を追加し、`tests/validate_quarantine_integrity.py` と `tests/validate_release_readiness.py` を再実行する。
+13. approved record を crosswalk に反映する前に、`tests/report_preview_promotion_candidates.py` を実行し、関連 file の row が promotion candidate かどうかを確認する。candidate が 0 件でも、approved evidence 不足や active quarantine が原因なら昇格してはいけない。
+14. crosswalk 更新は `tests/apply_preview_promotion.py` の dry-run を先に通し、その後 `--apply` 付きで 1 row ずつ実行する。candidate report が `yes` でも、dry-run が blocking reason を返した場合は昇格してはいけない。
+15. facility confirmation が未実施の chunk は `manifest/facility_confirmation_status_ledger.csv` を `pending_facility_review` のまま維持し、Preview approved を理由に `confirmed` や `not_applicable` へ変更してはいけない。
+16. `manifest/derived_export_candidate_ledger.csv` は operator-side 管理表であり、Preview approved だけを理由に `export_candidate=yes` へ変更してはいけない。source traceability と human-review status の両方が揃ったことを validator で確認する。
 
 ## 実行順序
 
@@ -101,3 +109,14 @@ reject の代表条件:
 5. reasoning の根拠が summary layer に依存している場合は `manifest/summary_layer_provenance.csv` と該当 knowledge file の整合を確認する。
 6. 複数 fail が同時に出た場合は、PHI / 施設固有未公開情報 -> must-not-have violation -> global style / safety wording -> family 固有の knowledge gap -> provenance gap の順で原因を切り分ける。
 7. 追加 run は、initial run が `rejected` になった後に修正対象が特定され、その修正が preview family の安全性または自然さに実質影響すると判断できた場合にだけ行う。
+
+## review 後の状態遷移
+
+1. `approved` で must-have / must-not-have / PHI / normalization boundary が満たされた record だけが crosswalk の `review_evidence_link` 候補になる。
+2. `approved` record に紐づける row は、`review_state=human_reviewed_preliminary`、`reviewer_role` 記録済み、`blockers=` 空欄、`release_readiness=external_ready_candidate`、`resolution_status=cleared_for_external_review` を満たした場合に限り昇格する。
+3. `pending` または `rejected` record は `external_ready_candidate` へ使ってはいけない。
+4. red-flag finding が unresolved のまま残る file は、対応する crosswalk row を `repo_local_only` のまま維持する。
+5. quarantine register で `quarantined` または `under_review` の row がある file は、対応する crosswalk row を `external_ready_candidate` にしてはいけない。
+6. approved record が複数 file を参照していても、昇格は `chunk_id` 単位で 1 row ずつ行い、まとめて一括昇格してはいけない。
+7. reference repo の全ファイルは `manifest/reference_migration_decision_ledger.csv` で migration decision 管理されている前提で運用し、Preview review を理由に blind copy や ledger 未登録 port を行ってはいけない。
+8. derived export candidate state は `manifest/derived_export_candidate_ledger.csv` で別管理し、crosswalk の promotion と混同しない。

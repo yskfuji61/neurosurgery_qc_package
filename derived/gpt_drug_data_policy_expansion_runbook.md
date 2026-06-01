@@ -702,6 +702,66 @@ find neurosurgery_integrated_safe_rag_package -maxdepth 5 -type f | sort > /tmp/
 find derived/custom_gpt_knowledge_package -maxdepth 5 -type f | sort > /tmp/derived_files_after.txt
 ```
 
+Derived upload manifest validation:
+
+```bash
+python derived/custom_gpt_knowledge_package/tests/validate_upload_manifest.py
+```
+
+Derived reference migration ledger validation:
+
+```bash
+python derived/custom_gpt_knowledge_package/tests/validate_reference_migration_ledger.py --output /tmp/qc_reference_migration_findings.csv
+```
+
+Derived facility confirmation validation:
+
+```bash
+python derived/custom_gpt_knowledge_package/tests/validate_facility_confirmation_status.py --output /tmp/qc_facility_confirmation_findings.csv
+```
+
+Derived export candidate validation:
+
+```bash
+python derived/custom_gpt_knowledge_package/tests/validate_derived_export_candidate_ledger.py
+```
+
+Derived unsafe-pattern validation:
+
+```bash
+python derived/custom_gpt_knowledge_package/tests/validate_unsafe_patterns.py --output /tmp/qc_unsafe_pattern_findings.csv
+```
+
+Derived review-state integrity validation:
+
+```bash
+python derived/custom_gpt_knowledge_package/tests/validate_review_state_integrity.py --output /tmp/qc_review_state_findings.csv
+```
+
+Derived release-readiness validation:
+
+```bash
+python derived/custom_gpt_knowledge_package/tests/validate_release_readiness.py --output /tmp/qc_release_readiness_findings.csv
+```
+
+Derived quarantine validation:
+
+```bash
+python derived/custom_gpt_knowledge_package/tests/validate_quarantine_integrity.py --output /tmp/qc_quarantine_findings.csv
+```
+
+Derived preview-promotion candidate report:
+
+```bash
+python derived/custom_gpt_knowledge_package/tests/report_preview_promotion_candidates.py --output /tmp/qc_preview_promotion_candidates.csv
+```
+
+Derived preview-promotion apply helper:
+
+```bash
+python derived/custom_gpt_knowledge_package/tests/apply_preview_promotion.py --record-id PREVIEW-001 --chunk-id summary-03 --reviewer-role pharmacist
+```
+
 危険語 scan:
 
 ```bash
@@ -719,6 +779,36 @@ Derived source-traceability scan:
 ```bash
 rg -n "source_path:|source_revision:|export_date:|transformation_rule:" derived/custom_gpt_knowledge_package/knowledge
 ```
+
+`python derived/custom_gpt_knowledge_package/tests/validate_upload_manifest.py` は、Knowledge upload target を `knowledge/` 配下の 13 ファイルだけに固定し、README、instructions、tests、audit、manifest を upload 対象へ silent expansion していないか確認します。
+
+`python derived/custom_gpt_knowledge_package/tests/validate_reference_migration_ledger.py` は、`references/neurosurgery_safe_rag_pmda_product_source_register_resolved` の実ファイルと `manifest/reference_migration_decision_ledger.csv` を照合し、1 file 1 decision、missing / extra / duplicate 0、allowed migration mode、unresolved / quarantine flag consistency を確認します。全ファイルが ledger にあることは blind copy の許可ではなく、移植しない判断も含めて監査可能にするための gate です。
+
+`python derived/custom_gpt_knowledge_package/tests/validate_facility_confirmation_status.py` は、`manifest/facility_confirmation_status_ledger.csv` と `manifest/knowledge_chunk_review_crosswalk.csv` の chunk coverage、allowed status、pending / blocked の blocker、external-ready candidate と facility 未clear の衝突を確認します。実 facility confirmation evidence がない row を `confirmed` または `not_applicable` にしてはいけません。
+
+`python derived/custom_gpt_knowledge_package/tests/validate_derived_export_candidate_ledger.py` は、`manifest/derived_export_candidate_ledger.csv` と `manifest/summary_layer_provenance.csv` の chunk coverage を照合し、source traceability または human-review status が揃っていない row を `export_candidate=yes` にしていないか確認します。`export_candidate=yes` は Knowledge upload、Preview approval、facility confirmation、external-ready の代替ではありません。
+
+`python derived/custom_gpt_knowledge_package/tests/validate_unsafe_patterns.py` は、`manifest/custom_gpt_upload_manifest.csv` の `upload_to_custom_gpt=yes` 行だけを scan し、dangerous-term と numeric assertion の findings を operator-side review 用に出力します。review 実績がない section は `manifest/knowledge_chunk_review_crosswalk.csv` で pending のまま保持し、scan pass を human review 完了と混同してはいけません。
+
+`python derived/custom_gpt_knowledge_package/tests/validate_review_state_integrity.py` は、`tests/human_reviewed_preview_examples.md` と `manifest/knowledge_chunk_review_crosswalk.csv` の間で、pending record を reviewed と誤昇格していないか、evidence link が存在しない reviewed state がないかを確認します。
+
+`python derived/custom_gpt_knowledge_package/tests/validate_release_readiness.py` は、`manifest/knowledge_chunk_review_crosswalk.csv` の `release_readiness` と `resolution_status` を検査し、`repo_local_only`、`pending_preview_review`、`quarantined_red_flag`、`external_ready_candidate` を混同していないかを確認します。validator pass は external-ready 完了を意味せず、preview evidence、human review、operator closeout が残っている row は ready candidate に上げてはいけません。
+
+`python derived/custom_gpt_knowledge_package/tests/validate_quarantine_integrity.py` は、`manifest/knowledge_quarantine_register.csv` の enum と clearance 条件を検査し、quarantined row が `manifest/knowledge_chunk_review_crosswalk.csv` 上で `external_ready_candidate` に上がっていないかを確認します。red-flag findings は quarantine register へ隔離し、evidence 不在のまま `cleared` にしてはいけません。
+
+`python derived/custom_gpt_knowledge_package/tests/report_preview_promotion_candidates.py` は、approved Preview record と `manifest/knowledge_chunk_review_crosswalk.csv` の対応候補を operator-side に可視化する helper です。approved 実績がない状態で `0 candidate` を返すのは正常であり、その場合は昇格せず pending を維持します。
+
+`python derived/custom_gpt_knowledge_package/tests/apply_preview_promotion.py` は、approved Preview record を根拠に `manifest/knowledge_chunk_review_crosswalk.csv` を 1 row ずつ昇格させる operator-side helper です。先に dry-run を通し、blocking reason が消えた row にだけ `--apply` を付けて実行します。approved でない record、active quarantine がある row、blocker が残る row は昇格させてはいけません。
+
+Derived Preview evidence reflection order:
+
+1. `tests/preview_execution_runbook.md` の順序で Preview を実行する。
+2. `tests/human_reviewed_preview_examples.md` に raw output、lightly normalized output、approve / reject を創作なしで記録する。
+3. 実 Preview evidence が未投入、または record が `approved` でない場合は、ここで停止し、promotion helper を実行しない。
+4. `python derived/custom_gpt_knowledge_package/tests/report_preview_promotion_candidates.py --output /tmp/qc_preview_promotion_candidates.csv` を実行し、candidate row を確認する。
+5. candidate が `yes` の row だけに `python derived/custom_gpt_knowledge_package/tests/apply_preview_promotion.py --record-id <PREVIEW-ID> --chunk-id <summary-XX> --reviewer-role <role>` の dry-run を行う。
+6. dry-run が clean な row にだけ `--apply` を付けて 1 row ずつ反映する。
+7. 反映後に `validate_review_state_integrity.py`、`validate_release_readiness.py`、必要時は `validate_quarantine_integrity.py` を再実行する。
 
 `rg` が利用できない環境では `grep -E` を代替として使います。ただし、scan が通ることは clinical approval ではありません。validation は operator review と human review の補助です。
 

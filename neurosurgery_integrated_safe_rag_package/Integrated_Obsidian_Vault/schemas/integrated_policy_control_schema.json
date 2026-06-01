@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "integrated_policy_control_schema.json",
+  "title": "Integrated Policy Control Validation Schema",
+  "description": "Operator-side validation gate inventory for integrated policy notes. This schema encodes source-traceability, human-review, non-prescription, non-procedure, non-production-CDS, and no-clinical-value rules only. It is not a clinical source and contains no dose, interval, threshold, IV compatibility, TDM adjustment, repeat-dosing, dialysis operation, facility availability, or production EHR/CDS values.",
+  "policy_directory_prefixes": [
+    "12_Drug_Label_Source_Hierarchy",
+    "13_Dosing_Adjustment_Boundaries",
+    "14_Interactions_Contraindications",
+    "15_IV_Compatibility_Admin_Boundaries",
+    "16_Guideline_Label_Separation",
+    "17_Clinical_Data_Reference_Policy",
+    "18_Renal_Function_Data_Policy",
+    "19_Vital_Signs_Data_Policy",
+    "20_Lab_Trend_Time_Window_Policy",
+    "21_Repeat_Dosing_Interval_Policy",
+    "22_TDM_Steady_State_Policy",
+    "23_Statistical_Aggregation_Policy",
+    "24_CDS_Time_Window_Alert_Boundaries"
+  ],
+  "required_frontmatter_keys": [
+    "note_type",
+    "not_a_guideline",
+    "not_a_prescription_order",
+    "not_an_institutional_procedure",
+    "not_immediate_cds_specification",
+    "source_document",
+    "source_section",
+    "source_quote_or_summary",
+    "gpt_structured_interpretation",
+    "not_to_standardize",
+    "undetermined_from_source",
+    "external_primary_source_check_items",
+    "facility_confirmation_items",
+    "required_human_review",
+    "ai_misread_risk",
+    "not_to_interpret_as",
+    "audit_status"
+  ],
+  "required_true_keys": [
+    "not_a_guideline",
+    "not_a_prescription_order",
+    "not_an_institutional_procedure",
+    "not_immediate_cds_specification",
+    "required_human_review"
+  ],
+  "source_traceability_keys": [
+    "source_document",
+    "source_section",
+    "source_quote_or_summary"
+  ],
+  "required_non_empty_array_keys": [
+    "not_to_standardize",
+    "undetermined_from_source",
+    "external_primary_source_check_items",
+    "facility_confirmation_items",
+    "not_to_interpret_as"
+  ],
+  "allowed_audit_status": [
+    "draft_needs_human_review"
+  ],
+  "disallowed_placeholder_values": [
+    "",
+    "TBD",
+    "TODO",
+    "to_be_recorded",
+    "pending_without_owner",
+    "confirmed",
+    "approved",
+    "external-ready",
+    "facility-ready"
+  ],
+  "required_not_to_interpret_as_terms": [
+    "診療ガイドライン",
+    "処方指示",
+    "電子カルテ診療支援仕様"
+  ],
+  "forbidden_clinical_value_patterns": [
+    {
+      "id": "dose_or_amount_unit",
+      "pattern": "(?i)\\b\\d+(?:\\.\\d+)?\\s*(?:mg|mcg|ug|μg|g|ml|mL|L|IU|units?)\\b"
+    },
+    {
+      "id": "time_interval_value",
+      "pattern": "(?i)\\b\\d+(?:\\.\\d+)?\\s*(?:hours?|hrs?|days?|minutes?|mins?)\\b"
+    },
+    {
+      "id": "clinical_threshold_comparator",
+      "pattern": "(?:>=|<=|>|<)\\s*\\d+(?:\\.\\d+)?"
+    }
+  ],
+  "validation_scope_note": "Validation pass is repo-local structural safety only. It is not PMDA confirmation, pharmacist review, facility confirmation, Custom GPT Preview approval, clinical approval, or external readiness."
+}

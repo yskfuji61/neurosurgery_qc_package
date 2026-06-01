@@ -1,0 +1,49 @@
+file,role,upload_to_custom_gpt,human_review_required,reason_if_not_uploaded
+README.md,package_readme,no,yes,operator-side package guide
+audit/human_review_log_template.md,audit,no,yes,operator-side audit template
+audit/rag_export_audit_checklist.md,audit,no,yes,operator-side audit checklist
+audit/review_change_note.md,audit,no,yes,operator-side audit note
+audit/update_trigger_checklist.md,audit,no,yes,operator-side audit checklist
+instructions/custom_gpt_instructions.md,instructions,no,yes,operator-side instructions
+knowledge/01_START_HERE_AND_POSITIONING.md,knowledge,yes,yes,
+knowledge/02_INDEX_AND_NAVIGATION.md,knowledge,yes,yes,
+knowledge/03_HIGH_RISK_WARNINGS_AND_NEGATIVE_KNOWLEDGE.md,knowledge,yes,yes,
+knowledge/04_DISEASE_NOTES.md,knowledge,yes,yes,
+knowledge/05_DRUG_CLASS_AND_LAYER2_DRUG_NOTES.md,knowledge,yes,yes,
+knowledge/06_PATIENT_STATE_NOTES.md,knowledge,yes,yes,
+knowledge/07_PROCEDURE_AND_PERIOPERATIVE_NOTES.md,knowledge,yes,yes,
+knowledge/08_THRESHOLDS_AND_CONDITIONS.md,knowledge,yes,yes,
+knowledge/09_EVIDENCE_AND_PRIMARY_SOURCE_CHECKLISTS.md,knowledge,yes,yes,
+knowledge/10_OPERATIONAL_AND_FACILITY_CHECKLISTS.md,knowledge,yes,yes,
+knowledge/11_CDS_CANDIDATE_BOUNDARIES.md,knowledge,yes,yes,
+knowledge/12_AI_ERROR_TESTS_AND_VALIDATION.md,knowledge,yes,yes,
+knowledge/13_AUDIT_LOGS_AND_UPDATE_OPERATIONS.md,knowledge,yes,yes,
+manifest/build_notes.md,manifest,no,yes,operator-side build log
+manifest/commit_message_body.md,manifest,no,yes,operator-side commit scaffold
+manifest/custom_gpt_upload_manifest.csv,manifest,no,yes,operator-side upload boundary control sheet
+manifest/derived_export_candidate_ledger.csv,manifest,no,yes,operator-side derived export candidate evidence ledger
+manifest/facility_confirmation_status_ledger.csv,manifest,no,yes,operator-side facility confirmation status ledger
+manifest/file_inventory.csv,manifest,no,yes,operator-side source inventory
+manifest/future_policy_integration_matrix.md,manifest,no,yes,operator-side control sheet
+manifest/integrated_origin_reclassification_summary.csv,manifest,no,yes,operator-side integrated-origin migration reclassification summary
+manifest/knowledge_quarantine_register.csv,manifest,no,yes,operator-side quarantine register
+manifest/reference_migration_decision_ledger.csv,manifest,no,yes,operator-side reference-to-target migration decision ledger
+manifest/source_to_knowledge_mapping.csv,manifest,no,yes,operator-side source mapping
+manifest/summary_layer_provenance.csv,manifest,no,yes,operator-side provenance register
+tests/expected_answer_samples.md,test,no,yes,operator-side preview rubric
+tests/human_reviewed_preview_examples.md,test,no,yes,operator-side review log
+tests/pass_fail_criteria.md,test,no,yes,operator-side validation rubric
+tests/preview_execution_runbook.md,test,no,yes,operator-side preview runbook
+tests/preview_test_cases.md,test,no,yes,operator-side test cases
+tests/apply_preview_promotion.py,test,no,yes,operator-side promotion apply helper
+tests/report_preview_promotion_candidates.py,test,no,yes,operator-side promotion candidate report
+tests/response_style_regression_assets.md,test,no,yes,operator-side regression assets
+tests/validate_upload_manifest.py,test,no,yes,operator-side validation script
+tests/validate_unsafe_patterns.py,test,no,yes,operator-side unsafe-pattern validation script
+tests/validate_quarantine_integrity.py,test,no,yes,operator-side quarantine validation script
+tests/validate_review_state_integrity.py,test,no,yes,operator-side review-state validation script
+tests/validate_release_readiness.py,test,no,yes,operator-side release-readiness validation script
+tests/validate_reference_migration_ledger.py,test,no,yes,operator-side reference migration ledger validation script
+tests/validate_facility_confirmation_status.py,test,no,yes,operator-side facility confirmation validation script
+tests/validate_derived_export_candidate_ledger.py,test,no,yes,operator-side derived export candidate ledger validation script
+manifest/knowledge_chunk_review_crosswalk.csv,manifest,no,yes,operator-side review and unresolved tracking register

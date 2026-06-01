@@ -63,9 +63,19 @@
 2. raw output、lightly normalized output、approved or rejected excerpt、review rationale を分けて残し、approved example を全文一致用の正解文として扱わない。
 3. high-risk reversal、threshold interpretation、evidence source selection、audit/update operations の family は human review required とする。
 4. `manifest/source_to_knowledge_mapping.csv` は file-level mapping として維持し、summary layer の section-level provenance は `manifest/summary_layer_provenance.csv` に分離して管理する。
-5. provenance record では、source-faithful paraphrase と stylistic naturalization を区別して記録する。
-6. Preview 実行自体は operator が Custom GPT UI で行い、初回 run の手順と approve/reject 基準は `tests/preview_execution_runbook.md` に固定する。
-7. 04、05、06、07、10、11 では clinician-facing summary に加えて `実際の考え方` を secondary naturalized section として provenance 登録し、secondary pilot の対象を過不足なく揃える。
+5. `manifest/knowledge_chunk_review_crosswalk.csv` は review state と unresolved gate の補助 ledger として追加し、mapping/provenance を置き換えずに pending / unassigned を保持する。
+6. `release_readiness` と `resolution_status` は repo-local pass、preview pending、quarantine、external-ready candidate を分離するための operator-side field とし、validation pass や preview pending のまま external-ready と表現しない。
+7. `manifest/knowledge_quarantine_register.csv` は dangerous-term、numeric assertion、reviewer red-flag の findings を隔離追跡する専用 manifest とし、unresolved ledger の代替にしない。
+8. `manifest/reference_migration_decision_ledger.csv` は reference repo 全ファイルを 1 file 1 decision で管理し、`tests/validate_reference_migration_ledger.py` で coverage と mode consistency を確認する。これは blind copy の許可ではない。
+9. `manifest/facility_confirmation_status_ledger.csv` は chunk ごとの施設確認状態を管理し、`tests/validate_facility_confirmation_status.py` で crosswalk coverage と pending / confirmed の誤記を確認する。
+10. `manifest/derived_export_candidate_ledger.csv` は source traceability と human-review status の両方が揃った row だけを export candidate にするための operator-side ledger とし、`tests/validate_derived_export_candidate_ledger.py` で summary provenance coverage と candidate 誤昇格を確認する。
+11. `manifest/integrated_origin_reclassification_summary.csv` は reference migration decision の current classification を operator-side / unresolved / adapted などの観点で集約し、adapted_port を derived export や external-ready の承認として扱わない。
+12. provenance record では、source-faithful paraphrase と stylistic naturalization を区別して記録する。
+13. Preview 実行自体は operator が Custom GPT UI で行い、初回 run の手順と approve/reject 基準は `tests/preview_execution_runbook.md` に固定する。
+14. approved Preview 実績を crosswalk へ反映する前に `tests/report_preview_promotion_candidates.py` を使って candidate row を確認し、approved evidence がない状態では `0 candidate` を正常値として pending を維持する。
+15. crosswalk 更新は `tests/apply_preview_promotion.py` の dry-run を先に通し、blocking reason が消えた row にだけ `--apply` を付けて 1 row ずつ実行する。
+16. reject または red-flag の Preview 実績は `manifest/knowledge_quarantine_register.csv` へ反映し、`tests/validate_quarantine_integrity.py` と `tests/validate_release_readiness.py` を再実行してから closeout する。
+17. 04、05、06、07、10、11 では clinician-facing summary に加えて `実際の考え方` を secondary naturalized section として provenance 登録し、secondary pilot の対象を過不足なく揃える。
 
 ## 削除していないこと
 
