@@ -84,6 +84,10 @@ AI は Markdown、manifest、tests、schemas、validation reports、audit scaffo
 2. migration slice B（adapted_port 25 件）を「統合完了」「upload safe」「PMDA 解決済み」と報告すること。
 3. 212 薬剤プロファイルを integrated drug-profile 層未整備のまま `knowledge/` へ直コピーすること。
 
+### Migration ledger 306/306（slice C 完走）
+
+`reference_migration_decision_ledger.csv` は 306 reference files すべてについて 1 file = 1 decision を記録済み（slice B: 25 件 `m1_port_applied_pending_operator_review`、slice C: 281 件 `m2_non_port_recorded_pending_operator_review`）。ledger 完走は blind copy の許可ではなく、non-port 行は TARGET へ物理コピーしない監査完走である。統合完了・PMDA 解決済み・upload safe の宣言は禁止のまま。
+
 ## Integrated First / Derived Second 原則
 
 将来の薬剤データ拡張は、必ず次の順序で進めます。

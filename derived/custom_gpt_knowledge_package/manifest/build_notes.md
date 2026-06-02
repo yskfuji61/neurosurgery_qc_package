@@ -100,6 +100,18 @@
 2. `manifest/file_inventory.csv` と `manifest/source_to_knowledge_mapping.csv` は integrated / qc source の traceability 用であり、reference の `upload_bundle_manifest.csv` 行をそのまま転記していない。
 3. `manifest/human_review_manifest.csv` 相当の役割は `knowledge_chunk_review_crosswalk.csv` と `tests/human_reviewed_preview_examples.md` で管理する。
 
+## Migration slice C（reference ledger 306/306 完走）
+
+2026-06-02: `baseline/post-slice-b-m1` 以降、残り 281 件（`no_port_keep_as_reference_only` 129 + `no_port_unresolved` 151 + `no_port_quarantine` 1）を **物理コピーなし** で ledger 処理した。
+
+| 区分 | 件数 | `status_after_this_slice` | 実施内容 |
+| --- | --- | --- | --- |
+| slice B 済み（adapted / operator-side port） | 25 | `m1_port_applied_pending_operator_review` | 変更なし |
+| slice C（non-port 完走） | 281 | `m2_non_port_recorded_pending_operator_review` | ledger の `reason` に m2 監査 suffix のみ。TARGET へファイル本体はコピーしない |
+| うち薬剤プロファイル | 212 | 同上 | integrated drug-profile 層 + Runbook Commit 1–9 先行が port 条件 |
+
+**306/306** が `reference_migration_decision_ledger.csv` に 1 file = 1 decision で登録済みである。これは統合完了・PMDA 解決済み・`custom_gpt_upload_safe` ではない。REFERENCE 側 PMDA 0/127 は維持する。
+
 ## 配置ポリシー
 
 1. この package は `references/neurosurgery_qc_package/derived/custom_gpt_knowledge_package/` に配置する。
