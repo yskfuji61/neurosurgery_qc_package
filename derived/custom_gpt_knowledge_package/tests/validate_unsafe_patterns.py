@@ -1,4 +1,10 @@
 #!/usr/bin/env python3
+"""Scan Custom GPT upload targets for dangerous terms and numeric assertions.
+
+Aligned with sibling reference corpus `08_VALIDATION_CHECKS/validate_safe_knowledge.py`
+discipline (pattern categories only; not a drop-in replacement). Repo-local PASS does not
+mean clinical approval, PMDA resolution, or custom_gpt_upload_safe.
+"""
 from __future__ import annotations
 
 from pathlib import Path

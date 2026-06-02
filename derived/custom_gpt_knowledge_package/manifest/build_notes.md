@@ -81,6 +81,25 @@
 
 元ファイルは削除していません。既存 source は上書きしていません。新規作成と更新は、この derived package 配下の operator-side files に限定しています。
 
+## Migration slice B（reference governance の適応）
+
+2026-06-02: `baseline/pre-slice-b-m1` 以降、reference corpus 25 件（`adapted_port` 24 + `operator_side_only_port` 1）の境界・運用言語を TARGET operator-side 文書へ適応した。REFERENCE 306 件の無批判コピー、`knowledge/` 13 本の拡張、PMDA 解決済み宣言は行っていない。
+
+### sibling reference corpus の readiness（事実の写し込み禁止）
+
+| 項目 | reference 側の位置づけ | 本 derived package への扱い |
+| --- | --- | --- |
+| 127 薬剤 inventory | candidate、施設未確定 | 確定リストとして扱わない |
+| PMDA 製品 URL | 0/127 確認済み（NOT_COMPLETE 系） | resolved と書かない |
+| `custom_gpt_upload_safe` | false | true にしない |
+| reference `custom_gpt_upload_manifest.csv` | 6 行 yes（register 系・pending） | 本 package の upload manifest（knowledge 13 のみ yes）とは別 corpus |
+
+### upload / inventory 境界
+
+1. `manifest/custom_gpt_upload_manifest.csv` は **本 package** の Knowledge 13 + operator-side 分離が正本である。
+2. `manifest/file_inventory.csv` と `manifest/source_to_knowledge_mapping.csv` は integrated / qc source の traceability 用であり、reference の `upload_bundle_manifest.csv` 行をそのまま転記していない。
+3. `manifest/human_review_manifest.csv` 相当の役割は `knowledge_chunk_review_crosswalk.csv` と `tests/human_reviewed_preview_examples.md` で管理する。
+
 ## 配置ポリシー
 
 1. この package は `references/neurosurgery_qc_package/derived/custom_gpt_knowledge_package/` に配置する。

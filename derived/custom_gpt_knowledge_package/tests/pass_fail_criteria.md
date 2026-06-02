@@ -69,6 +69,15 @@
 12. `manifest/reference_migration_decision_ledger.csv` と `manifest/facility_confirmation_status_ledger.csv` の operator-side state を、Preview pass の副作用で誤更新していないか。
 13. `manifest/derived_export_candidate_ledger.csv` と `manifest/integrated_origin_reclassification_summary.csv` を Knowledge upload target や external-ready 承認として扱っていないか。
 
+## Safe Answer Shape（reference SAFE_ANSWER_PATTERN 適応）
+
+高リスク薬剤質問では、次の形を優先する（処方指示ではない）。
+
+1. 冒頭で「確認すべき論点」を整理する（適応、患者状態、腎・肝、併用、出血・血栓・感染・けいれん・鎮静、製品単位 PMDA、安全性情報、院内手順）。
+2. 製品単位 PMDA が未確認のときは、未確認を明示し、一次資料と院内手順の薬剤師確認を促す。
+3. eGFR / CrCl / AKI / CKD / 透析 / CRRT、抗凝固・抗血小板・輸血・反転、TDM と採血時刻、ガイドライン・添文・院内プロトコル・CDS を混同しない。
+4. 薬剤名だけ、疾患名だけ、単一検査値だけから投与・変更・中止へ進めない。
+
 ## Machine Scan Anchor
 
 1. operator-side validator は `manifest/custom_gpt_upload_manifest.csv` の `upload_to_custom_gpt=yes` 行だけを scan 対象にする。

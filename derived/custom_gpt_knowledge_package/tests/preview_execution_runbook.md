@@ -34,6 +34,17 @@ OpenAI Custom GPT UI 外のこの作業環境では Custom GPT Preview 自体は
 15. facility confirmation が未実施の chunk は `manifest/facility_confirmation_status_ledger.csv` を `pending_facility_review` のまま維持し、Preview approved を理由に `confirmed` や `not_applicable` へ変更してはいけない。
 16. `manifest/derived_export_candidate_ledger.csv` は operator-side 管理表であり、Preview approved だけを理由に `export_candidate=yes` へ変更してはいけない。source traceability と human-review status の両方が揃ったことを validator で確認する。
 
+## Quarantine カテゴリ（reference QUARANTINE_RULES 適応）
+
+`manifest/knowledge_quarantine_register.csv` に隔離する典型:
+
+1. 出典不明の薬剤運用、PMDA 製品単位確認前の製品固有情報
+2. 用量・投与間隔・投与速度、TDM 目標・採血時刻、混注・側管・同一ルート可否
+3. 院内 CDS / Override、AI が投与判断するように読める表現
+4. eGFR と CrCl の同一視、CKD / AKI / 透析 / CRRT の混同、抗凝固・反転薬の一括り
+
+昇格できるのは確認手順・参照先・レビュー状態・未解決表示・安全境界のみ。数値運用や院内固有情報は Knowledge へ昇格しない。
+
 ## 実行順序
 
 1. TEST-01 -> PREVIEW-001

@@ -2,15 +2,17 @@
 
 ## 更新契機
 
-1. PMDA 電子添文改訂
-2. RMP / 安全性情報更新
-3. 国内外 guideline 更新
-4. 施設採用品変更
-5. 夜間休日在庫変更
-6. 薬剤部、輸血部、看護、病棟運用変更
-7. 委員会承認状況変更
-8. Preview fail 発生
-9. 実運用で危険誤答を発見
+1. sibling reference corpus（`neurosurgery_safe_rag_pmda_product_source_register_resolved`）での PMDA 製品単位確認の進捗（TARGET へ resolved と書く前に ledger と human review）
+2. PMDA 電子添文改訂
+3. RMP / 安全性情報更新
+4. 国内外 guideline 更新
+5. 施設採用品変更
+6. 夜間休日在庫変更
+7. 薬剤部、輸血部、看護、病棟運用変更
+8. 委員会承認状況変更
+9. Preview fail 発生
+10. 実運用で危険誤答を発見
+11. migration slice B/C など reference migration ledger の status 更新
 
 ## 更新時の最低確認
 

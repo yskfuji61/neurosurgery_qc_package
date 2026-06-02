@@ -16,6 +16,8 @@
 4. rejected example は fail の理由と紐づけて残します。
 5. PHI、施設固有の未公開運用、不要な固有名詞が入った出力は approve しません。
 6. `preview_execution_runbook.md` に従って UI で取得した値だけを転記し、このファイル内で回答文を創作しません。
+7. 薬剤師・医師レビューが未記録の representative sample を、external-ready や export candidate の根拠にしない。
+8. sibling reference corpus の PMDA 未解決状態を、Preview pass で解消した事実として記録しない。
 
 ## レコード項目
 

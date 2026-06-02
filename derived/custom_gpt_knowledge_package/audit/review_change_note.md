@@ -1,5 +1,13 @@
 # Review Change Note
 
+## Migration slice B（2026-06-02）
+
+`baseline/pre-slice-b-m1` 以降、reference corpus 25 件（adapted_port + operator_side_only_port）の governance パターンを TARGET operator-side 文書へ適応。REFERENCE の PMDA 0/127 や `custom_gpt_upload_safe: false` を TARGET の完了事実として写していない。`knowledge/` 13 本は未変更。
+
+レビュー重点: runbook / README の sibling reference 節、quarantine カテゴリ、safe answer shape、instructions の禁止短絡、ledger 25 行の `m1_port_applied_pending_operator_review`。
+
+## Prior closeout note
+
 今回の変更は、Preview evidence -> candidate report -> dry-run -> apply -> closeout の順序規律に加えて、reference migration completeness、facility confirmation state、derived export candidate state の gate を operator-side 文書全体で揃えるための限定差分です。レビューでは、実 Preview 実績が未記録のまま promotion helper に進めないこと、active quarantine を残した row を `external_ready_candidate` に上げないこと、reference repo 全ファイルが migration decision ledger で 1 file 1 decision として管理されていること、facility evidence がない row を `confirmed` または `not_applicable` にしないこと、human review 未記録 row を `derived_export_candidate_ledger.csv` で `export_candidate=yes` にしないこと、closeout 記録面で candidate report と dry-run/apply と validation の証跡が追えることを見てください。
 
 主な確認対象は次のとおりです。

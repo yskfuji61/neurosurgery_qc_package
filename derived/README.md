@@ -2,6 +2,12 @@
 
 このディレクトリは、`references/neurosurgery_qc_package/` 配下の source corpus そのものではなく、その source から再構成した derived packages を置くための領域です。
 
+## Sibling reference corpus（読み取り専用の作業用）
+
+PMDA 製品単位解決用 scaffold は、ワークスペース sibling の `references/neurosurgery_safe_rag_pmda_product_source_register_resolved/`（306 files）に置く。これは **Custom GPT Knowledge の正本ではない**。North Star の upload 対象は `custom_gpt_knowledge_package/knowledge/` の 13 ファイルと `instructions/custom_gpt_instructions.md` のみ。
+
+reference 側は PMDA 0/127・`custom_gpt_upload_safe: false` のまま運用する。repo-local validation PASS を external-ready や PMDA 解決済みと混同しない。全ファイルの扱いは `custom_gpt_knowledge_package/manifest/reference_migration_decision_ledger.csv` で監査する。
+
 ## 運用ルール
 
 1. source of truth は `../` 配下の source corpus と integrated package に置きます。

@@ -67,6 +67,23 @@ AI は Markdown、manifest、tests、schemas、validation reports、audit scaffo
 2. source-of-truth が不明な content が user-facing summary に入りそうな場合
 3. matrix、tests、audit が診療方針そのものとして読める表現になった場合
 
+## Sibling reference corpus（PMDA scaffold）
+
+ワークスペース sibling として `references/neurosurgery_safe_rag_pmda_product_source_register_resolved/`（306 files）を置く。これは PMDA 製品単位解決と safe-boundary 薬剤プロファイルの **作業用 reference corpus** であり、本 repo の integrated package や derived `knowledge/` 13 本の代替ではない。
+
+現時点の reference 側事実（TARGET に「解決済み」と写さない）:
+
+1. 127 薬剤 inventory は `candidate_list_not_facility_confirmed` であり、施設確定リストではない。
+2. `pmda_resolved_count` は 0、`completion_status` は `NOT_COMPLETE_PMDA_SEARCH_UNAVAILABLE` 系、`custom_gpt_upload_safe` は false。
+3. Custom GPT への直接 upload 候補は reference 内 `09_MANIFESTS/custom_gpt_upload_manifest.csv` の `upload_to_custom_gpt=yes` 行のみ（現状 6 件・human review pending）。306 件一括は禁止。
+4. `derived/custom_gpt_knowledge_package/manifest/reference_migration_decision_ledger.csv` で 1 file = 1 migration decision を管理する。ledger 完走は blind copy の許可ではない。
+
+やってはいけないこと:
+
+1. reference の未解決 PMDA 行を TARGET の確定事実または `knowledge/` の推奨値として扱うこと。
+2. migration slice B（adapted_port 25 件）を「統合完了」「upload safe」「PMDA 解決済み」と報告すること。
+3. 212 薬剤プロファイルを integrated drug-profile 層未整備のまま `knowledge/` へ直コピーすること。
+
 ## Integrated First / Derived Second 原則
 
 将来の薬剤データ拡張は、必ず次の順序で進めます。

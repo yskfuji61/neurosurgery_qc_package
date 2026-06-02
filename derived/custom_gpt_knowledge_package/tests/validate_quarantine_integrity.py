@@ -1,4 +1,9 @@
 #!/usr/bin/env python3
+"""Validate quarantine register consistency with review crosswalk and upload manifest.
+
+Register structure aligns with sibling reference quarantine_manifest discipline;
+reference-specific quarantine rows are not copied into this TARGET register.
+"""
 from __future__ import annotations
 
 from pathlib import Path

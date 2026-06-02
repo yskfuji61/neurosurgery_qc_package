@@ -6,6 +6,8 @@
 
 実際の Preview 実出力と人間レビュー結果は `human_reviewed_preview_examples.md` に記録します。このファイル自体は representative sample を示す基準ファイルであり、approve / reject の ledger ではありません。
 
+製品単位 PMDA が未確認の薬剤については、「確認済み製品情報」として書かず、確認すべき論点と一次資料・院内手順の確認を促す shape を優先する（sibling reference SAFE_ANSWER_PATTERN 適応）。
+
 ## 1. 一般整理質問
 
 sample_family_id: SAMPLE-GENERAL-ORGANIZATION

@@ -1,4 +1,10 @@
 #!/usr/bin/env python3
+"""Ensure Knowledge upload targets stay limited to knowledge/ (13 files).
+
+Complements sibling reference `validate_manifest_completeness.py` discipline and
+`manifest/reference_migration_decision_ledger.csv` (306 reference files, 1:1 decisions).
+Does not approve reference-corpus rows for upload by itself.
+"""
 from pathlib import Path
 import csv
 import sys
