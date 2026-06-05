@@ -78,6 +78,8 @@ round 7（2 件）では、`guideline`、`manufacturer documents`、`summary`、
 
 round 8（2 件）では、`統合Vault側`、`転記`、`派生成果物`、`索引`、`GL`、`Evidence見出し` などの軽微だが読みにくい表現を、日本語医療文書として読みやすい形へ修正しました（`01`/`09` のみ）。
 
+round 9（2 件）では、`Evidence`、`reference`、`マージ`、`collision gate`、`operator 正本` などの軽微だが読みにくい表現を、日本語医療文書として読みやすい形へ修正しました（`01`/`09` のみ）。
+
 修正は日本語表現の自然化と禁止事項の明確化に限定しています。用量、投与速度、投与可否、抗菌薬選択、VTE予防薬、抗凝固再開時期、施設採用品、看護運用、CDS発火条件は追加していません。詳細は [audit/JAPANESE_KNOWLEDGE_13_PATCH_APPLICATION_REPORT_20260605.md](audit/JAPANESE_KNOWLEDGE_13_PATCH_APPLICATION_REPORT_20260605.md)。Preview 実出力の承認は未完了であり、医療従事者向け完成文書ではありません。
 
 ## パッケージ構成

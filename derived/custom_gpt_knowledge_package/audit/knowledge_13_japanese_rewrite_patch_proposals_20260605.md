@@ -315,3 +315,42 @@ See [JAPANESE_KNOWLEDGE_13_PATCH_APPLICATION_REPORT_20260605.md](JAPANESE_KNOWLE
 | 標準ページ構造 | 全面移行 | DEFERRED_HUMAN_REVIEW_REQUIRED | 別フェーズ |
 | Knowledge 13 文体統一 | — | DEFERRED_HUMAN_REVIEW_REQUIRED | 別フェーズ |
 | `knowledge/13` / `04` | 追加校正 | DEFERRED_HUMAN_REVIEW_REQUIRED | round 8 スコープ外 |
+
+---
+
+## Round 9 — 2026-06-05
+
+### Proposal ID: JP-STYLE-01-010
+
+- 対象ファイル: `knowledge/01_START_HERE_AND_POSITIONING.md`
+- 内容: `reference 一般名プロファイル` → `参考資料の一般名プロファイル`；`疾患ノート本文への無断マージ禁止` → `疾患ノート本文へ、内容確認なしに統合しない`；`integrated` / `collision gate` / `operator 正本` → `統合Vault` / `gap v3の照合ゲート記録`
+- status: REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW
+- review_date: 2026-06-05
+
+### Proposal ID: JP-STYLE-09-008
+
+- 対象ファイル: `knowledge/09_EVIDENCE_AND_PRIMARY_SOURCE_CHECKLISTS.md`
+- 内容: 本文 `Evidence` → `エビデンス`；`自然発症 ICH と TXA 関連 Evidence の確認` → `自然発症ICHとTXA関連エビデンスの確認`；`一次資料と施設内確認を飛ばして Evidence だけで結論にしません` → `一次資料と施設内確認を飛ばして、エビデンスだけで結論を出しません`
+- status: REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW
+- review_date: 2026-06-05
+
+## Deferred — not applied in round 9
+
+| 対象 | 表現 | status | 理由 |
+|------|------|--------|------|
+| `knowledge/05` L120 | ICU 以外で routine 化 | DEFERRED_HUMAN_REVIEW_REQUIRED | スコープ外 |
+| `knowledge/04` L225 | routine で固定化 | DEFERRED_HUMAN_REVIEW_REQUIRED | スコープ外 |
+| `knowledge/04` L157 | 施設 antibiogram | DEFERRED_HUMAN_REVIEW_REQUIRED | スコープ外 |
+| `clinician-facing summary` | 全13本横断 | DEFERRED_HUMAN_REVIEW_REQUIRED | round 9 スコープ外 |
+| `knowledge/09` L33 | clinician-facing summary 見出し | DEFERRED_HUMAN_REVIEW_REQUIRED | round 9 スコープ外 |
+| `knowledge/09` L105 | guideline（未確定事項節） | DEFERRED_HUMAN_REVIEW_REQUIRED | round 9 スコープ外 |
+| `knowledge/09` L111 | Drug label source hierarchy 英語小見出し | DEFERRED_HUMAN_REVIEW_REQUIRED | round 9 スコープ外 |
+| `knowledge/01` L87 | Evidence（横断参照リスト） | DEFERRED_HUMAN_REVIEW_REQUIRED | round 9 スコープ外 |
+| `knowledge/01` L120 | 転記しません（禁止境界文） | DEFERRED_HUMAN_REVIEW_REQUIRED | round 9 スコープ外 |
+| `knowledge/09` L140 | 転記禁止境界文 | DEFERRED_HUMAN_REVIEW_REQUIRED | round 9 スコープ外 |
+| `Integrated governance boundary export` | 他ファイル横断 | DEFERRED_HUMAN_REVIEW_REQUIRED | 02–08, 10–13 本文修正対象外 |
+| 略語初出説明 | — | DEFERRED_HUMAN_REVIEW_REQUIRED | 一括反映は別フェーズ |
+| Emergency Quick Check | 他ファイル展開 | DEFERRED_HUMAN_REVIEW_REQUIRED | 別フェーズ |
+| 標準ページ構造 | 全面移行 | DEFERRED_HUMAN_REVIEW_REQUIRED | 別フェーズ |
+| Knowledge 13 文体統一 | — | DEFERRED_HUMAN_REVIEW_REQUIRED | 別フェーズ |
+| `knowledge/13` / `04` | 追加校正 | DEFERRED_HUMAN_REVIEW_REQUIRED | round 9 スコープ外 |

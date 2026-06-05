@@ -12,7 +12,8 @@ Round 4: JP-STYLE-01-004, JP-STYLE-04-002, JP-STYLE-09-002, JP-STYLE-13-002
 Round 5: JP-STYLE-01-005, JP-STYLE-09-003  
 Round 6: JP-STYLE-09-005, JP-STYLE-01-007  
 Round 7: JP-STYLE-09-006, JP-STYLE-01-008  
-Round 8: JP-STYLE-01-009, JP-STYLE-09-007
+Round 8: JP-STYLE-01-009, JP-STYLE-09-007  
+Round 9: JP-STYLE-01-010, JP-STYLE-09-008
 
 ## 2. 適用したpatch
 
@@ -44,6 +45,8 @@ Round 8: JP-STYLE-01-009, JP-STYLE-09-007
 | JP-STYLE-01-008 | knowledge/01_START_HERE_AND_POSITIONING.md | REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW | Integrated policy boundary export 見出しを使用範囲と禁止事項へ |
 | JP-STYLE-01-009 | knowledge/01_START_HERE_AND_POSITIONING.md | REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW | 統合Vault側・転記・派生成果物の平易化 |
 | JP-STYLE-09-007 | knowledge/09_EVIDENCE_AND_PRIMARY_SOURCE_CHECKLISTS.md | REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW | 索引・GL見出し・エビデンス見出しの平易化 |
+| JP-STYLE-01-010 | knowledge/01_START_HERE_AND_POSITIONING.md | REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW | reference・無断マージ・integrated/collision gate/operator 正本の平易化 |
+| JP-STYLE-09-008 | knowledge/09_EVIDENCE_AND_PRIMARY_SOURCE_CHECKLISTS.md | REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW | 本文 Evidence → エビデンス統一；TICH-2・エビデンス節の自然化 |
 
 ## 3. 適用しなかったpatch
 
@@ -58,7 +61,7 @@ Round 8: JP-STYLE-01-009, JP-STYLE-09-007
 | — | knowledge/09 L105 guideline（未確定事項節） | DEFERRED_HUMAN_REVIEW_REQUIRED | round 7 スコープ外 |
 | — | knowledge/09 L111 Drug label source hierarchy 英語小見出し | DEFERRED_HUMAN_REVIEW_REQUIRED | round 7 スコープ外 |
 | — | knowledge/01 L120 転記しません | DEFERRED_HUMAN_REVIEW_REQUIRED | round 8 スコープ外（禁止境界文） |
-| — | knowledge/09 L89–90, L100 Evidence 本文 | DEFERRED_HUMAN_REVIEW_REQUIRED | round 8 スコープ外（見出し以外） |
+| — | knowledge/01 L87 Evidence（横断参照リスト） | DEFERRED_HUMAN_REVIEW_REQUIRED | round 9 スコープ外 |
 | — | knowledge/09 L140 転記禁止境界文 | DEFERRED_HUMAN_REVIEW_REQUIRED | round 8 スコープ外 |
 | — | Integrated governance boundary export 他ファイル横断 | DEFERRED_HUMAN_REVIEW_REQUIRED | 02–13 本文修正対象外 |
 | — | Knowledge 13 文体統一 | DEFERRED_HUMAN_REVIEW_REQUIRED | 別フェーズ |
@@ -98,6 +101,9 @@ Round 8: JP-STYLE-01-009, JP-STYLE-09-007
 - 内容確認なしに Knowledge へ転記することを許可していない（09-003）。
 - ガイドライン記載だけで国内薬事、施設採用、EHR/CDS実装が確定したように見える回答や要約を作成していない（09-006）。
 - 参考資料を、人間レビューなしに Knowledge へ直接取り込む対象にしていない（09-007）。
+- 参考資料の一般名プロファイルから数値を推測・補完する表現を追加していない（01-010）。
+- 疾患ノート本文へ、内容確認なしに統合することを許可していない（01-010）。
+- エビデンスだけで院内採用、処方指示、電子カルテ上の入力可否、オーダーセット登録を確定していない（09-008；09-005 と整合）。
 
 ## 5. Knowledge upload target
 
@@ -124,7 +130,7 @@ Round 8: JP-STYLE-01-009, JP-STYLE-09-007
 
 ## 7. Validator結果
 
-**Run date:** 2026-06-05（repo-local；round 8 適用後に再実測）
+**Run date:** 2026-06-05（repo-local；round 9 適用後に再実測）
 
 | Validator | Result | Notes |
 |---|---|---|
@@ -133,7 +139,7 @@ Round 8: JP-STYLE-01-009, JP-STYLE-09-007
 | validate_abbreviation_first_use_ledger.py | PASS | abbreviation_first_use_ledger_findings=0 |
 | validate_plain_language_rewrite_ledger.py | PASS | plain_language_rewrite_ledger_findings=0 |
 | validate_japanese_preview_quality_tests.py | PASS | japanese_preview_quality_tests_findings=0 |
-| validate_unsafe_patterns.py | PASS | gate PASS; 09 L39/L99 否定境界 = REVIEW_CONTEXT；L120 EHR/CDS実装否定境界は gate RED なし |
+| validate_unsafe_patterns.py | PASS | gate PASS; 09 L39/L99 否定境界 = REVIEW_CONTEXT；01 L129「統合しない」は新規 RED なし |
 | validate_release_readiness.py | PASS | external_ready_candidates=0 |
 | validate_review_state_integrity.py | PASS | review_state_findings=0 |
 
