@@ -1,18 +1,29 @@
 ---
-document_role: "custom_gpt_rag_knowledge"
-package_name: "neurosurgery_qc_custom_gpt_knowledge_package"
+document_type: derived_custom_gpt_knowledge
+package_layer: derived
+document_role: custom_gpt_rag_knowledge
+package_name: neurosurgery_qc_custom_gpt_knowledge_package
+source_path: "references/neurosurgery_qc_package/neurosurgery_integrated_safe_rag_package/Integrated_Obsidian_Vault/24_CDS_Time_Window_Alert_Boundaries/00_CDS_Time_Window_Alert_Boundaries.md"
+source_revision: integrated-vault-2026-06-01;runbook-commit-10
+export_date: 2026-06-02
+transformation_rule: integrated_cds_time_window_boundary_summary_export_commit10
+included_for_custom_gpt: true
+operator_side_only: false
+human_review_required: true
 not_a_guideline: true
 not_a_prescription_order: true
-not_an_institutional_procedure: true
 not_immediate_cds_specification: true
+no_patient_specific_dose_decision: true
+no_auto_intervention_decision: true
 requires_primary_source_check: true
 requires_facility_confirmation: true
 requires_human_review: true
 source_repository: "https://github.com/yskfuji61/neurosurgery_qc_package"
 source_scope: "Integrated_Obsidian_Vault and related audit/export files"
-rag_chunk_policy: "safety_first_cross_reference_required"
+rag_chunk_policy: safety_first_cross_reference_required
+tests_link: "derived/custom_gpt_knowledge_package/tests/pass_fail_criteria.md"
+not_an_institutional_procedure: true
 ---
-
 # 11 CDS CANDIDATE BOUNDARIES
 
 ## このファイルの役割
@@ -76,3 +87,11 @@ CDS 候補とは、入力条件、表示条件、理由記録、確認フロー�
 
 1. 実装画面文言、ロジック、責任分界は別設計が必要です。
 2. 本ファイルは CDS readiness の前提整理であり、 build spec ではありません。
+
+## Integrated policy boundary export（Runbook Commit 10）
+
+出典: `24_CDS_Time_Window_Alert_Boundaries/` の boundary summary。
+
+1. confirmation-promoting CDS candidate の境界だけを扱い、production EHR/CDS specifications と混同しない。
+2. automatic dose adjustment、administration、discontinuation、AI-determined prescribing behavior は禁止する。
+3. CDS candidate、time-window context、EHR data availability、alert candidate から order set や final alert logic へ直結する user-facing conclusion は quarantine / unresolved とする。

@@ -24,6 +24,12 @@
 20. `manifest/facility_confirmation_status_ledger.csv` が crosswalk 全 chunk を cover し、実 evidence がない row を `confirmed` または `not_applicable` として扱っていない。
 21. `manifest/derived_export_candidate_ledger.csv` が summary provenance 全 chunk を cover し、source traceability または human-review status が揃わない row を `export_candidate=yes` にしていない。
 22. `manifest/integrated_origin_reclassification_summary.csv` が adapted / operator-side / unresolved / quarantine の current classification を監査補助として記録し、blind copy や external-ready 承認として扱われていない。
+23. `audit/pharmacist_red_flag_review_checklist.md` が存在し、薬剤師 sign-off が未記録であることが明示されている（Commit 13）。
+24. `audit/unapproved_content_quarantine.md` と `manifest/knowledge_quarantine_register.csv` が整合し、active quarantine 中の chunk を `external_ready_candidate` にしていない。
+25. `tests/validate_pharmacist_red_flag_commit13.py` と `tests/validate_quarantine_integrity.py` が PASS している。
+26. `audit/runbook_commit_14_final_audit_report.md` が存在し、upload safe / 統合完了を宣言していない（Commit 14）。
+27. `audit/pharmacist_red_flag_chunk_review_log_014.md` で高リスク chunk の repo-local red-flag 照合が記録されている。
+28. `tests/validate_final_audit_commit14.py` が PASS している。
 
 ## export 後チェック
 

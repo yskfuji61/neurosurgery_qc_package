@@ -1,18 +1,29 @@
 ---
-document_role: "custom_gpt_rag_knowledge"
-package_name: "neurosurgery_qc_custom_gpt_knowledge_package"
+document_type: derived_custom_gpt_knowledge
+package_layer: derived
+document_role: custom_gpt_rag_knowledge
+package_name: neurosurgery_qc_custom_gpt_knowledge_package
+source_path: "references/neurosurgery_qc_package/neurosurgery_integrated_safe_rag_package/Integrated_Obsidian_Vault/08_Negative_Knowledge/Layer2薬剤_標準化しない事項.md"
+source_revision: integrated-vault-2026-06-01;runbook-commit-10
+export_date: 2026-06-02
+transformation_rule: direct_guardrail_import_summary_export_commit10
+included_for_custom_gpt: true
+operator_side_only: false
+human_review_required: true
 not_a_guideline: true
 not_a_prescription_order: true
-not_an_institutional_procedure: true
 not_immediate_cds_specification: true
+no_patient_specific_dose_decision: true
+no_auto_intervention_decision: true
 requires_primary_source_check: true
 requires_facility_confirmation: true
 requires_human_review: true
 source_repository: "https://github.com/yskfuji61/neurosurgery_qc_package"
 source_scope: "Integrated_Obsidian_Vault and related audit/export files"
-rag_chunk_policy: "safety_first_cross_reference_required"
+rag_chunk_policy: safety_first_cross_reference_required
+tests_link: "derived/custom_gpt_knowledge_package/tests/pass_fail_criteria.md"
+not_an_institutional_procedure: true
 ---
-
 # 03 HIGH RISK WARNINGS AND NEGATIVE KNOWLEDGE
 
 ## このファイルの役割
@@ -131,3 +142,21 @@ Knowledge 上に確定値がない場合は、次のように扱います。
 
 1. 高リスク薬剤の最終運用可否は対象施設ごとに異なります。
 2. 本ファイルは誤読防止を優先しており、個別運用判断は `04` から `10` と一次資料を併用して確認する必要があります。
+## Integrated governance boundary export（Stage 4 — 2026-06-05）
+
+### 添付文書・用法用量（negative knowledge）
+
+1. ファイル名・略語・一般名・gap supplement から用法・用量・投与間隔を答えない。
+2. PMDA 製品単位未解決の reference を、製品承認用量として提示しない。
+3. 「添付文書で要確認」以外の数値断定を user-facing conclusion にしない。
+
+### 適用外使用（negative knowledge）
+
+1. 文献・gap supplement を根拠に、適用外使用を標準治療・推奨・「当院ルーティン」として一般化しない。
+2. 医師の個別判断・施設プロトコル・委員会承認の有無を確認せず、適用外を処方確定として提示しない。
+
+### Gap v3 領域の誤短絡（negative knowledge）
+
+1. 神経腫瘍: レジメン名（例: TMZ、PCV、bevacizumab、カルムスチン wafer）を、製品・施設未確認の「標準治療」として断定しない。`04` 脳腫瘍周術期は周術期 ASM・ステロイド・感染・血栓の文脈であり、化学療法選択の代替ではない。
+2. 下垂体: 術後 DI / stress steroid 文脈 note を、慢性水欠症や無条件ステロイド増量の確定指示にしない。
+3. 造影・手技・脳室内・ITB 等: procedural / reference ノートを標準治療薬プロファイルとして扱わない。

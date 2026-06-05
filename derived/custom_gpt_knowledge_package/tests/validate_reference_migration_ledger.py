@@ -9,7 +9,12 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 WORKSPACE_ROOT = ROOT.parents[3]
-REFERENCE_ROOT = ROOT.parents[2] / "neurosurgery_safe_rag_pmda_product_source_register_resolved"
+REFERENCE_ROOTS: dict[str, Path] = {
+    "child": WORKSPACE_ROOT
+    / "references/neurosurgery_safe_rag_pmda_product_source_register_resolved",
+    "parent": WORKSPACE_ROOT
+    / "references/neurosurgery_qc_package/reference_archive/neurosurgery_gap_supplement_package_v3_full_residual_20260603",
+}
 MIGRATION_LEDGER = ROOT / "manifest" / "reference_migration_decision_ledger.csv"
 
 REQUIRED_COLUMNS = {
@@ -66,12 +71,20 @@ def read_csv_with_fieldnames(path: Path) -> tuple[list[dict[str, str]], list[str
         return list(reader), reader.fieldnames or []
 
 
-def reference_files() -> set[str]:
-    return {
-        path.relative_to(WORKSPACE_ROOT).as_posix()
-        for path in REFERENCE_ROOT.rglob("*")
-        if path.is_file() and path.name != ".DS_Store"
-    }
+def reference_files(corpus: str = "all") -> set[str]:
+    if corpus not in {"child", "parent", "all"}:
+        raise ValueError(f"unsupported corpus: {corpus}")
+    roots = (
+        list(REFERENCE_ROOTS.values())
+        if corpus == "all"
+        else [REFERENCE_ROOTS[corpus]]
+    )
+    files: set[str] = set()
+    for root in roots:
+        for path in root.rglob("*"):
+            if path.is_file() and path.name != ".DS_Store":
+                files.add(path.relative_to(WORKSPACE_ROOT).as_posix())
+    return files
 
 
 def add_finding(findings: list[dict[str, str]], item: str, issue: str, detail: str) -> None:
@@ -167,16 +180,23 @@ def write_findings(path: Path, findings: list[dict[str, str]]) -> None:
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--output", type=Path)
+    parser.add_argument(
+        "--corpus",
+        choices=("child", "parent", "all"),
+        default="all",
+        help="Which reference corpus file set to compare against the ledger (default: all).",
+    )
     args = parser.parse_args()
 
     findings: list[dict[str, str]] = []
     rows, fieldnames = read_csv_with_fieldnames(MIGRATION_LEDGER)
-    actual_reference_files = reference_files()
+    actual_reference_files = reference_files(args.corpus)
     validate_ledger(rows, fieldnames, actual_reference_files, findings)
 
     if args.output:
         write_findings(args.output, findings)
 
+    print(f"migration_ledger_corpus={args.corpus}")
     print(f"migration_ledger_findings={len(findings)}")
     print(f"migration_ledger_rows={len(rows)}")
     print(f"reference_file_count={len(actual_reference_files)}")

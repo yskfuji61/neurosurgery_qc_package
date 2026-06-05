@@ -1,18 +1,29 @@
 ---
-document_role: "custom_gpt_rag_knowledge"
-package_name: "neurosurgery_qc_custom_gpt_knowledge_package"
+document_type: derived_custom_gpt_knowledge
+package_layer: derived
+document_role: custom_gpt_rag_knowledge
+package_name: neurosurgery_qc_custom_gpt_knowledge_package
+source_path: "references/neurosurgery_qc_package/neurosurgery_integrated_safe_rag_package/Integrated_Obsidian_Vault/17_Clinical_Data_Reference_Policy/00_Clinical_Data_Reference_Policy.md"
+source_revision: integrated-vault-2026-06-01;runbook-commit-10
+export_date: 2026-06-02
+transformation_rule: integrated_clinical_data_boundary_summary_export_commit10
+included_for_custom_gpt: true
+operator_side_only: false
+human_review_required: true
 not_a_guideline: true
 not_a_prescription_order: true
-not_an_institutional_procedure: true
 not_immediate_cds_specification: true
+no_patient_specific_dose_decision: true
+no_auto_intervention_decision: true
 requires_primary_source_check: true
 requires_facility_confirmation: true
 requires_human_review: true
 source_repository: "https://github.com/yskfuji61/neurosurgery_qc_package"
 source_scope: "Integrated_Obsidian_Vault and related audit/export files"
-rag_chunk_policy: "safety_first_cross_reference_required"
+rag_chunk_policy: safety_first_cross_reference_required
+tests_link: "derived/custom_gpt_knowledge_package/tests/pass_fail_criteria.md"
+not_an_institutional_procedure: true
 ---
-
 # 06 PATIENT STATE NOTES
 
 ## このファイルの役割
@@ -91,3 +102,12 @@ rag_chunk_policy: "safety_first_cross_reference_required"
 
 1. 患者状態ノートは、単独で治療候補を出すためのものではありません。
 2. 実回答では必ず疾患、薬剤、処置、閾値、施設運用を併記してください。
+
+## Integrated policy boundary export（Runbook Commit 10）
+
+出典: `17_Clinical_Data_Reference_Policy/`、`18_Renal_Function_Data_Policy/`、`19_Vital_Signs_Data_Policy/` の boundary summary。
+
+1. 単一の臨床データ（検査・バイタル等）から薬剤開始、薬剤変更、投与管理、CDS 実装へ直結する user-facing conclusion は出さない。
+2. 腎機能値だけで薬剤量調整、透析時運用、投与管理、CDS trigger を確定しない。
+3. 単一のバイタル値から薬剤開始、薬剤変更、抗菌薬判断、CDS 実装へ直結しない。
+4. 臨床データは review support の分岐軸であり、medication decision の十分条件ではない。

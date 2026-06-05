@@ -1,8 +1,14 @@
-file,role,upload_to_custom_gpt,human_review_required,reason_if_not_uploaded
+﻿file,role,upload_to_custom_gpt,human_review_required,reason_if_not_uploaded
 README.md,package_readme,no,yes,operator-side package guide
 audit/human_review_log_template.md,audit,no,yes,operator-side audit template
 audit/rag_export_audit_checklist.md,audit,no,yes,operator-side audit checklist
 audit/review_change_note.md,audit,no,yes,operator-side audit note
+audit/pharmacist_red_flag_review_checklist.md,audit,no,yes,operator-side Commit 13 pharmacist red-flag checklist
+audit/unapproved_content_quarantine.md,audit,no,yes,operator-side Commit 13 quarantine policy
+tests/validate_pharmacist_red_flag_commit13.py,test,no,yes,operator-side Commit 13 pharmacist/quarantine gate
+audit/pharmacist_red_flag_chunk_review_log_014.md,audit,no,yes,operator-side Commit 14 repo-local red-flag chunk review log
+audit/runbook_commit_14_final_audit_report.md,audit,no,yes,operator-side Commit 14 final audit report
+tests/validate_final_audit_commit14.py,test,no,yes,operator-side Commit 14 final audit gate
 audit/update_trigger_checklist.md,audit,no,yes,operator-side audit checklist
 instructions/custom_gpt_instructions.md,instructions,no,yes,operator-side instructions
 knowledge/01_START_HERE_AND_POSITIONING.md,knowledge,yes,yes,
@@ -35,6 +41,9 @@ tests/human_reviewed_preview_examples.md,test,no,yes,operator-side review log
 tests/pass_fail_criteria.md,test,no,yes,operator-side validation rubric
 tests/preview_execution_runbook.md,test,no,yes,operator-side preview runbook
 tests/preview_test_cases.md,test,no,yes,operator-side test cases
+tests/preview_test_protocol.md,test,no,yes,operator-side Commit 12 preview protocol
+tests/cds_time_window_alert_tests.md,test,no,yes,operator-side Commit 12 CDS preview tests
+tests/validate_preview_protocol.py,test,no,yes,operator-side Commit 12 preview protocol gate
 tests/apply_preview_promotion.py,test,no,yes,operator-side promotion apply helper
 tests/report_preview_promotion_candidates.py,test,no,yes,operator-side promotion candidate report
 tests/response_style_regression_assets.md,test,no,yes,operator-side regression assets
@@ -47,3 +56,50 @@ tests/validate_reference_migration_ledger.py,test,no,yes,operator-side reference
 tests/validate_facility_confirmation_status.py,test,no,yes,operator-side facility confirmation validation script
 tests/validate_derived_export_candidate_ledger.py,test,no,yes,operator-side derived export candidate ledger validation script
 manifest/knowledge_chunk_review_crosswalk.csv,manifest,no,yes,operator-side review and unresolved tracking register
+manifest/_DRAFT_parent_child_diff_report.md,manifest,no,yes,operator-side Phase 0 PARENT/CHILD diff DRAFT
+tests/_generate_gap_v3_parent_ledger_rows.py,test,no,yes,operator-side PARENT ledger row generator
+audit/gap_v3_pharmacist_facility_review_log_20260604.md,audit,no,yes,operator-side gap v3 pharmacist/facility repo-local review
+tests/validate_collision_governance.py,test,no,yes,operator-side Gap V3 collision governance validation
+manifest/gap_v3_export_gate_summary.md,manifest,no,yes,operator-side Gap V3 export gate summary (archive manifests)
+tests/validate_gap_v3_review_ready.py,test,no,yes,operator-side Gap V3 review-ready gate validation
+manifest/classification_vocabulary_registry.md,manifest,no,yes,operator-side Stage 2 classification vocabulary registry
+tests/validate_classification_vocabulary.py,test,no,yes,operator-side Stage 2 classification vocabulary validation
+scripts/_apply_stage2_classification_vocabulary.py,test,no,yes,operator-side Stage 2 vocabulary column generator
+audit/STAGE2_CLASSIFICATION_LEDGER_AUDIT_REPORT_20260605.md,audit,no,yes,operator-side Stage 2 classification ledger audit
+scripts/_apply_stage3_label_offlabel_governance.py,test,no,yes,operator-side Stage 3 integrated governance apply helper
+audit/STAGE3_INTEGRATED_GOVERNANCE_AUDIT_REPORT_20260605.md,audit,no,yes,operator-side Stage 3 integrated label/off-label governance audit
+scripts/_apply_stage4_knowledge_boundary_export.py,test,no,yes,operator-side Stage 4 knowledge boundary export helper
+audit/STAGE4_KNOWLEDGE_BOUNDARY_EXPORT_AUDIT_REPORT_20260605.md,audit,no,yes,operator-side Stage 4 knowledge boundary export audit
+audit/STAGE5_READINESS_AND_BLOCKERS_20260605.md,audit,no,yes,operator-side Stage 5 readiness and blockers (no promotion)
+audit/preview_evidence_collection_checklist.md,audit,no,yes,operator-side Stage 5 Preview evidence collection checklist
+audit/collision_rag_regression_evidence_collection.md,audit,no,yes,operator-side Stage 5 collision RAG 21-question evidence checklist
+audit/collision_rag_regression_results_PENDING.csv,audit,no,yes,operator-side collision regression results pending slots (pass_fail empty)
+audit/preview_promotion_candidates_report_20260605.csv,audit,no,yes,operator-side preview promotion candidate report snapshot
+audit/STAGE5A_EVIDENCE_COLLECTION_OPERATOR_CHECKLIST.md,audit,no,yes,operator-side Stage 5A unified evidence collection checklist
+audit/STAGE5A_READINESS_REPORT_20260605.md,audit,no,yes,operator-side Stage 5A readiness report
+audit/STAGE5A_READINESS_REPORT_20260604.md,audit,no,yes,operator-side Stage 5A readiness report (post Stage 6/6C refresh)
+audit/preview_promotion_candidates_report_20260604.csv,audit,no,yes,operator-side preview promotion candidate report snapshot 2026-06-04
+audit/STAGE6_NO_EDIT_AUDIT_20260605.md,audit,no,yes,operator-side Stage 6 no-edit audit
+audit/STAGE6_CHILD_GAP_RECONCILIATION_MATRIX_20260605.csv,audit,no,yes,operator-side Stage 6 CHILD-gap reconciliation matrix
+audit/STAGE6_COMPLETION_REPORT_20260605.md,audit,no,yes,operator-side Stage 6 PMDA/IF register completion report
+audit/STAGE6C_BATCH_ASSIGNMENTS.json,audit,no,yes,operator-side Stage6C/D STAGE6C_BATCH_ASSIGNMENTS.json
+audit/STAGE6C_BATCH_C-002_REVIEW_PACKET.md,audit,no,yes,operator-side Stage6C/D STAGE6C_BATCH_C-002_REVIEW_PACKET.md
+audit/STAGE6C_BATCH_C-003_REVIEW_PACKET.md,audit,no,yes,operator-side Stage6C/D STAGE6C_BATCH_C-003_REVIEW_PACKET.md
+audit/STAGE6C_BATCH_C-004_REVIEW_PACKET.md,audit,no,yes,operator-side Stage6C/D STAGE6C_BATCH_C-004_REVIEW_PACKET.md
+audit/STAGE6C_BATCH_C-005_REVIEW_PACKET.md,audit,no,yes,operator-side Stage6C/D STAGE6C_BATCH_C-005_REVIEW_PACKET.md
+audit/STAGE6C_BATCH_C-006_REVIEW_PACKET.md,audit,no,yes,operator-side Stage6C/D STAGE6C_BATCH_C-006_REVIEW_PACKET.md
+audit/STAGE6C_BATCH_C-007_REVIEW_PACKET.md,audit,no,yes,operator-side Stage6C/D STAGE6C_BATCH_C-007_REVIEW_PACKET.md
+audit/STAGE6C_BATCH_C-008_REVIEW_PACKET.md,audit,no,yes,operator-side Stage6C/D STAGE6C_BATCH_C-008_REVIEW_PACKET.md
+audit/STAGE6C_BATCH_C-009_REVIEW_PACKET.md,audit,no,yes,operator-side Stage6C/D STAGE6C_BATCH_C-009_REVIEW_PACKET.md
+audit/STAGE6C_BATCH_C-010_REVIEW_PACKET.md,audit,no,yes,operator-side Stage6C/D STAGE6C_BATCH_C-010_REVIEW_PACKET.md
+audit/STAGE6C_BATCH_C-011_REVIEW_PACKET.md,audit,no,yes,operator-side Stage6C/D STAGE6C_BATCH_C-011_REVIEW_PACKET.md
+audit/STAGE6C_BATCH_C-012_REVIEW_PACKET.md,audit,no,yes,operator-side Stage6C/D STAGE6C_BATCH_C-012_REVIEW_PACKET.md
+audit/STAGE6C_BATCH_C-013_REVIEW_PACKET.md,audit,no,yes,operator-side Stage6C/D STAGE6C_BATCH_C-013_REVIEW_PACKET.md
+audit/STAGE6C_BATCH_C-014_REVIEW_PACKET.md,audit,no,yes,operator-side Stage6C/D STAGE6C_BATCH_C-014_REVIEW_PACKET.md
+audit/STAGE6C_BATCH_C-015_REVIEW_PACKET.md,audit,no,yes,operator-side Stage6C/D STAGE6C_BATCH_C-015_REVIEW_PACKET.md
+audit/STAGE6C_BATCH_C-016_REVIEW_PACKET.md,audit,no,yes,operator-side Stage6C/D STAGE6C_BATCH_C-016_REVIEW_PACKET.md
+audit/STAGE6C_BATCH_C-017_REVIEW_PACKET.md,audit,no,yes,operator-side Stage6C/D STAGE6C_BATCH_C-017_REVIEW_PACKET.md
+audit/STAGE6C_BATCH_C-018_REVIEW_PACKET.md,audit,no,yes,operator-side Stage6C/D STAGE6C_BATCH_C-018_REVIEW_PACKET.md
+audit/STAGE6C_NEURO_PRIORITY_DRUG_LIST_20260605.csv,audit,no,yes,operator-side Stage6C/D STAGE6C_NEURO_PRIORITY_DRUG_LIST_20260605.csv
+audit/STAGE6C_PHARMACIST_IF_REVIEW_OPERATOR_GUIDE.md,audit,no,yes,operator-side Stage6C/D STAGE6C_PHARMACIST_IF_REVIEW_OPERATOR_GUIDE.md
+audit/STAGE6C_D_COMPLETION_REPORT_20260605.md,audit,no,yes,operator-side Stage6C/D completion report

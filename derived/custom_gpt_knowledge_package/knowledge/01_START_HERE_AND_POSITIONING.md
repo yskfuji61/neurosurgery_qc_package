@@ -1,18 +1,29 @@
 ---
-document_role: "custom_gpt_rag_knowledge"
-package_name: "neurosurgery_qc_custom_gpt_knowledge_package"
+document_type: derived_custom_gpt_knowledge
+package_layer: derived
+document_role: custom_gpt_rag_knowledge
+package_name: neurosurgery_qc_custom_gpt_knowledge_package
+source_path: "references/neurosurgery_qc_package/final_qc_manifest.json"
+source_revision: integrated-vault-2026-06-01;runbook-commit-10
+export_date: 2026-06-02
+transformation_rule: boundary_preservation_summary_export_commit10
+included_for_custom_gpt: true
+operator_side_only: false
+human_review_required: true
 not_a_guideline: true
 not_a_prescription_order: true
-not_an_institutional_procedure: true
 not_immediate_cds_specification: true
+no_patient_specific_dose_decision: true
+no_auto_intervention_decision: true
 requires_primary_source_check: true
 requires_facility_confirmation: true
 requires_human_review: true
 source_repository: "https://github.com/yskfuji61/neurosurgery_qc_package"
 source_scope: "Integrated_Obsidian_Vault and related audit/export files"
-rag_chunk_policy: "safety_first_cross_reference_required"
+rag_chunk_policy: safety_first_cross_reference_required
+tests_link: "derived/custom_gpt_knowledge_package/tests/pass_fail_criteria.md"
+not_an_institutional_procedure: true
 ---
-
 # 01 START HERE AND POSITIONING
 
 ## このファイルの役割
@@ -99,3 +110,20 @@ Knowledge だけでは、次の事項を確定できません。
 
 1. この位置づけ文だけでは個別薬剤や個別疾患の可否を決められません。
 2. 実回答では関連する `04` から `13` の横断参照が必要です。
+
+## Integrated policy boundary export（Runbook Commit 10）
+
+この節は integrated vault の位置づけを derived へ写した operator-side 境界です。処方・施設運用・upload 可否の確定根拠にはなりません。
+
+1. ワークスペース sibling の PMDA reference corpus（366 files）は、製品単位 source register の作業用正本であり、本 Knowledge 13 本の代替ではない。
+2. reference 側の `pmda_resolved_count` や register 更新は、repo-local の追跡事実であり、Custom GPT upload safe や施設採用品確定を意味しない。
+3. 127 薬剤 inventory は `candidate_list_not_facility_confirmed` のまま扱い、薬剤プロファイル 212 件を integrated drug-profile 層未整備のまま Knowledge へ直コピーしない。
+4. derived export は source traceability と `human_review_required` を frontmatter に持つ summary layer に限る（Commit 10）。
+## Integrated governance boundary export（Stage 4 — 2026-06-05）
+
+出典: integrated `00_Index/05_PMDA_添付文書遵守と適用外使用ガバナンス` および gap v3 collision gate（operator 正本）。**validation pass・ledger 登録は臨床承認・施設確定・upload safe ではない。**
+
+1. **Reference corpora（upload 対象外）:** CHILD PMDA 作業 corpus（366 files）と PARENT gap v3 archive（191 files）は、合計 **557** reference files として ledger 管理されるが、本 Knowledge 13 本の代替・一括投入対象ではない。
+2. **添付文書遵守:** 用法・用量・投与間隔・投与速度・用法区分は、当該製品の最新電子添文（PMDA 製品単位）で確認できる場合に限り記載可能。reference 一般名プロファイルから数値を推測・補完しない。
+3. **適用外使用:** 添付文書の承認範囲を超える使用を、医師の個別判断なしに標準治療・推奨・標準オーダーとして提示しない（原則禁止）。
+4. **Gap v3:** 神経腫瘍・下垂体・造影/手技・CSF/IIH・血管内・痙縮・CNS 感染などは **reference-only / hold**。疾患ノート本文への無断マージ禁止。

@@ -2,18 +2,12 @@
 
 ## Commit Title
 
-Align migration, facility, and preview governance across operator-side docs
+Runbook Commit 14: final audit closeout with pharmacist chunk review log
 
 ## Commit Body
 
-derived Custom GPT package の operator-side 文書群を横断して、Preview evidence -> candidate report -> dry-run -> apply -> closeout の順序規律を揃えた。
+[GPT 薬剤データ方針拡張 Runbook](../gpt_drug_data_policy_expansion_runbook.md) Commit 14 に従い、derived package の最終監査を実施した。
 
-README、runbook、matrix では、実 Preview 実績が `tests/human_reviewed_preview_examples.md` に記録される前に `report_preview_promotion_candidates.py` や `apply_preview_promotion.py` へ進まないことに加え、`reference_migration_decision_ledger.csv` と `facility_confirmation_status_ledger.csv` を operator-side gate として扱うことを明記した。
+`audit/pharmacist_red_flag_chunk_review_log_014.md` で quarantine 対象 8 chunk の red-flag 10 項を repo-local 照合し（0 該当）、薬剤師 sign-off 前の **quarantine hold 維持** を記録した（`cleared` 行は追加しない）。`audit/runbook_commit_14_final_audit_report.md` で未解決ゲート（Preview、薬剤師、施設、REFERENCE PMDA）を明示した。
 
-`derived_export_candidate_ledger.csv` と `integrated_origin_reclassification_summary.csv` を追加し、source traceability と human-review status が揃っていない summary chunk を export candidate にしないこと、adapted_port や Preview pending state を external-ready と混同しないことを operator-side で見える化した。
-
-audit/human_review_log_template.md、audit/rag_export_audit_checklist.md、audit/update_trigger_checklist.md、tests/preview_execution_runbook.md、tests/pass_fail_criteria.md には candidate report、dry-run、`--apply`、quarantine 再検証、reference migration completeness、facility pending state の確認点を追加し、review_change_note.md と build_notes.md も現行の運用順へ合わせて更新した。
-
-今回、instructions/custom_gpt_instructions.md への追加変更は行っていない。
-
-repo-local validation として `report_preview_promotion_candidates.py`、`validate_quarantine_integrity.py`、`validate_release_readiness.py`、`validate_review_state_integrity.py`、`validate_unsafe_patterns.py`、`validate_upload_manifest.py`、`validate_reference_migration_ledger.py`、`validate_facility_confirmation_status.py`、`validate_derived_export_candidate_ledger.py` は PASS を維持している。実 Preview evidence はまだ未投入のため、approved preview records と external_ready_candidate は 0 件のままであり、facility confirmation 18 rows も pending のまま維持している。
+`tests/validate_final_audit_commit14.py` を追加し、既存 derived validators 一括 PASS を gate とした。統合完了・PMDA 127 解決済み・`custom_gpt_upload_safe` の宣言は行っていない。

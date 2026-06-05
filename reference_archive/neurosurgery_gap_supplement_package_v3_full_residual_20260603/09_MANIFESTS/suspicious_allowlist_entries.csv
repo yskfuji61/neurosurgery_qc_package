@@ -1,0 +1,2 @@
+path_or_glob,layer,review_status,suspicion_reason,recommended_action,auto_removed
+references/neurosurgery_qc_package/reference_archive/neurosurgery_gap_supplement_package_v3_full_residual_20260603/09_MANIFESTS/collision_resolution_ledger.csv,PARENT,READY_FOR_LIMITED_ROUTING,informational_allowlist_entry,operator_manifest on allowlist with READY_FOR_LIMITED_ROUTING — routing metadata only; not drug profile export,no

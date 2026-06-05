@@ -1,18 +1,29 @@
 ---
-document_role: "custom_gpt_rag_knowledge"
-package_name: "neurosurgery_qc_custom_gpt_knowledge_package"
+document_type: derived_custom_gpt_knowledge
+package_layer: derived
+document_role: custom_gpt_rag_knowledge
+package_name: neurosurgery_qc_custom_gpt_knowledge_package
+source_path: "references/neurosurgery_qc_package/neurosurgery_integrated_safe_rag_package/Integrated_Obsidian_Vault/13_Dosing_Adjustment_Boundaries/00_Dosing_Adjustment_Boundaries.md"
+source_revision: integrated-vault-2026-06-01;runbook-commit-10
+export_date: 2026-06-02
+transformation_rule: integrated_drug_boundary_summary_export_commit10
+included_for_custom_gpt: true
+operator_side_only: false
+human_review_required: true
 not_a_guideline: true
 not_a_prescription_order: true
-not_an_institutional_procedure: true
 not_immediate_cds_specification: true
+no_patient_specific_dose_decision: true
+no_auto_intervention_decision: true
 requires_primary_source_check: true
 requires_facility_confirmation: true
 requires_human_review: true
 source_repository: "https://github.com/yskfuji61/neurosurgery_qc_package"
 source_scope: "Integrated_Obsidian_Vault and related audit/export files"
-rag_chunk_policy: "safety_first_cross_reference_required"
+rag_chunk_policy: safety_first_cross_reference_required
+tests_link: "derived/custom_gpt_knowledge_package/tests/pass_fail_criteria.md"
+not_an_institutional_procedure: true
 ---
-
 # 05 DRUG CLASS AND LAYER2 DRUG NOTES
 
 ## このファイルの役割
@@ -155,3 +166,26 @@ rag_chunk_policy: "safety_first_cross_reference_required"
 
 1. 薬剤ごとの国内薬事、保険、採用品、在庫は対象施設で再確認が必要です。
 2. 個別薬剤の候補可否は `06`、`07`、`08`、`09`、`10` を併用して判断します。
+
+## Integrated policy boundary export（Runbook Commit 10）
+
+出典: integrated vault の `13_Dosing_Adjustment_Boundaries/`、`14_Interactions_Contraindications/`、`15_IV_Compatibility_Admin_Boundaries/`、`21_Repeat_Dosing_Interval_Policy/`、`22_TDM_Steady_State_Policy/` の boundary summary。具体用量・間隔・同一ライン混注・側管投与の可否断定は含めない。
+
+1. **用量調整**: source-confirmed かつ human-reviewed でない患者個別の薬剤量・透析時運用・投与管理は user-facing conclusion にしない。
+2. **相互作用・禁忌**: source-confirmed かつ human-reviewed でない相互作用、禁忌、併用可否は結論として出さない。
+3. **IV compatibility / 投与境界**: facility-confirmed でない compatibility、調製、投与管理、投与経路は結論にしない。
+4. **反復投与間隔**: last administration、cumulative exposure、interval だけで反復投与・薬剤変更・投与管理・CDS 実装へ直結しない。固定間隔や dose-adjustment assertion を書かない。
+5. **TDM / steady state**: trough/peak、steady state、sampling timing だけで薬剤開始・変更・投与管理・CDS 実装へ直結しない。
+## Integrated governance boundary export（Stage 4 — 2026-06-05）
+
+**Gap v3 薬効領域（reference-only / hold — 第一選択薬リストではない）:**
+
+1. 神経腫瘍薬物療法 — 一般名プロファイル、PMDA 製品単位未解決
+2. 下垂体内分泌薬 — 同上
+3. 術中可視化・造影剤 — 手技・造影文脈。治療薬プロファイルと混同しない
+4. CSF / IIH 関連薬 — 施設 IIH・ICP プロトコル要確認
+5. 血管内治療・血管攣縮局所薬 — Neuro-ICU / 調製・施設手順要確認
+6. 痙縮・機能的脳神経外科薬 — ITB / ボツリヌス / DBS パスウェイ要確認
+7. 中枢神経感染・脳室内投与 — 脳室内投与 SOP 要確認
+
+いずれも: 用法・用量は製品単位添付文書遵守。適用外は医師の個別判断なしに標準化しない。CHILD 127 inventory との盲検マージ禁止。

@@ -1,18 +1,29 @@
 ---
-document_role: "custom_gpt_rag_knowledge"
-package_name: "neurosurgery_qc_custom_gpt_knowledge_package"
+document_type: derived_custom_gpt_knowledge
+package_layer: derived
+document_role: custom_gpt_rag_knowledge
+package_name: neurosurgery_qc_custom_gpt_knowledge_package
+source_path: "references/neurosurgery_qc_package/neurosurgery_integrated_safe_rag_package/Integrated_Obsidian_Vault/90_Audit/RAG_Export監査チェックリスト.md"
+source_revision: integrated-vault-2026-06-01;runbook-commit-10
+export_date: 2026-06-02
+transformation_rule: audit_checklist_summary_export_commit10
+included_for_custom_gpt: true
+operator_side_only: false
+human_review_required: true
 not_a_guideline: true
 not_a_prescription_order: true
-not_an_institutional_procedure: true
 not_immediate_cds_specification: true
+no_patient_specific_dose_decision: true
+no_auto_intervention_decision: true
 requires_primary_source_check: true
 requires_facility_confirmation: true
 requires_human_review: true
 source_repository: "https://github.com/yskfuji61/neurosurgery_qc_package"
 source_scope: "Integrated_Obsidian_Vault and related audit/export files"
-rag_chunk_policy: "safety_first_cross_reference_required"
+rag_chunk_policy: safety_first_cross_reference_required
+tests_link: "derived/custom_gpt_knowledge_package/tests/pass_fail_criteria.md"
+not_an_institutional_procedure: true
 ---
-
 # 13 AUDIT LOGS AND UPDATE OPERATIONS
 
 ## このファイルの役割
@@ -74,3 +85,9 @@ rag_chunk_policy: "safety_first_cross_reference_required"
 
 1. 監査頻度と責任者は対象チームで定義が必要です。
 2. 実運用開始前に preview 再試験と監査ログ確認が必要です。
+## Integrated governance boundary export（Stage 4 — 2026-06-05）
+
+1. **Operator validation:** `validate_release_readiness.py` の PASS および `external_ready_candidates=0` は、外部公開・臨床承認・施設確定を意味しない。
+2. **Ledger 557/557:** reference 追跡完走は blind copy 許可ではない（CHILD 366 + PARENT 191 files、collision/review-ready 追補含む）。
+3. **Stage 4 変更:** integrated ガバナンス（添付文書遵守・適用外原則禁止）を knowledge へ境界言語のみエクスポート。用量・TDM・CDS 確定値は含めない。
+4. **昇格禁止:** Preview 未記録での `apply_preview_promotion.py`、gap v3 の `export_status` 自動昇格、CHILD PMDA pilot の V3 流用は禁止のまま。

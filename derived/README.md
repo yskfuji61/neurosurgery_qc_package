@@ -4,9 +4,14 @@
 
 ## Sibling reference corpus（読み取り専用の作業用）
 
-PMDA 製品単位解決用 scaffold は、ワークスペース sibling の `references/neurosurgery_safe_rag_pmda_product_source_register_resolved/`（306 files）に置く。これは **Custom GPT Knowledge の正本ではない**。North Star の upload 対象は `custom_gpt_knowledge_package/knowledge/` の 13 ファイルと `instructions/custom_gpt_instructions.md` のみ。
+二つの sibling reference corpus をワークスペース `references/` 配下に置く。いずれも **Custom GPT Knowledge の正本ではない**。North Star の upload 対象は `custom_gpt_knowledge_package/knowledge/` の 13 ファイルと `instructions/custom_gpt_instructions.md` のみ。
 
-reference 側は PMDA 0/127・`custom_gpt_upload_safe: false` のまま運用する。repo-local validation PASS を external-ready や PMDA 解決済みと混同しない。全ファイルの扱いは `custom_gpt_knowledge_package/manifest/reference_migration_decision_ledger.csv` で監査する。
+1. **CHILD（PMDA 作業 corpus）:** `references/neurosurgery_safe_rag_pmda_product_source_register_resolved/`（366 files）。127 薬剤 inventory の製品単位 PMDA 解決・safe-boundary プロファイル・pilot batch 証跡。
+2. **PARENT（gap v3 残差・archive）:** `references/neurosurgery_qc_package/reference_archive/neurosurgery_gap_supplement_package_v3_full_residual_20260603/`（191 files）。V3 領域補完。**PMDA 製品単位は未解決**。旧 workspace sibling `references/neurosurgery_gap_supplement_package_v3_full_residual_20260603/` は 2026-06-04 移植後に削除済み（[reference_archive/README.md](../reference_archive/README.md)）。
+
+`custom_gpt_knowledge_package/manifest/reference_migration_decision_ledger.csv` は **557 行**（CHILD 366 + PARENT 191）で 1 file = 1 migration decision。ledger 完走は blind copy の許可ではない。`tests/validate_reference_migration_ledger.py --corpus all` で両 corpus を照合する（期待: `migration_ledger_rows=557`, `reference_file_count=557`）。
+
+reference 側の `package_summary.json` や `custom_gpt_upload_safe` は reference 内スナップショットであり、TARGET の解決済み事実や external-ready にはしない。
 
 ## 運用ルール
 
@@ -18,6 +23,7 @@ reference 側は PMDA 0/127・`custom_gpt_upload_safe: false` のまま運用す
 6. 施設確認状態は `custom_gpt_knowledge_package/manifest/facility_confirmation_status_ledger.csv` で chunk ごとに管理し、実 evidence がない row を `confirmed` または `not_applicable` として扱ってはいけません。
 7. derived export 候補は `custom_gpt_knowledge_package/manifest/derived_export_candidate_ledger.csv` で別管理し、source traceability と human-review status が揃わない row を export candidate にしてはいけません。
 8. integrated-origin の再分類状態は `custom_gpt_knowledge_package/manifest/integrated_origin_reclassification_summary.csv` で要約し、adapted_port を derived export や external-ready の自動承認として扱ってはいけません。
+9. Stage 2（2026-06-05）: `reference_migration_decision_ledger.csv` に `classification_vocabulary` 列（7 語彙の closed set）。`tests/validate_classification_vocabulary.py` で promotion 禁止を機械確認。臨床承認・upload safe ではない。
 
 ## GPT Drug Data Policy Expansion
 

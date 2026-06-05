@@ -1,18 +1,29 @@
 ---
-document_role: "custom_gpt_rag_knowledge"
-package_name: "neurosurgery_qc_custom_gpt_knowledge_package"
+document_type: derived_custom_gpt_knowledge
+package_layer: derived
+document_role: custom_gpt_rag_knowledge
+package_name: neurosurgery_qc_custom_gpt_knowledge_package
+source_path: "references/neurosurgery_qc_package/neurosurgery_integrated_safe_rag_package/Integrated_Obsidian_Vault/99_Exports/Upload_Bundles/02_diseases_patient_states_procedures.md"
+source_revision: integrated-vault-2026-06-01;runbook-commit-10
+export_date: 2026-06-02
+transformation_rule: procedure_bundle_summary_export_commit10
+included_for_custom_gpt: true
+operator_side_only: false
+human_review_required: true
 not_a_guideline: true
 not_a_prescription_order: true
-not_an_institutional_procedure: true
 not_immediate_cds_specification: true
+no_patient_specific_dose_decision: true
+no_auto_intervention_decision: true
 requires_primary_source_check: true
 requires_facility_confirmation: true
 requires_human_review: true
 source_repository: "https://github.com/yskfuji61/neurosurgery_qc_package"
 source_scope: "Integrated_Obsidian_Vault and related audit/export files"
-rag_chunk_policy: "safety_first_cross_reference_required"
+rag_chunk_policy: safety_first_cross_reference_required
+tests_link: "derived/custom_gpt_knowledge_package/tests/pass_fail_criteria.md"
+not_an_institutional_procedure: true
 ---
-
 # 07 PROCEDURE AND PERIOPERATIVE NOTES
 
 ## このファイルの役割
@@ -71,3 +82,8 @@ rag_chunk_policy: "safety_first_cross_reference_required"
 
 1. 実際の処置準備フローは施設ごとに異なります。
 2. ここで示すのは確認軸であり、手順書そのものではありません。
+## Integrated governance boundary export（Stage 4 — 2026-06-05）
+
+1. **術中可視化・造影:** gap v3 の造影/可視化 reference は手技・造影文脈であり、標準的な治療薬プロファイルではない。用法・用量は製品単位添付文書と放射線・麻酔・手術室 SOP で確認（`10`）。
+2. **血管内・局所薬:** プロシージャル文脈と全身治療を混同しない。施設 Neuro-ICU / 血管内手順を `10` で確認。
+3. 適用外使用を、医師判断なしに「当院の術中ルーティン」として断定しない。

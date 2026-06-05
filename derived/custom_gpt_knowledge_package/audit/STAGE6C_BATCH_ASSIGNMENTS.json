@@ -1,0 +1,179 @@
+{
+  "C-001": [
+    "carbamazepine",
+    "fosphenytoin",
+    "lacosamide",
+    "levetiracetam",
+    "perampanel",
+    "phenytoin",
+    "topiramate",
+    "valproate"
+  ],
+  "C-002": [
+    "vancomycin",
+    "midazolam",
+    "lamotrigine",
+    "zonisamide",
+    "clobazam",
+    "diazepam",
+    "lorazepam",
+    "phenobarbital"
+  ],
+  "C-003": [
+    "warfarin",
+    "dabigatran",
+    "apixaban",
+    "edoxaban",
+    "rivaroxaban",
+    "unfractionated_heparin",
+    "enoxaparin",
+    "dalteparin"
+  ],
+  "C-004": [
+    "fondaparinux",
+    "argatroban",
+    "urokinase",
+    "alteplase",
+    "aspirin",
+    "clopidogrel",
+    "prasugrel",
+    "ticagrelor"
+  ],
+  "C-005": [
+    "protamine",
+    "idarucizumab",
+    "andexanet_alfa",
+    "fresh_frozen_plasma",
+    "platelet_transfusion",
+    "red_blood_cell_concentrate",
+    "fibrinogen_product",
+    "cryoprecipitate"
+  ],
+  "C-006": [
+    "tranexamic_acid",
+    "rfviia",
+    "desmopressin",
+    "aminocaproic_acid",
+    "teicoplanin",
+    "meropenem",
+    "ceftazidime",
+    "ceftriaxone"
+  ],
+  "C-007": [
+    "cefotaxime",
+    "piperacillin_tazobactam",
+    "linezolid",
+    "daptomycin",
+    "metronidazole",
+    "voriconazole",
+    "amphotericin_b",
+    "fluconazole"
+  ],
+  "C-008": [
+    "acyclovir",
+    "ampicillin",
+    "mannitol",
+    "glycerol",
+    "furosemide",
+    "labetalol",
+    "amlodipine",
+    "norepinephrine"
+  ],
+  "C-009": [
+    "epinephrine",
+    "dopamine",
+    "dobutamine",
+    "vasopressin",
+    "nitroprusside",
+    "landiolol",
+    "esmolol",
+    "hydrocortisone"
+  ],
+  "C-010": [
+    "dexmedetomidine",
+    "fentanyl",
+    "propofol",
+    "ketamine",
+    "oxycodone",
+    "haloperidol",
+    "sodium_polystyrene_sulfonate",
+    "sodium_zirconium_cyclosilicate"
+  ],
+  "C-011": [
+    "tolvaptan",
+    "calcium_gluconate",
+    "magnesium_sulfate",
+    "potassium_chloride",
+    "glucose",
+    "albumin",
+    "clazosentan",
+    "edaravone"
+  ],
+  "C-012": [
+    "fasudil",
+    "fludrocortisone",
+    "levofloxacin",
+    "levothyroxine",
+    "nimodipine",
+    "nitroglycerin",
+    "ozagrel",
+    "pentobarbital"
+  ],
+  "C-013": [
+    "remimazolam",
+    "rocuronium",
+    "sugammadex",
+    "sulbactam_ampicillin",
+    "thiamylal",
+    "thiopental",
+    "vitamin_k"
+  ],
+  "C-014": [
+    "acetaminophen",
+    "apcc_class",
+    "atorvastatin",
+    "bisoprolol",
+    "cefazolin",
+    "cefepime",
+    "cilostazol",
+    "ciprofloxacin"
+  ],
+  "C-015": [
+    "clevidipine",
+    "dexamethasone",
+    "enalapril",
+    "famotidine",
+    "hydromorphone",
+    "hypertonic_saline_class",
+    "insulin_class",
+    "lactulose"
+  ],
+  "C-016": [
+    "lansoprazole",
+    "magnesium_oxide",
+    "methylprednisolone",
+    "metoclopramide",
+    "micafungin",
+    "milrinone",
+    "morphine",
+    "nicardipine"
+  ],
+  "C-017": [
+    "nsaids_class",
+    "olanzapine",
+    "olmesartan",
+    "pcc_class",
+    "quetiapine",
+    "remifentanil",
+    "risperidone",
+    "rosuvastatin"
+  ],
+  "C-018": [
+    "sarpogrelate",
+    "sennoside",
+    "sodium_bicarbonate",
+    "sulfamethoxazole_trimethoprim",
+    "telmisartan",
+    "trazodone"
+  ]
+}

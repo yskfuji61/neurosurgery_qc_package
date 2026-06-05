@@ -67,26 +67,43 @@ AI は Markdown、manifest、tests、schemas、validation reports、audit scaffo
 2. source-of-truth が不明な content が user-facing summary に入りそうな場合
 3. matrix、tests、audit が診療方針そのものとして読める表現になった場合
 
-## Sibling reference corpus（PMDA scaffold）
+## Sibling reference corpus（CHILD + PARENT）
 
-ワークスペース sibling として `references/neurosurgery_safe_rag_pmda_product_source_register_resolved/`（306 files）を置く。これは PMDA 製品単位解決と safe-boundary 薬剤プロファイルの **作業用 reference corpus** であり、本 repo の integrated package や derived `knowledge/` 13 本の代替ではない。
+ワークスペース sibling に二層の reference corpus がある。いずれも本 repo の integrated package や derived `knowledge/` 13 本の代替ではない。
 
-現時点の reference 側事実（TARGET に「解決済み」と写さない）:
+### CHILD: PMDA 作業 corpus
+
+`references/neurosurgery_safe_rag_pmda_product_source_register_resolved/`（366 files）。PMDA 製品単位解決と safe-boundary 薬剤プロファイルの **作業用 reference**。
+
+現時点の CHILD 側事実（TARGET に「解決済み」と写さない）:
 
 1. 127 薬剤 inventory は `candidate_list_not_facility_confirmed` であり、施設確定リストではない。
-2. `pmda_resolved_count` は 0、`completion_status` は `NOT_COMPLETE_PMDA_SEARCH_UNAVAILABLE` 系、`custom_gpt_upload_safe` は false。
-3. Custom GPT への直接 upload 候補は reference 内 `09_MANIFESTS/custom_gpt_upload_manifest.csv` の `upload_to_custom_gpt=yes` 行のみ（現状 6 件・human review pending）。306 件一括は禁止。
-4. `derived/custom_gpt_knowledge_package/manifest/reference_migration_decision_ledger.csv` で 1 file = 1 migration decision を管理する。ledger 完走は blind copy の許可ではない。
+2. `package_summary.json` の PMDA カウントは reference 内スナップショットであり、TARGET 正本ではない。`custom_gpt_upload_safe: false` を維持する。
+3. Custom GPT への直接 upload 候補は `09_MANIFESTS/custom_gpt_upload_manifest.csv` の `upload_to_custom_gpt=yes` 行のみ（human review pending）。366 件一括は禁止。
+
+### PARENT: gap v3 残差 corpus
+
+`references/neurosurgery_qc_package/reference_archive/neurosurgery_gap_supplement_package_v3_full_residual_20260603/`（191 files）。V2 監査残の領域補完（神経腫瘍・下垂体・造影/手技等）。
+
+PARENT 側事実（TARGET に写さない）:
+
+1. **PMDA 製品単位未解決** — 販売名・添付文書 URL・RMP 等は `UNRESOLVED_DO_NOT_GUESS`。
+2. V3_RESIDUAL 58 drug_key は CHILD 127 register と **直交**（V3_ALL と CHILD は 17 件のみ交差、命名不一致あり）。盲検マージ禁止。
+3. procedural / historical / negative note を標準治療薬 profile として扱わない（`11_INTEGRATION_GUIDES/V3統合手順.md`）。
+
+### Migration ledger 557/557
+
+`reference_migration_decision_ledger.csv` は CHILD 366 + PARENT 191 = **557** reference files について 1 file = 1 decision。`tests/validate_reference_migration_ledger.py --corpus all` で照合する。
 
 やってはいけないこと:
 
-1. reference の未解決 PMDA 行を TARGET の確定事実または `knowledge/` の推奨値として扱うこと。
-2. migration slice B（adapted_port 25 件）を「統合完了」「upload safe」「PMDA 解決済み」と報告すること。
-3. 212 薬剤プロファイルを integrated drug-profile 層未整備のまま `knowledge/` へ直コピーすること。
+1. reference の未解決 PMDA 行または PARENT の一般名プロファイルを TARGET の確定事実または `knowledge/` の推奨値として扱うこと。
+2. migration slice B（adapted_port 25 件）または PARENT ledger 登録を「統合完了」「upload safe」「PMDA 解決済み」と報告すること。
+3. 335 薬剤プロファイル（CHILD 212 + PARENT 123）を integrated drug-profile 層未整備のまま `knowledge/` へ直コピーすること。
 
-### Migration ledger 306/306（slice C 完走）
+### CHILD migration ledger 366/366（slice C 完走）
 
-`reference_migration_decision_ledger.csv` は 306 reference files すべてについて 1 file = 1 decision を記録済み（slice B: 25 件 `m1_port_applied_pending_operator_review`、slice C: 281 件 `m2_non_port_recorded_pending_operator_review`）。ledger 完走は blind copy の許可ではなく、non-port 行は TARGET へ物理コピーしない監査完走である。統合完了・PMDA 解決済み・upload safe の宣言は禁止のまま。
+CHILD 366 files は slice B/C + d11 batch で監査済み。PARENT 191 archive files（うち初期 gap v3 登録 174 + collision/review-ready 等の追補 17）は ledger-only 記録。`gap_v3_m0_ledger_recorded_pending_operator_review` および `gap_v3_review_ready_recorded` 等の status は blind copy 許可ではない。統合完了・PMDA 解決済み・upload safe の宣言は禁止のまま。
 
 ## Integrated First / Derived Second 原則
 

@@ -1,0 +1,10 @@
+﻿source_id,source_type,title,url,published_or_checked,used_for,limitations
+JSTS_STROKE_GL_2021_REV2025,guideline,脳卒中治療ガイドライン2021〔改訂2025〕,https://www.jsts.gr.jp/img/guideline2021_kaitei2025_kaiteikoumoku.pdf,2025-06-30,SAH遅発性脳血管攣縮薬（クラゾセンタン、ファスジル、オザグレル）およびrt-PA等の脳卒中急性期項目の根拠確認,改訂項目PDFであり全文全章ではない。実運用では最新版本文・添付文書・院内採用品を併用確認。
+PMDA_OZAGREL_SAFETY_2019,pmda_safety_material,PMDA資料 オザグレルナトリウム関連 安全対策資料,https://www.pmda.go.jp/files/000230548.pdf,2019-06-26,オザグレルのSAH術後脳血管攣縮、脳血栓症急性期、出血リスク文脈の確認,個別販売名の最新添付文書そのものではない。製品単位ではPMDA医療用医薬品検索で再確認必須。
+PMDA_EDARAVONE_RMP_RADICUT,pmda_rmp,ラジカット注/点滴静注バッグ RMP,https://www.pmda.go.jp/RMP/www/400315/6eba6676-657f-43cb-a9ad-b00dd4a8b6e6/400315_1190401A1023_006RMP.pdf,2026-03-18,エダラボンの脳梗塞急性期適応、投与開始時期、安全性監視文脈の確認,RMPであり添付文書の代替ではない。後発品・剤形差・施設採用品は別確認。
+PMDA_CLAZOSENTAN_PIVLAZ_REVIEW,pmda_review,ピヴラッツ点滴静注液150mg 審査報告/関連資料,https://www.pmda.go.jp/drugs/2022/P20210112001/150923000_30400AMX00012_B100_1.pdf,2021-09-10,クラゾセンタンのSAH術後脳血管攣縮関連、安全性論点、対象患者制限の確認,審査資料であり添付文書最新版ではない。肝機能・併用薬・年齢等は添付文書で再確認。
+PMDA_ALTEPLASE_LABEL,pmda_label,アルテプラーゼ 静注用rt-PA製剤 添付文書PDF,https://www.pmda.go.jp/PmdaSearch/iyakuDetail/ResultDataSetPDF/400315_3959402D1035_3_16,2025-11-01,虚血性脳血管障害急性期、発症後4.5時間以内、出血性相互作用、抗アミロイド抗体関連注意の確認,販売名・版数は必ずPMDA画面で確認。院内プロトコル・rt-PA適正治療指針とセットで扱う。
+PMDA_ARGATROBAN_REEXAM_2020,pmda_reexam,アルガトロバン 再審査報告書,https://www.pmda.go.jp/drugs_reexam/2020/P20200330003/400315000_21700AMZ00221_A100_1.pdf,2020-02-03,発症後48時間以内の脳血栓症急性期（ラクネを除く）等の国内承認文脈確認,再審査報告書であり最新添付文書ではない。製品ごとの添付文書確認が必要。
+PMDA_UROKINASE_SAFETY_2019,pmda_safety_material,ウロキナーゼ関連 安全対策調査会資料,https://www.pmda.go.jp/files/000232192.pdf,2019-10-29,脳血栓症と脳塞栓症の鑑別、出血性脳梗塞警告、線溶薬安全境界の確認,安全対策資料。現在の販売名・添付文書・採用状況確認必須。
+JSGN_MENINGITIS_GL_2014,guideline,細菌性髄膜炎診療ガイドライン2014 治療章,https://www.neurology-jp.org/guidelinem/pdf/zuimaku_guide_2014_08.pdf,2014,成人細菌性髄膜炎のアンピシリン、バンコマイシン、第3世代セフェム、MEPM等の位置づけ確認,2014年版。耐性菌動向・JAID/JSC等の最新抗菌薬指針・施設アンチバイオグラムで更新必須。
+TBI_NEUROCRITICAL_REVIEW_2019,review,頭部外傷の病態と治療,https://www.nms.ac.jp/sh/jmanms/pdf/015020071.pdf,2019,重症頭部外傷ICP管理、浸透圧療法、鎮静・神経集中治療薬剤カテゴリの不足確認,総説であり薬剤添付文書や国内ガイドライン最新版の代替ではない。

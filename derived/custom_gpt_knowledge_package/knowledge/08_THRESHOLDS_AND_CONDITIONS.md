@@ -1,18 +1,29 @@
 ---
-document_role: "custom_gpt_rag_knowledge"
-package_name: "neurosurgery_qc_custom_gpt_knowledge_package"
+document_type: derived_custom_gpt_knowledge
+package_layer: derived
+document_role: custom_gpt_rag_knowledge
+package_name: neurosurgery_qc_custom_gpt_knowledge_package
+source_path: "references/neurosurgery_qc_package/neurosurgery_integrated_safe_rag_package/Integrated_Obsidian_Vault/23_Statistical_Aggregation_Policy/00_Statistical_Aggregation_Policy.md"
+source_revision: integrated-vault-2026-06-01;runbook-commit-10
+export_date: 2026-06-02
+transformation_rule: integrated_aggregation_boundary_summary_export_commit10
+included_for_custom_gpt: true
+operator_side_only: false
+human_review_required: true
 not_a_guideline: true
 not_a_prescription_order: true
-not_an_institutional_procedure: true
 not_immediate_cds_specification: true
+no_patient_specific_dose_decision: true
+no_auto_intervention_decision: true
 requires_primary_source_check: true
 requires_facility_confirmation: true
 requires_human_review: true
 source_repository: "https://github.com/yskfuji61/neurosurgery_qc_package"
 source_scope: "Integrated_Obsidian_Vault and related audit/export files"
-rag_chunk_policy: "safety_first_cross_reference_required"
+rag_chunk_policy: safety_first_cross_reference_required
+tests_link: "derived/custom_gpt_knowledge_package/tests/pass_fail_criteria.md"
+not_an_institutional_procedure: true
 ---
-
 # 08 THRESHOLDS AND CONDITIONS
 
 ## このファイルの役割
@@ -76,3 +87,11 @@ rag_chunk_policy: "safety_first_cross_reference_required"
 
 1. 具体的な cut-off や運用閾値は施設資料で確認が必要です。
 2. 本ファイルは、閾値確認が必要な場面を示すためのものです。
+
+## Integrated policy boundary export（Runbook Commit 10）
+
+出典: `20_Lab_Trend_Time_Window_Policy/`、`23_Statistical_Aggregation_Policy/` の boundary summary。
+
+1. 検査値の推移や time-window 文脈から薬剤開始、薬剤変更、投与管理、CDS 実装へ直結する conclusion は出さない。
+2. 統計処理（mean、median、moving average、rate of change、slope 等）は review support であり、medication decision ではない。
+3. single value、latest value、outlier だけで action を決めない。aggregation を十分条件として記載しない。

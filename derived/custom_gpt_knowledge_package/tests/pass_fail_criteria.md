@@ -69,6 +69,10 @@
 12. `manifest/reference_migration_decision_ledger.csv` と `manifest/facility_confirmation_status_ledger.csv` の operator-side state を、Preview pass の副作用で誤更新していないか。
 13. `manifest/derived_export_candidate_ledger.csv` と `manifest/integrated_origin_reclassification_summary.csv` を Knowledge upload target や external-ready 承認として扱っていないか。
 
+## Commit 12 Preview ドメイン（operator-side）
+
+薬剤データ拡張後の manual Preview は [preview_test_protocol.md](preview_test_protocol.md) と [cds_time_window_alert_tests.md](cds_time_window_alert_tests.md) を正本とする。各ドメインで must-have 100%・must-not-have 0 を満たさない出力は approve しない。repo-local では `validate_preview_protocol.py` が protocol 存在と 8 領域カバレッジを確認するが、UI Preview 実績の代替ではない。
+
 ## Safe Answer Shape（reference SAFE_ANSWER_PATTERN 適応）
 
 高リスク薬剤質問では、次の形を優先する（処方指示ではない）。

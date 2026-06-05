@@ -110,7 +110,95 @@
 | slice C（non-port 完走） | 281 | `m2_non_port_recorded_pending_operator_review` | ledger の `reason` に m2 監査 suffix のみ。TARGET へファイル本体はコピーしない |
 | うち薬剤プロファイル | 212 | 同上 | integrated drug-profile 層 + Runbook Commit 1–9 先行が port 条件 |
 
-**306/306** が `reference_migration_decision_ledger.csv` に 1 file = 1 decision で登録済みである。これは統合完了・PMDA 解決済み・`custom_gpt_upload_safe` ではない。REFERENCE 側 PMDA 0/127 は維持する。
+**306/306** が `reference_migration_decision_ledger.csv` に 1 file = 1 decision で登録済みである（当時の reference ファイル集合）。これは統合完了・PMDA 解決済み・`custom_gpt_upload_safe` ではない。
+
+## Runbook Commit 11（derived operator surfaces・2026-06-02）
+
+目的: [GPT 薬剤データ方針拡張 Runbook](../../gpt_drug_data_policy_expansion_runbook.md) Commit 11 に従い、derived package の README、manifest、tests 境界を Commit 10 済み knowledge 13 本と整合させる。Knowledge ファイル数の silent expansion は行わない。
+
+### 実施内容
+
+1. sibling reference に追加された A-PMDA batch 証跡（`09_MANIFESTS/pmda_pilot_batch_*.md`、`pmda_class_note_resolution_028.md`、`08_VALIDATION_CHECKS/_apply_pmda_pilot_batch_*.py` 計 56 件）を `reference_migration_decision_ledger.csv` へ **ledger-only** 登録（`no_port_keep_as_reference_only`、`d11_reference_batch_recorded_pending_operator_review`）。
+2. `manifest/custom_gpt_upload_manifest.csv` は knowledge 13 + operator-side の分離を維持（upload yes は 13 のみ）。
+3. `knowledge/05_*` と `knowledge/09_*` の Commit 10 boundary export 文で、unsafe-pattern スキャンの誤検知語（混注可の部分一致）を boundary 記述へ言い換え。医療断定の追加はなし。
+4. README の sibling reference 節を、reference `package_summary` を TARGET 確定事実に写さない旨へ更新。
+
+### 未実施（Commit 11 範囲外・次 stage）
+
+1. `instructions/custom_gpt_instructions.md` の本文改訂（operator 承認待ち）。
+2. Preview protocol 本格化（Commit 12）、pharmacist red-flag 専用 audit ファイル（Commit 13）、最終監査 closeout（Commit 14）。
+3. reference PMDA カウントの derived knowledge への反映。
+
+### Commit 11 検証 gate（repo-local）
+
+`validate_upload_manifest.py`、`validate_unsafe_patterns.py`、`validate_reference_migration_ledger.py` および facility / export-candidate / release-readiness / quarantine / review-state validators を再実行する。
+
+## Runbook Commit 12（Custom GPT Preview protocol・2026-06-02）
+
+目的: drug-data expansion 後の unsafe shortcuts 拒否を manual Preview で検証するための protocol を operator-side tests に追加する。Knowledge 13 本は増やさない。
+
+### 追加ファイル
+
+1. `tests/preview_test_protocol.md` — 8 必須領域（renal, BP, temperature, sodium, mannitol interval, TDM, IV compatibility, CDS automation）ごとに unsafe prompt / pass / fail / must-have / must-not-have / manual 記録規則。
+2. `tests/cds_time_window_alert_tests.md` — TEST-CDS-01〜03（time-window、検査値自動介入、AI 即時実装）。
+3. `tests/validate_preview_protocol.py` — 上記 2 ファイルの存在と必須節・領域カバレッジの repo-local gate。
+
+### 更新ファイル
+
+1. `tests/preview_test_cases.md` — TEST-16〜23 追加。
+2. `tests/preview_execution_runbook.md` — フェーズ B 実行順（PREVIEW-005〜015）。
+3. `tests/human_reviewed_preview_examples.md` — 予約レコード表（UI 実行前は pending）。
+4. `manifest/custom_gpt_upload_manifest.csv` — 新規 tests を operator-side（upload no）で登録。
+
+### 未実施（Commit 12 人間レビュー gate）
+
+OpenAI Custom GPT UI での manual Preview 実行と `human_reviewed_preview_examples.md` への raw_output 転記。promotion helper の `--apply` は evidence 記録後のみ。
+
+### Commit 12 検証 gate
+
+`validate_preview_protocol.py` PASS + 既存 derived validators PASS。Preview evidence 未記録は正常（pending 維持）。
+
+## Runbook Commit 13（pharmacist red-flag + quarantine・2026-06-02）
+
+目的: drug-data / CDS / facility 境界の **薬剤師 red-flag レビュー** と **未承認内容 quarantine** を operator-side で必須化する。Knowledge 13 本は増やさない。
+
+### 追加ファイル
+
+1. `audit/pharmacist_red_flag_review_checklist.md` — RF-DOSE 〜 RF-SOURCE、sign-off **未記録**、停止条件。
+2. `audit/unapproved_content_quarantine.md` — quarantine ワークフロー、REFERENCE 05_QUARANTINE との境界。
+3. `tests/validate_pharmacist_red_flag_commit13.py` — checklist / quarantine doc / register 非空 gate。
+
+### 更新ファイル
+
+1. `manifest/knowledge_quarantine_register.csv` — 8 chunk の governance hold（`under_review` / `pending`）。`cleared` 行なし。
+2. `manifest/knowledge_chunk_review_crosswalk.csv` — blockers に `pharmacist_red_flag_pending` 追加。
+3. `manifest/custom_gpt_upload_manifest.csv` — 上記 audit/tests を upload=no で登録。
+
+### 人間レビュー gate（未達・意図どおり）
+
+薬剤師 sign-off 未記録。active quarantine があるため `external_ready_candidate` は 0 のまま。
+
+### Commit 13 検証 gate
+
+`validate_pharmacist_red_flag_commit13.py` + `validate_quarantine_integrity.py` + `validate_release_readiness.py` + 既存 derived validators。
+
+## Runbook Commit 14（最終監査 closeout・2026-06-02）
+
+目的: integrated / derived / validation / Preview / pharmacist / quarantine の整合を監査し、**未解決ゲートを明示したうえで** repo-local PASS を記録する。completion / upload safe 宣言はしない。
+
+### 実施内容
+
+1. [pharmacist_red_flag_chunk_review_log_014.md](../audit/pharmacist_red_flag_chunk_review_log_014.md) — quarantine 8 chunk の red-flag 10 項 repo-local 照合（0 該当）。**quarantine は hold 維持**（薬剤師 sign-off 前に `cleared` しない）。
+2. [runbook_commit_14_final_audit_report.md](../audit/runbook_commit_14_final_audit_report.md) — Runbook 必須 11 項目 + validator サマリー + 未解決ゲート列挙。
+3. `tests/validate_final_audit_commit14.py` — 全 derived validators オーケストレーション + 監査 report 存在確認。
+
+### 人間ゲート（未達・明示）
+
+Preview UI 未実施、薬剤師 sign-off 未記録、施設確認 pending、`external_ready_candidate=0`、`custom_gpt_upload_safe=false` 維持。
+
+### Commit 14 検証 gate
+
+`validate_final_audit_commit14.py` PASS = repo-local governance 整合。外部投入承認ではない。
 
 ## 配置ポリシー
 
@@ -158,6 +246,22 @@
 3. summary-XX-02 は Preview 実出力で同じ説明不足が再現し、existing layers では回収不能で、しかも global instruction fault や rubric fault では説明できない場合にだけ追加する。
 4. 追加しない file も build note または Preview review log に non-add decision を残し、silent skip を禁止する。
 5. pilot では各 file につき summary-XX-02 までに止め、summary-XX-03 以降は扱わない。
+
+## gap v3 PARENT corpus 登録（2026-06-04）
+
+1. PARENT（174 files）を `reference_migration_decision_ledger.csv` に追加。CHILD 366 行は不変。合計 540 行。（**historical 2026-06-04**）
+2. `tests/validate_reference_migration_ledger.py` を `--corpus child|parent|all` 対応に拡張。
+
+**Current state (2026-06-05):** PARENT archive 191 files on disk; ledger **557** rows（+9 collision gate, +8 review-ready operator manifests）。`validate_reference_migration_ledger.py --corpus all` PASS 557/557。
+3. Integrated Phase 2（7 領域）: `04_Drug_Classes/*_境界と出典階層.md` + `90_Audit/Collisions/gap_v3_*`。
+4. DRAFT 差分レポート: `manifest/_DRAFT_parent_child_diff_report.md`。
+5. `custom_gpt_upload_safe` は true にしない。
+
+## gap v3 archive 移行・sibling 削除（2026-06-04）
+
+1. 正本: `references/neurosurgery_qc_package/reference_archive/neurosurgery_gap_supplement_package_v3_full_residual_20260603/`。
+2. 旧 `references/neurosurgery_gap_supplement_package_v3_full_residual_20260603/` を削除。
+3. `audit/gap_v3_pharmacist_facility_review_log_20260604.md` — collision hold + Preview/promotion 禁止。
 
 ## 未確定事項・人間レビュー項目
 

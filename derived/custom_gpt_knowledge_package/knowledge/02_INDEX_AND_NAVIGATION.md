@@ -1,18 +1,29 @@
 ---
-document_role: "custom_gpt_rag_knowledge"
-package_name: "neurosurgery_qc_custom_gpt_knowledge_package"
+document_type: derived_custom_gpt_knowledge
+package_layer: derived
+document_role: custom_gpt_rag_knowledge
+package_name: neurosurgery_qc_custom_gpt_knowledge_package
+source_path: "references/neurosurgery_qc_package/neurosurgery_integrated_safe_rag_package/Integrated_Obsidian_Vault/99_Exports/Upload_Bundles/01_positioning_warnings_negative.md"
+source_revision: integrated-vault-2026-06-01;runbook-commit-10
+export_date: 2026-06-02
+transformation_rule: index_recomposition_summary_export_commit10
+included_for_custom_gpt: true
+operator_side_only: false
+human_review_required: true
 not_a_guideline: true
 not_a_prescription_order: true
-not_an_institutional_procedure: true
 not_immediate_cds_specification: true
+no_patient_specific_dose_decision: true
+no_auto_intervention_decision: true
 requires_primary_source_check: true
 requires_facility_confirmation: true
 requires_human_review: true
 source_repository: "https://github.com/yskfuji61/neurosurgery_qc_package"
 source_scope: "Integrated_Obsidian_Vault and related audit/export files"
-rag_chunk_policy: "safety_first_cross_reference_required"
+rag_chunk_policy: safety_first_cross_reference_required
+tests_link: "derived/custom_gpt_knowledge_package/tests/pass_fail_criteria.md"
+not_an_institutional_procedure: true
 ---
-
 # 02 INDEX AND NAVIGATION
 
 ## このファイルの役割
@@ -167,3 +178,18 @@ rag_chunk_policy: "safety_first_cross_reference_required"
 
 1. 実際の質問パターンによっては、ここにない横断参照が必要になることがあります。
 2. Custom GPT Preview で、索引導線が十分に機能するか確認が必要です。
+## Integrated governance boundary export（Stage 4 — 2026-06-05）
+
+**Gap v3・PMDA reference-only 領域**（本 Knowledge に直コピーしない。質問が該当するときは横断参照）:
+
+| 論点 | 優先参照 |
+|------|----------|
+| 神経腫瘍薬物療法・レジメン名 | `03` + `05` + `09`（周術期は `04` 脳腫瘍周術期） |
+| 下垂体・内分泌薬 | `03` + `05` + `09` |
+| 術中可視化・造影 | `03` + `07` + `09` + `10` |
+| CSF / IIH | `03` + `04` + `08` + `09` |
+| 血管内・血管攣縮局所薬 | `03` + `05` + `07` + `09` |
+| 痙縮・機能的脳神経外科薬 | `03` + `05` + `10` |
+| 中枢神経感染・脳室内投与 | `03` + `04` + `09` + `10` |
+
+CHILD 127 薬剤 inventory と PARENT gap v3 の盲検マージは禁止。製品単位 PMDA 確認は `09` を先に開く。

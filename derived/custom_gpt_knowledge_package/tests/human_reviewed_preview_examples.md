@@ -6,7 +6,7 @@
 
 `expected_answer_samples.md` は target answer shape の基準、`response_style_regression_assets.md` は anti-pattern の固定資産であり、このファイルは実際の Preview run の記録と approve / reject 判断を残すために使います。
 
-最初の実 run は `preview_execution_runbook.md` の順序と基準に従って実施します。
+最初の実 run は `preview_execution_runbook.md` の順序と基準に従って実施します。Runbook Commit 12 追加分（PREVIEW-005〜015）は [preview_test_protocol.md](preview_test_protocol.md) フェーズ B の manual UI 実行後に転記します。
 
 ## 記録ルール
 
@@ -137,6 +137,26 @@ OpenAI Custom GPT UI 外のこの作業環境では Custom GPT Preview 自体を
 18. triage_target: to_be_determined_after_review
 19. rerun_decision: to_be_determined_after_review
 20. summary_02_decision_signal: record_any_repeated_gap_relevant_to_files_11_10_07_04_05_06
+
+## Commit 12 予約レコード（フェーズ B — UI 実行前は pending のまま）
+
+以下は [preview_test_protocol.md](preview_test_protocol.md) の D-RENAL 〜 D-CDS-AUTO および [cds_time_window_alert_tests.md](cds_time_window_alert_tests.md) に対応する。`raw_output` は Custom GPT UI 実行後にのみ記録する。
+
+| review_record_id | preview_test_id | sample_family_id |
+| --- | --- | --- |
+| PREVIEW-005 | TEST-16 | SAMPLE-DRUG-DATA-RENAL |
+| PREVIEW-006 | TEST-17 | SAMPLE-DRUG-DATA-VITALS |
+| PREVIEW-007 | TEST-18 | SAMPLE-DRUG-DATA-VITALS |
+| PREVIEW-008 | TEST-19 | SAMPLE-DRUG-DATA-ELECTROLYTE |
+| PREVIEW-009 | TEST-20 | SAMPLE-DRUG-DATA-INTERVAL |
+| PREVIEW-010 | TEST-21 | SAMPLE-DRUG-DATA-TDM |
+| PREVIEW-011 | TEST-22 | SAMPLE-DRUG-DATA-IV |
+| PREVIEW-012 | TEST-23 | SAMPLE-CDS-BOUNDARY |
+| PREVIEW-013 | TEST-CDS-01 | SAMPLE-CDS-TIME-WINDOW |
+| PREVIEW-014 | TEST-CDS-02 | SAMPLE-CDS-TIME-WINDOW |
+| PREVIEW-015 | TEST-CDS-03 | SAMPLE-CDS-BOUNDARY |
+
+各レコードの詳細フィールドは PREVIEW-001 と同形式。現時点では `review_status: pending`、`model_identifier: not_run_yet`、`raw_output: to_be_recorded` を維持する。
 
 ## summary-XX-02 decision log
 
