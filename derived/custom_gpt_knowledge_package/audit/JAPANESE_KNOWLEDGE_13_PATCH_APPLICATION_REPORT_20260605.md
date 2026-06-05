@@ -5,7 +5,8 @@
 
 ## 1. 対象proposal
 
-JP-STYLE-01-001, JP-STYLE-03-001, JP-EMERG-003-001, JP-STYLE-05-001, JP-STYLE-08-001
+Round 1: JP-STYLE-01-001, JP-STYLE-03-001, JP-EMERG-003-001, JP-STYLE-05-001, JP-STYLE-08-001  
+Round 2: JP-STYLE-01-002, JP-STYLE-03-002, JP-STYLE-05-002, JP-STYLE-08-002
 
 ## 2. 適用したpatch
 
@@ -16,14 +17,23 @@ JP-STYLE-01-001, JP-STYLE-03-001, JP-EMERG-003-001, JP-STYLE-05-001, JP-STYLE-08
 | JP-EMERG-003-001 | knowledge/03_HIGH_RISK_WARNINGS_AND_NEGATIVE_KNOWLEDGE.md | REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW | 緊急時確認ブロックを冒頭近くに追加（非処方境界付き） |
 | JP-STYLE-05-001 | knowledge/05_DRUG_CLASS_AND_LAYER2_DRUG_NOTES.md | REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW | antibiogram / de-escalation の日本語併記（個別培養結果と分離） |
 | JP-STYLE-08-001 | knowledge/08_THRESHOLDS_AND_CONDITIONS.md | REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW | 「必須」を確認項目説明へ言い換え（投与条件に見えないよう） |
+| JP-STYLE-01-002 | knowledge/01_START_HERE_AND_POSITIONING.md | REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW | operator-side 境界・upload safe の日本語明確化 |
+| JP-STYLE-03-002 | knowledge/03_HIGH_RISK_WARNINGS_AND_NEGATIVE_KNOWLEDGE.md | REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW | shortcut → 短絡（shortcut） |
+| JP-STYLE-05-002 | knowledge/05_DRUG_CLASS_AND_LAYER2_DRUG_NOTES.md | REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW | routine 表現を一律運用・一律候補へ（L92/L99） |
+| JP-STYLE-08-002 | knowledge/08_THRESHOLDS_AND_CONDITIONS.md | REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW | ICU以外運用可否の確認軸明確化 |
 
 ## 3. 適用しなかったpatch
 
 | proposal_id | file | status | reason |
 |---|---|---|---|
-| — | knowledge/04_DISEASE_NOTES.md 等の antibiogram | DEFERRED_HUMAN_REVIEW_REQUIRED | JP-STYLE-05-001 スコープ外（05 の抗菌薬節のみ） |
+| — | knowledge/05 L120 ICU 以外 routine 化 | DEFERRED_HUMAN_REVIEW_REQUIRED | JP-STYLE-05-002 スコープ外 |
+| — | knowledge/03 L76 routine で扱わない | DEFERRED_HUMAN_REVIEW_REQUIRED | JP-STYLE-03-002 は shortcut のみ |
+| — | knowledge/04 中核 | DEFERRED_HUMAN_REVIEW_REQUIRED | 直接本文修正対象外 |
+| — | knowledge/09 routine | DEFERRED_HUMAN_REVIEW_REQUIRED | 直接本文修正対象外 |
+| — | knowledge/13 release readiness | DEFERRED_HUMAN_REVIEW_REQUIRED | 直接本文修正対象外 |
 | — | abbreviation_first_use_review_ledger 一括反映 | DEFERRED_HUMAN_REVIEW_REQUIRED | 略語初出説明の本文挿入は別フェーズ |
-| — | plain language ledger 未レビュー GLOBAL 行 | NEEDS_REVIEW | 今回 5 proposal 外は据え置き |
+| — | Emergency Quick Check 他ファイル展開 | DEFERRED_HUMAN_REVIEW_REQUIRED | 別フェーズ |
+| — | plain language ledger 未レビュー GLOBAL 行 | NEEDS_REVIEW | round 2 外は据え置き |
 
 ## 4. 医療安全上の確認
 
@@ -38,6 +48,7 @@ JP-STYLE-01-001, JP-STYLE-03-001, JP-EMERG-003-001, JP-STYLE-05-001, JP-STYLE-08
 - EHR/CDS発火条件を追加していない（否定境界文での言及のみ）。
 - 処方指示、投与指示、休薬・再開指示を追加していない。
 - validator PASS や台帳登録を臨床承認として扱っていない。
+- 抗菌薬広域化・ICU運用の施設確定は追加していない（08-002 の看護観察体制・責任医・薬剤部は確認軸のみ）。
 
 ## 5. Knowledge upload target
 
@@ -54,11 +65,12 @@ JP-STYLE-01-001, JP-STYLE-03-001, JP-EMERG-003-001, JP-STYLE-05-001, JP-STYLE-08
 - 看護手順ではない。
 - CDS 本番仕様ではない。
 - 実患者への適用可否は、最新電子添文、国内ガイドライン、患者背景、施設採用品、施設手順、責任医・薬剤部確認が必要。
-- Knowledge 13 本への日本語スタイル完全適用は未完了（残 proposal・台帳行あり）。
+- Knowledge 13 本への日本語スタイル完全適用は未完了（04/09/13、05-L120、03-L76 routine、略語一括、Emergency 他ファイル展開は残存）。
+- Preview 実出力の日本語品質承認は未完了。
 
 ## 7. Validator結果
 
-**Run date:** 2026-06-05（repo-local）
+**Run date:** 2026-06-05（repo-local；round 2 適用後に再実測）
 
 | Validator | Result | Notes |
 |---|---|---|

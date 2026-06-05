@@ -113,10 +113,10 @@ Knowledge だけでは、次の事項を確定できません。
 
 ## Integrated policy boundary export（Runbook Commit 10）
 
-この節は integrated vault の位置づけを derived へ写した operator-side 境界です。処方・施設運用・upload 可否の確定根拠にはなりません。
+この節は、統合Vault側で定義された位置づけを、運用者向けの安全境界として転記したものです。処方・施設運用・upload 可否の確定根拠にはなりません。
 
 1. ワークスペース sibling の PMDA reference corpus（366 files）は、製品単位 source register の作業用正本であり、本 Knowledge 13 本の代替ではない。
-2. reference 側の `pmda_resolved_count` や register 更新は、repo-local の追跡事実であり、Custom GPT upload safe や施設採用品確定を意味しない。
+2. reference 側の `pmda_resolved_count` や register 更新は、repo-local の追跡事実であり、Custom GPT Knowledgeへの投入承認や施設採用品の確定を意味しない。
 3. 127 薬剤 inventory は `candidate_list_not_facility_confirmed` のまま扱い、薬剤プロファイル 212 件を integrated drug-profile 層未整備のまま Knowledge へ直コピーしない。
 4. derived export は source traceability と `human_review_required` を frontmatter に持つ summary layer に限る（Commit 10）。
 ## Integrated governance boundary export（Stage 4 — 2026-06-05）

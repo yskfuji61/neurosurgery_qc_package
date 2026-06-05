@@ -1,6 +1,6 @@
 # Knowledge 13 Japanese Rewrite Patch Proposals
 
-**Summary:** 5 proposals `REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW` on 2026-06-05. 0 deferred. Knowledge bodies `01`, `03`, `05`, `08` only.
+**Summary:** Round 1: 5 proposals applied 2026-06-05. Round 2: 4 additional proposals applied 2026-06-05. Deferred items remain registered below. Knowledge bodies `01`, `03`, `05`, `08` only for direct edits.
 
 See [JAPANESE_KNOWLEDGE_13_PATCH_APPLICATION_REPORT_20260605.md](JAPANESE_KNOWLEDGE_13_PATCH_APPLICATION_REPORT_20260605.md).
 
@@ -66,3 +66,47 @@ See [JAPANESE_KNOWLEDGE_13_PATCH_APPLICATION_REPORT_20260605.md](JAPANESE_KNOWLE
 - priority: high
 - status: REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW
 - review_date: 2026-06-05
+
+---
+
+## Round 2 — 2026-06-05
+
+### Proposal ID: JP-STYLE-01-002
+
+- 対象ファイル: `knowledge/01_START_HERE_AND_POSITIONING.md`
+- 内容: `operator-side 境界` → 運用者向けの安全境界；`upload safe` → Custom GPT Knowledgeへの投入承認
+- status: REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW
+- review_date: 2026-06-05
+
+### Proposal ID: JP-STYLE-03-002
+
+- 対象ファイル: `knowledge/03_HIGH_RISK_WARNINGS_AND_NEGATIVE_KNOWLEDGE.md`
+- 内容: `shortcut` → `短絡（shortcut）`
+- status: REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW
+- review_date: 2026-06-05
+
+### Proposal ID: JP-STYLE-05-002
+
+- 対象ファイル: `knowledge/05_DRUG_CLASS_AND_LAYER2_DRUG_NOTES.md`
+- 内容: `routine` 表現を一律運用・一律候補の日本語へ
+- status: REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW
+- review_date: 2026-06-05
+
+### Proposal ID: JP-STYLE-08-002
+
+- 対象ファイル: `knowledge/08_THRESHOLDS_AND_CONDITIONS.md`
+- 内容: ICU以外運用可否の確認軸を明確化（検査値単独に見えないよう）
+- status: REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW
+- review_date: 2026-06-05
+
+## Deferred — not applied in round 2
+
+| 対象 | 表現 | status | 理由 |
+|------|------|--------|------|
+| `knowledge/05` L120 | ICU 以外で routine 化 | DEFERRED_HUMAN_REVIEW_REQUIRED | JP-STYLE-05-002 スコープ外 |
+| `knowledge/03` L76 | routine で扱わない | DEFERRED_HUMAN_REVIEW_REQUIRED | JP-STYLE-03-002 は shortcut のみ |
+| `knowledge/04` | 中核 | DEFERRED_HUMAN_REVIEW_REQUIRED | 直接本文修正対象外 |
+| `knowledge/09` | routine | DEFERRED_HUMAN_REVIEW_REQUIRED | 直接本文修正対象外 |
+| `knowledge/13` | release readiness | DEFERRED_HUMAN_REVIEW_REQUIRED | 直接本文修正対象外 |
+| 略語初出説明 | — | DEFERRED_HUMAN_REVIEW_REQUIRED | 一括反映は別フェーズ |
+| Emergency Quick Check | 他ファイル展開 | DEFERRED_HUMAN_REVIEW_REQUIRED | 別フェーズ |

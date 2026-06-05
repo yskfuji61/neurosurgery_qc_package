@@ -1,5 +1,5 @@
 file_path,line_or_section,original_expression,expression_type,current_context,proposed_japanese_expression,auto_rewrite_allowed,clinical_meaning_change_risk,human_review_required,priority,status,reviewer,review_date,notes
-GLOBAL,style_rule,operator-side,audit_term,operator-side governance wording,運用者向け,yes,low,yes,medium,NEEDS_REVIEW,,,
+GLOBAL,style_rule,operator-side,audit_term,operator-side governance wording,運用者向けの安全境界,yes,low,yes,medium,REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW,,2026-06-05,JP-STYLE-01-002 applied knowledge/01
 GLOBAL,style_rule,boundary export,audit_term,derived boundary transfer,安全境界の転記,yes,low,yes,medium,NEEDS_REVIEW,,,
 GLOBAL,style_rule,upload safe,audit_term,upload eligibility wording,Knowledge投入可否,yes,low,yes,high,REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW,,2026-06-05,Applied in knowledge/01_START_HERE_AND_POSITIONING.md (JP-STYLE-01-001)
 GLOBAL,style_rule,reference-only,audit_term,reference parking status,参考資料扱い,yes,low,yes,high,NEEDS_REVIEW,,,
@@ -12,9 +12,9 @@ GLOBAL,style_rule,migration ledger,audit_term,traceability ledger,移行判断�
 GLOBAL,style_rule,blind copy,audit_term,unsafe copy warning,文脈確認なしの転記,yes,low,yes,high,NEEDS_REVIEW,,,
 GLOBAL,style_rule,runtime fetch,audit_term,external source retrieval at answer time,回答時の外部取得,yes,low,yes,medium,NEEDS_REVIEW,,,
 GLOBAL,style_rule,preview promotion,audit_term,review-state promotion after Preview,Preview承認後の昇格,yes,low,yes,high,NEEDS_REVIEW,,,
-GLOBAL,style_rule,shortcut,audit_term,unsafe reasoning shortcut,短絡,yes,low,yes,high,NEEDS_REVIEW,,,
+GLOBAL,style_rule,shortcut,audit_term,unsafe reasoning shortcut,短絡（shortcut）,yes,low,yes,high,REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW,,2026-06-05,JP-STYLE-03-002 applied knowledge/03
 GLOBAL,style_rule,workflow,clinical_english,operation flow,運用フロー,yes,low,yes,medium,NEEDS_REVIEW,,,
-GLOBAL,style_rule,routine,clinical_english,routine treatment/operation,一律運用 / 定型化,conditional,medium,yes,high,HUMAN_REVIEW_REQUIRED,,,
+GLOBAL,style_rule,routine,clinical_english,routine treatment/operation,一律運用 / 定型化,conditional,medium,yes,high,REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW,,2026-06-05,JP-STYLE-05-002 applied knowledge/05 L92 L99
 GLOBAL,style_rule,order set,clinical_english,EHR order grouping,オーダーセット,yes,low,yes,high,NEEDS_REVIEW,,,
 GLOBAL,style_rule,reversal,clinical_english,anticoagulant reversal context,中和・拮抗・代替対応,conditional,medium,yes,high,HUMAN_REVIEW_REQUIRED,,,
 GLOBAL,style_rule,de-escalation,clinical_english,antimicrobial narrowing,抗菌薬の狭域化（de-escalation）,conditional,medium,yes,medium,REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW,,2026-06-05,Applied in knowledge/05 (JP-STYLE-05-001)
@@ -30,4 +30,6 @@ knowledge/03_HIGH_RISK_WARNINGS_AND_NEGATIVE_KNOWLEDGE.md,role section,negative 
 knowledge/04_DISEASE_NOTES.md,TBI section,workflow,clinical_english,facility trauma workflow,運用フロー,yes,low,yes,medium,NEEDS_REVIEW,,,
 knowledge/05_DRUG_CLASS_AND_LAYER2_DRUG_NOTES.md,antimicrobial sections,antibiogram,clinical_english,facility antibiogram confirmation,施設・地域の薬剤感受性傾向をまとめた資料（antibiogram）,yes,low,yes,medium,REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW,,2026-06-05,JP-STYLE-05-001
 knowledge/06_PATIENT_STATE_NOTES.md,anticoagulant exposure,reversal,clinical_english,drug class split before reversal,中和・拮抗・代替対応,conditional,medium,yes,high,HUMAN_REVIEW_REQUIRED,,,
+knowledge/01_START_HERE_AND_POSITIONING.md,Integrated policy boundary export,operator-side,audit_term,policy boundary operator wording,運用者向けの安全境界,yes,low,yes,medium,REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW,,2026-06-05,JP-STYLE-01-002
+knowledge/01_START_HERE_AND_POSITIONING.md,Integrated policy boundary export,upload safe,audit_term,upload safe residual in policy section,Custom GPT Knowledgeへの投入承認,yes,low,yes,high,REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW,,2026-06-05,JP-STYLE-01-002
 knowledge/09_EVIDENCE_AND_PRIMARY_SOURCE_CHECKLISTS.md,evidence section,blind copy,audit_term,ledger is not blind copy permission,文脈確認なしの転記,yes,low,yes,high,NEEDS_REVIEW,,,

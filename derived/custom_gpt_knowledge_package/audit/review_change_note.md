@@ -1,5 +1,14 @@
 # Review Change Note
 
+## Knowledge 13 patch round 2（2026-06-05）
+
+- Applied 4 additional human-reviewed Japanese patches to `knowledge/01`, `03`, `05`, `08` only (no instructions edit).
+- Patches: JP-STYLE-01-002 (operator-side / upload safe), JP-STYLE-03-002 (shortcut), JP-STYLE-05-002 (routine L92/L99), JP-STYLE-08-002 (ICU-context confirmation axes).
+- Deferred without Knowledge body edit: `05` L120 routine, `03` L76 routine, `04` 中核, `09` routine, `13` release readiness.
+- Ledgers and patch proposals updated; `05` L120 / `03` L76 registered as `DEFERRED_HUMAN_REVIEW_REQUIRED`.
+- 8/8 targeted validators PASS (post round 2); `external_ready_candidates=0`; upload target **13 files** unchanged.
+- **Not** release ready; Preview evidence still pending. See [JAPANESE_KNOWLEDGE_13_PATCH_APPLICATION_REPORT_20260605.md](JAPANESE_KNOWLEDGE_13_PATCH_APPLICATION_REPORT_20260605.md).
+
 ## Knowledge 13 patch application pass（2026-06-05）
 
 - Applied 5 human-reviewed Japanese patches to `knowledge/01`, `03`, `05`, `08` only (no instructions edit).
