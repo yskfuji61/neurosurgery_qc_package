@@ -28,7 +28,7 @@ not_an_institutional_procedure: true
 
 ## このファイルの役割
 
-このファイルは、Knowledge 内の候補や caution を最終確認するための一次資料・Evidence チェックリストをまとめます。
+このファイルは、Knowledge内の候補や注意事項を確認するために、参照すべき一次資料とエビデンス確認項目をまとめたものです。
 
 ## 医療従事者向け要約（clinician-facing summary）
 
@@ -36,11 +36,13 @@ not_an_institutional_procedure: true
 
 ## このファイルを開く場面
 
-薬剤や対応の候補が見えてきたあとに、「国内薬事はどうか」「安全性情報は更新されていないか」「この論点は guideline や trial でどこまで支えられるか」を確認したい場面で開きます。Evidence は重要ですが、施設採用品や order 化の代わりにはなりません。
+薬剤や対応の候補が見えてきたあとに、国内薬事、安全性情報、ガイドライン、臨床試験でどこまで確認できるかを整理するために使います。エビデンスは重要な確認材料ですが、それだけで施設採用品、処方、またはオーダー化を確定する根拠にはなりません。
 
-## Sibling gap v3 reference（PMDA 未解決）
+## PMDA製品単位確認が未完了のgap v3参考資料（Sibling gap v3 reference）
 
-ワークスペース sibling の `references/neurosurgery_qc_package/reference_archive/neurosurgery_gap_supplement_package_v3_full_residual_20260603/` は、神経腫瘍・下垂体・造影/手技などの **一般名ベース gap supplement** である。PMDA 製品単位（販売名・添付文書 URL・RMP 等）は **未解決** のまま推測で埋めない。本 Knowledge 13 本にそのまま取り込む設計ではない。確認が必要なときは、製品単位 PMDA ページと施設採用品を先に確認し、reference プロファイルは人間監査後の索引としてのみ使う。CHILD（127 薬剤 PMDA 作業 corpus）との inventory 盲検マージは禁止する。
+この参考資料は、神経腫瘍、下垂体、造影・手技などに関する一般名ベースの補足資料です。販売名、添付文書URL、RMPなどのPMDA製品単位情報は未確認のため、推測で補完しません。この資料は、本Knowledge 13本へそのまま取り込む対象ではありません。確認が必要な場合は、まず製品単位のPMDAページと施設採用品を確認します。この参考資料は、人間レビュー後の索引としてのみ使用します。127薬剤のPMDA作業資料と、内容確認なしに統合してはいけません。
+
+参照パス: `references/neurosurgery_qc_package/reference_archive/neurosurgery_gap_supplement_package_v3_full_residual_20260603/`
 
 ## PMDA 電子添文チェック
 
@@ -58,7 +60,7 @@ not_an_institutional_procedure: true
 
 1. 予防抗菌薬と治療抗菌薬の区別
 2. 術式、デバイス、感染制御の確認
-3. 施設 antibiogram の必要性
+3. 施設・地域の薬剤感受性傾向をまとめた資料（antibiogram）の確認
 
 ## 輸血療法関連指針チェック
 
@@ -102,28 +104,28 @@ not_an_institutional_procedure: true
 1. 最新版の改訂日は都度確認が必要です。
 2. 論文や guideline の解釈差は人間レビューで吸収してください。
 
-## Integrated policy boundary export（Runbook Commit 10）
+## 統合ポリシー上の安全境界（Runbook Commit 10）
 
-出典: `Integrated_Obsidian_Vault/12_Drug_Label_Source_Hierarchy/` および `16_Guideline_Label_Separation/` の reviewed boundary summary。数値・用法・同一ライン混注・側管投与の可否は含めない。
+出典は、Integrated_Obsidian_Vault/12_Drug_Label_Source_Hierarchy/ および 16_Guideline_Label_Separation/ にある、確認済みの安全境界要約です。この要約には、数値、用法、同一ライン混注、側管投与の可否は含めません。
 
-### Drug label source hierarchy（確認順序のみ）
+### 薬剤ラベル情報の確認順序（Drug label source hierarchy）
 
 1. 国内薬事・製品単位確認は PMDA 関連資料を最優先で見る。RMP / 安全性情報は別軸で確認する。
 2. guideline、JAPIC、manufacturer documents は背景整理と照合に用い、国内薬事確認の代替にしない。
 3. formulary、薬剤部手順、委員会承認、EHR medication master は facility confirmation として別管理する。
-4. 出典分類（source class）の順序は、処方上の優先順位（prescribing hierarchy）ではない。source class の存在だけで derived export や薬剤選択を許可しない。
+4. 出典分類（source class）の順序は、処方上の優先順位（prescribing hierarchy）ではありません。特定の出典分類に該当する資料があるだけでは、Knowledgeへの反映や薬剤選択を許可しません。
 
 ### Guideline と label の分離
 
 1. ガイドライン記載だけで国内薬事、施設採用、EHR/CDS 実装を確定したように見える summary は出さない。
-2. ガイドライン、label、保険、施設採用、CDS candidate を同一視する user-facing conclusion は quarantine / unresolved として扱う。
+2. ガイドライン、添付文書、保険、施設採用、CDS候補を同一視する利用者向け結論は、安全上未解決の内容として扱い、回答やKnowledge反映の対象から外します（quarantine / unresolved）。
 ## Integrated governance boundary export（Stage 4 — 2026-06-05）
 
 ### 製品単位添付文書（PMDA）— 用法・用量の一次確認
 
 1. 販売名・規格・最新電子添文・適応・用法用量は**製品単位**で確認する（一般名プロファイルと同一視しない）。
 2. RMP / IF / 患者向医薬品ガイドは該当製品で確認する。
-3. reference または ledger 登録だけでは、添付文書内容の確定根拠にならない。
+3. 参考資料や台帳に登録されているだけでは、添付文書の内容が確認済みであるとは扱いません。
 
 ### 適用外使用の確認軸
 
@@ -134,5 +136,5 @@ not_an_institutional_procedure: true
 
 ### CHILD / PARENT の使い分け
 
-- CHILD（366 files）: PMDA 作業 corpus。127 薬剤 inventory は `candidate_list_not_facility_confirmed`。
-- PARENT（191 files）: gap v3。**557** ledger rows は追跡用であり、blind copy 許可ではない。
+- PMDA確認用の作業資料366件（CHILD）には、施設採用や使用可否が未確認の127薬剤候補が含まれます。
+- gap v3関連の参考資料191件（PARENT）を含めた557件の台帳行は、確認状況を追跡するためのものです。内容確認なしにKnowledgeへ転記することを許可するものではありません。

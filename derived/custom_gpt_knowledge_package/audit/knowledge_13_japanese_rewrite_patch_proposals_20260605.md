@@ -1,6 +1,6 @@
 # Knowledge 13 Japanese Rewrite Patch Proposals
 
-**Summary:** Round 1–3 applied 2026-06-05. Round 4: 4 proposals applied 2026-06-05. Deferred items remain registered below. Knowledge bodies `01`, `03`, `04`, `05`, `08`, `09`, `13` for direct edits (round 4: `01`/`04`/`09`/`13` only).
+**Summary:** Rounds 1–4 applied 2026-06-05. Round 5: 2 proposals applied 2026-06-05. Deferred items remain registered below. Knowledge bodies `01`, `09` for round 5 direct edits only.
 
 See [JAPANESE_KNOWLEDGE_13_PATCH_APPLICATION_REPORT_20260605.md](JAPANESE_KNOWLEDGE_13_PATCH_APPLICATION_REPORT_20260605.md).
 
@@ -170,14 +170,37 @@ See [JAPANESE_KNOWLEDGE_13_PATCH_APPLICATION_REPORT_20260605.md](JAPANESE_KNOWLE
 - status: REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW
 - review_date: 2026-06-05
 
-## Deferred — not applied in round 4
+---
+
+## Round 5 — 2026-06-05
+
+### Proposal ID: JP-STYLE-01-005
+
+- 対象ファイル: `knowledge/01_START_HERE_AND_POSITIONING.md`
+- 内容: pmda_resolved_count / register / repo-local、127薬剤候補リスト、derived export、統合ガバナンス見出し、CHILD/PARENT 台帳文の平易化
+- status: REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW
+- review_date: 2026-06-05
+
+### Proposal ID: JP-STYLE-09-003
+
+- 対象ファイル: `knowledge/09_EVIDENCE_AND_PRIMARY_SOURCE_CHECKLISTS.md`
+- 内容: caution/Evidence、guideline/trial/order、Sibling gap v3、antibiogram、policy boundary、source hierarchy、quarantine/unresolved、CHILD/PARENT の平易化
+- status: REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW
+- review_date: 2026-06-05
+
+## Deferred — not applied in round 5
 
 | 対象 | 表現 | status | 理由 |
 |------|------|--------|------|
 | `knowledge/05` L120 | ICU 以外で routine 化 | DEFERRED_HUMAN_REVIEW_REQUIRED | スコープ外 |
-| `knowledge/04` L225 | routine で固定化 | DEFERRED_HUMAN_REVIEW_REQUIRED | JP-STYLE-04-002 は L162 のみ |
-| `knowledge/04` L157 | 施設 antibiogram | DEFERRED_HUMAN_REVIEW_REQUIRED | JP-STYLE-04-002 スコープ外 |
-| `clinician-facing summary` | 全13本横断 | DEFERRED_HUMAN_REVIEW_REQUIRED | round 4 は 09/13 のみ |
+| `knowledge/04` L225 | routine で固定化 | DEFERRED_HUMAN_REVIEW_REQUIRED | スコープ外 |
+| `knowledge/04` L157 | 施設 antibiogram | DEFERRED_HUMAN_REVIEW_REQUIRED | round 5 は 09 L61 のみ |
+| `clinician-facing summary` | 全13本横断 | DEFERRED_HUMAN_REVIEW_REQUIRED | round 5 スコープ外 |
+| `knowledge/01` L114 | Integrated policy boundary export 見出し | DEFERRED_HUMAN_REVIEW_REQUIRED | JP-STYLE-01-005 スコープ外 |
+| `knowledge/09` L120 | Integrated governance boundary export | DEFERRED_HUMAN_REVIEW_REQUIRED | JP-STYLE-09-003 スコープ外 |
+| `Integrated governance boundary export` | 他ファイル横断 | DEFERRED_HUMAN_REVIEW_REQUIRED | 02–08, 10–13 本文修正対象外 |
 | 略語初出説明 | — | DEFERRED_HUMAN_REVIEW_REQUIRED | 一括反映は別フェーズ |
 | Emergency Quick Check | 他ファイル展開 | DEFERRED_HUMAN_REVIEW_REQUIRED | 別フェーズ |
 | 標準ページ構造 | 全面移行 | DEFERRED_HUMAN_REVIEW_REQUIRED | 別フェーズ |
+| Knowledge 13 文体統一 | — | DEFERRED_HUMAN_REVIEW_REQUIRED | 別フェーズ |
+| `knowledge/13` / `04` | 追加校正 | DEFERRED_HUMAN_REVIEW_REQUIRED | round 5 スコープ外 |

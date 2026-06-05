@@ -1,5 +1,13 @@
 # Review Change Note
 
+## Knowledge 13 patch round 5（2026-06-05）
+
+- Applied 2 human-reviewed plain-language patches to `knowledge/01`, `09` only (no instructions edit).
+- Patches: JP-STYLE-01-005 (audit/RAG terms in policy boundary), JP-STYLE-09-003 (Evidence/gap v3/source hierarchy/quarantine plain Japanese).
+- Deferred: cross-13 clinician-facing, `01` L114 policy heading, `09` L120 governance section, other Knowledge files, abbreviation bulk, Emergency expansion, style unification.
+- 8/8 targeted validators PASS (post round 5); `external_ready_candidates=0`; upload target **13 files** unchanged.
+- **Not** release ready; Preview evidence still pending. See [JAPANESE_KNOWLEDGE_13_PATCH_APPLICATION_REPORT_20260605.md](JAPANESE_KNOWLEDGE_13_PATCH_APPLICATION_REPORT_20260605.md).
+
 ## Knowledge 13 patch round 4（2026-06-05）
 
 - Applied 4 additional human-reviewed Japanese patches to `knowledge/01`, `04`, `09`, `13` only (no instructions edit).

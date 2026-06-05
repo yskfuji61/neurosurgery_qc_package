@@ -8,7 +8,8 @@
 Round 1: JP-STYLE-01-001, JP-STYLE-03-001, JP-EMERG-003-001, JP-STYLE-05-001, JP-STYLE-08-001  
 Round 2: JP-STYLE-01-002, JP-STYLE-03-002, JP-STYLE-05-002, JP-STYLE-08-002  
 Round 3: JP-STYLE-01-003, JP-STYLE-03-003, JP-STYLE-04-001, JP-STYLE-09-001, JP-STYLE-13-001  
-Round 4: JP-STYLE-01-004, JP-STYLE-04-002, JP-STYLE-09-002, JP-STYLE-13-002
+Round 4: JP-STYLE-01-004, JP-STYLE-04-002, JP-STYLE-09-002, JP-STYLE-13-002  
+Round 5: JP-STYLE-01-005, JP-STYLE-09-003
 
 ## 2. 適用したpatch
 
@@ -32,6 +33,8 @@ Round 4: JP-STYLE-01-004, JP-STYLE-04-002, JP-STYLE-09-002, JP-STYLE-13-002
 | JP-STYLE-04-002 | knowledge/04_DISEASE_NOTES.md | REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW | antibiogram 日本語補足（L162；個別培養結果と分離） |
 | JP-STYLE-09-002 | knowledge/09_EVIDENCE_AND_PRIMARY_SOURCE_CHECKLISTS.md | REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW | clinician-facing 見出し；source class / prescribing hierarchy 日本語補足 |
 | JP-STYLE-13-002 | knowledge/13_AUDIT_LOGS_AND_UPDATE_OPERATIONS.md | REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW | clinician-facing 見出し；package → Knowledge package（文書群） |
+| JP-STYLE-01-005 | knowledge/01_START_HERE_AND_POSITIONING.md | REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW | 監査語・RAG語の平易化（作業進捗と承認の分離、台帳・派生成果物境界） |
+| JP-STYLE-09-003 | knowledge/09_EVIDENCE_AND_PRIMARY_SOURCE_CHECKLISTS.md | REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW | 監査語・RAG語の平易化（Evidence・gap v3・出典分類・quarantine 等） |
 
 ## 3. 適用しなかったpatch
 
@@ -40,11 +43,16 @@ Round 4: JP-STYLE-01-004, JP-STYLE-04-002, JP-STYLE-09-002, JP-STYLE-13-002
 | — | knowledge/05 L120 ICU 以外 routine 化 | DEFERRED_HUMAN_REVIEW_REQUIRED | JP-STYLE-05-002 スコープ外 |
 | — | knowledge/04 L225 routine で固定化 | DEFERRED_HUMAN_REVIEW_REQUIRED | JP-STYLE-04-002 は L162 のみ |
 | — | knowledge/04 L157 施設 antibiogram | DEFERRED_HUMAN_REVIEW_REQUIRED | JP-STYLE-04-002 スコープ外 |
-| — | clinician-facing summary 全13本横断 | DEFERRED_HUMAN_REVIEW_REQUIRED | round 4 は 09/13 のみ |
+| — | clinician-facing summary 全13本横断 | DEFERRED_HUMAN_REVIEW_REQUIRED | round 5 スコープ外 |
+| — | knowledge/01 L114 Integrated policy boundary export | DEFERRED_HUMAN_REVIEW_REQUIRED | JP-STYLE-01-005 スコープ外 |
+| — | knowledge/09 L120 Integrated governance boundary export | DEFERRED_HUMAN_REVIEW_REQUIRED | JP-STYLE-09-003 スコープ外 |
+| — | Integrated governance boundary export 他ファイル横断 | DEFERRED_HUMAN_REVIEW_REQUIRED | 02–13 本文修正対象外 |
+| — | Knowledge 13 文体統一 | DEFERRED_HUMAN_REVIEW_REQUIRED | 別フェーズ |
+| — | knowledge/13 / 04 追加校正 | DEFERRED_HUMAN_REVIEW_REQUIRED | round 5 スコープ外 |
 | — | abbreviation_first_use_review_ledger 一括反映 | DEFERRED_HUMAN_REVIEW_REQUIRED | 略語初出説明の本文挿入は別フェーズ |
 | — | Emergency Quick Check 他ファイル展開 | DEFERRED_HUMAN_REVIEW_REQUIRED | 別フェーズ |
 | — | 標準ページ構造への全面移行 | DEFERRED_HUMAN_REVIEW_REQUIRED | 別フェーズ |
-| — | plain language ledger 未レビュー GLOBAL 行 | NEEDS_REVIEW | round 4 外は据え置き |
+| — | plain language ledger 未レビュー GLOBAL 行 | NEEDS_REVIEW | round 5 外は据え置き |
 
 ## 4. 医療安全上の確認
 
@@ -68,6 +76,9 @@ Round 4: JP-STYLE-01-004, JP-STYLE-04-002, JP-STYLE-09-002, JP-STYLE-13-002
 - PMDA参考資料群を Knowledge 本文の代替または一括投入対象にしていない（01-004）。
 - 出典分類を処方優先順位に変換していない（09-002 は否定境界のみ）。
 - clinician-facing summary の日本語化は見出し補足のみであり、臨床内容を変更していない（09-002 / 13-002）。
+- 台帳登録や作業進捗を Custom GPT 投入承認・施設採用・実患者使用可否として扱っていない（01-005）。
+- Evidence だけで施設採用品、処方、オーダー化を確定していない（09-003）。
+- 内容確認なしに Knowledge へ転記することを許可していない（09-003）。
 
 ## 5. Knowledge upload target
 
@@ -88,12 +99,13 @@ Round 4: JP-STYLE-01-004, JP-STYLE-04-002, JP-STYLE-09-002, JP-STYLE-13-002
 - 略語初出説明の一括反映は未完了。
 - 他ファイルへの Emergency Quick Check Block 展開は未完了。
 - 薬剤別・病態別の標準ページ構造への全面移行は未完了。
-- `clinician-facing summary` の全 13 本横断統一は未完了（round 4 は `09`/`13` のみ）。
+- `clinician-facing summary` の全 13 本横断統一は未完了。
+- Knowledge 13 本全体の文体統一は未完了。
 - Preview 実出力の日本語品質承認は未完了。
 
 ## 7. Validator結果
 
-**Run date:** 2026-06-05（repo-local；round 4 適用後に再実測）
+**Run date:** 2026-06-05（repo-local；round 5 適用後に再実測）
 
 | Validator | Result | Notes |
 |---|---|---|

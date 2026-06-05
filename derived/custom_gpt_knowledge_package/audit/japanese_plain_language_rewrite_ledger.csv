@@ -7,9 +7,9 @@ GLOBAL,style_rule,hold,audit_term,export hold status,投入保留,yes,low,yes,hi
 GLOBAL,style_rule,negative knowledge,audit_term,safety misread prevention,誤読防止用の陰性知識（negative knowledge）,yes,low,yes,medium,REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW,,2026-06-05,Applied in knowledge/03 (JP-STYLE-03-001)
 GLOBAL,style_rule,clinician-facing summary,audit_term,summary section heading,医療従事者向け要約（clinician-facing summary）,yes,low,yes,medium,REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW,,2026-06-05,JP-STYLE-09-002 knowledge/09; JP-STYLE-13-002 knowledge/13
 GLOBAL,style_rule,source corpus,audit_term,source package wording,元資料群,yes,low,yes,medium,NEEDS_REVIEW,,,
-GLOBAL,style_rule,derived export,audit_term,derived package wording,派生成果物,yes,low,yes,medium,NEEDS_REVIEW,,,
+GLOBAL,style_rule,derived export,audit_term,derived package wording,派生成果物としてKnowledgeに反映できる要約ファイル,yes,low,yes,medium,REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW,,2026-06-05,JP-STYLE-01-005 knowledge/01 L121; JP-STYLE-09-003 knowledge/09 L114
 GLOBAL,style_rule,migration ledger,audit_term,traceability ledger,移行判断台帳,yes,low,yes,medium,NEEDS_REVIEW,,,
-GLOBAL,style_rule,blind copy,audit_term,unsafe copy warning,文脈確認なしの転記,yes,low,yes,high,NEEDS_REVIEW,,,
+GLOBAL,style_rule,blind copy,audit_term,unsafe copy warning,内容確認なしにKnowledgeへ転記しない,yes,low,yes,high,REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW,,2026-06-05,JP-STYLE-09-003 knowledge/09 CHILD/PARENT
 GLOBAL,style_rule,runtime fetch,audit_term,external source retrieval at answer time,回答時の外部取得,yes,low,yes,medium,NEEDS_REVIEW,,,
 GLOBAL,style_rule,preview promotion,audit_term,review-state promotion after Preview,Preview承認後の昇格,yes,low,yes,high,NEEDS_REVIEW,,,
 GLOBAL,style_rule,shortcut,audit_term,unsafe reasoning shortcut,短絡（shortcut）,yes,low,yes,high,REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW,,2026-06-05,JP-STYLE-03-002 applied knowledge/03
@@ -18,7 +18,7 @@ GLOBAL,style_rule,routine,clinical_english,routine treatment/operation,一律運
 GLOBAL,style_rule,order set,clinical_english,EHR order grouping,オーダーセット,yes,low,yes,high,NEEDS_REVIEW,,,
 GLOBAL,style_rule,reversal,clinical_english,anticoagulant reversal context,中和・拮抗・代替対応,conditional,medium,yes,high,HUMAN_REVIEW_REQUIRED,,,
 GLOBAL,style_rule,de-escalation,clinical_english,antimicrobial narrowing,抗菌薬の狭域化（de-escalation）,conditional,medium,yes,medium,REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW,,2026-06-05,Applied in knowledge/05 (JP-STYLE-05-001)
-GLOBAL,style_rule,antibiogram,clinical_english,facility susceptibility data,施設・地域の薬剤感受性傾向をまとめた資料（antibiogram）,yes,low,yes,medium,REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW,,2026-06-05,JP-STYLE-05-001 knowledge/05; JP-STYLE-04-002 knowledge/04 L162
+GLOBAL,style_rule,antibiogram,clinical_english,facility susceptibility data,施設・地域の薬剤感受性傾向をまとめた資料（antibiogram）,yes,low,yes,medium,REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW,,2026-06-05,JP-STYLE-05-001 knowledge/05; JP-STYLE-04-002 knowledge/04 L162; JP-STYLE-09-003 knowledge/09 L61
 GLOBAL,style_rule,high-risk,audit_term,risk classification,高リスク,yes,low,yes,medium,NEEDS_REVIEW,,,
 GLOBAL,style_rule,must-have,audit_term,Preview required element,必須確認項目,yes,low,yes,medium,NEEDS_REVIEW,,,
 GLOBAL,style_rule,must-not-have,audit_term,Preview forbidden element,禁止回答項目,yes,low,yes,medium,NEEDS_REVIEW,,,
@@ -47,4 +47,28 @@ knowledge/09_EVIDENCE_AND_PRIMARY_SOURCE_CHECKLISTS.md,Drug label source hierarc
 knowledge/13_AUDIT_LOGS_AND_UPDATE_OPERATIONS.md,見出し,clinician-facing summary,audit_term,summary section heading,医療従事者向け要約（clinician-facing summary）,yes,low,yes,medium,REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW,,2026-06-05,JP-STYLE-13-002
 knowledge/13_AUDIT_LOGS_AND_UPDATE_OPERATIONS.md,医療従事者向け要約,package,audit_term,package wording in summary,Knowledge package（文書群）,yes,low,yes,medium,REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW,,2026-06-05,JP-STYLE-13-002
 knowledge/01_START_HERE_AND_POSITIONING.md,Integrated policy boundary export,sibling / reference corpus / source register,audit_term,PMDA reference corpus boundary,PMDA参考資料群・出典登録作業の正本,yes,low,yes,high,REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW,,2026-06-05,JP-STYLE-01-004
-knowledge/09_EVIDENCE_AND_PRIMARY_SOURCE_CHECKLISTS.md,evidence section,blind copy,audit_term,ledger is not blind copy permission,文脈確認なしの転記,yes,low,yes,high,NEEDS_REVIEW,,,
+GLOBAL,style_rule,repo-local,audit_term,repository-local tracking fact,リポジトリ内での作業進捗,yes,low,yes,medium,REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW,,2026-06-05,JP-STYLE-01-005 knowledge/01 L119
+GLOBAL,style_rule,register,audit_term,source register update,出典登録の更新,yes,low,yes,medium,REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW,,2026-06-05,JP-STYLE-01-005 knowledge/01 L119
+GLOBAL,style_rule,source traceability,audit_term,source tracing requirement,出典を追跡できる,yes,low,yes,medium,REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW,,2026-06-05,JP-STYLE-01-005 knowledge/01 L121
+GLOBAL,style_rule,frontmatter,audit_term,yaml frontmatter metadata,メタデータへの明記,yes,low,yes,low,REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW,,2026-06-05,JP-STYLE-01-005 paraphrased in knowledge/01 L121
+GLOBAL,style_rule,summary layer,audit_term,summary layer export,要約ファイル,yes,low,yes,medium,REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW,,2026-06-05,JP-STYLE-01-005 knowledge/01 L121
+GLOBAL,style_rule,corpus,audit_term,reference corpus wording,作業資料・参考資料群,yes,low,yes,medium,REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW,,2026-06-05,JP-STYLE-01-005 knowledge/01 L126
+GLOBAL,style_rule,archive,audit_term,gap v3 archive wording,gap v3関連の参考資料,yes,low,yes,medium,REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW,,2026-06-05,JP-STYLE-01-005 knowledge/01 L126
+GLOBAL,style_rule,ledger,audit_term,migration ledger tracking,台帳管理・台帳行,yes,low,yes,medium,REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW,,2026-06-05,JP-STYLE-01-005 knowledge/01 L126; JP-STYLE-09-003 knowledge/09
+GLOBAL,style_rule,caution,audit_term,caution wording in knowledge,注意事項,yes,low,yes,medium,REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW,,2026-06-05,JP-STYLE-09-003 knowledge/09 L31
+GLOBAL,style_rule,Evidence,audit_term,evidence checklist wording,エビデンス・確認材料,yes,low,yes,medium,REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW,,2026-06-05,JP-STYLE-09-003 knowledge/09 L31 L39
+GLOBAL,style_rule,guideline,audit_term,guideline reference wording,ガイドライン,yes,low,yes,medium,REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW,,2026-06-05,JP-STYLE-09-003 knowledge/09 L39
+GLOBAL,style_rule,trial,audit_term,clinical trial reference wording,臨床試験,yes,low,yes,medium,REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW,,2026-06-05,JP-STYLE-09-003 knowledge/09 L39
+GLOBAL,style_rule,order,audit_term,order set / order化 wording,オーダー化,yes,low,yes,high,REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW,,2026-06-05,JP-STYLE-09-003 knowledge/09 L39
+GLOBAL,style_rule,gap supplement,audit_term,gap supplement reference,一般名ベースの補足資料,yes,low,yes,medium,REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW,,2026-06-05,JP-STYLE-09-003 knowledge/09 gap v3 section
+GLOBAL,style_rule,reference profile,audit_term,reference profile index use,人間レビュー後の索引,yes,low,yes,medium,REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW,,2026-06-05,JP-STYLE-09-003 knowledge/09 gap v3 section
+GLOBAL,style_rule,user-facing conclusion,audit_term,user-facing conclusion quarantine,利用者向け結論,yes,low,yes,high,REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW,,2026-06-05,JP-STYLE-09-003 knowledge/09 L119
+GLOBAL,style_rule,quarantine,audit_term,quarantine unresolved status,安全上未解決（quarantine）,yes,low,yes,high,REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW,,2026-06-05,JP-STYLE-09-003 knowledge/09 L119
+GLOBAL,style_rule,unresolved,audit_term,unresolved safety status,未解決（unresolved）,yes,low,yes,high,REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW,,2026-06-05,JP-STYLE-09-003 knowledge/09 L119
+knowledge/01_START_HERE_AND_POSITIONING.md,Integrated policy boundary export,pmda_resolved_count,audit_term,PMDA resolved count tracking,PMDA参考資料群の確認件数,yes,low,yes,high,REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW,,2026-06-05,JP-STYLE-01-005
+knowledge/01_START_HERE_AND_POSITIONING.md,Integrated policy boundary export,candidate_list_not_facility_confirmed,audit_term,unconfirmed facility drug list,施設採用未確認の候補リスト,yes,low,yes,high,REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW,,2026-06-05,JP-STYLE-01-005
+knowledge/09_EVIDENCE_AND_PRIMARY_SOURCE_CHECKLISTS.md,このファイルの役割,caution,audit_term,caution in role section,注意事項,yes,low,yes,medium,REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW,,2026-06-05,JP-STYLE-09-003
+knowledge/09_EVIDENCE_AND_PRIMARY_SOURCE_CHECKLISTS.md,統合ポリシー上の安全境界,reviewed boundary summary,audit_term,reviewed boundary summary source,確認済みの安全境界要約,yes,low,yes,medium,REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW,,2026-06-05,JP-STYLE-09-003
+knowledge/09_EVIDENCE_AND_PRIMARY_SOURCE_CHECKLISTS.md,Guideline と label の分離,user-facing conclusion,audit_term,user-facing conclusion boundary,利用者向け結論は回答・反映対象外,yes,low,yes,high,REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW,,2026-06-05,JP-STYLE-09-003
+knowledge/09_EVIDENCE_AND_PRIMARY_SOURCE_CHECKLISTS.md,製品単位添付文書,reference / ledger,audit_term,ledger registration not label confirmation,台帳登録は添付文書確認済みではない,yes,low,yes,high,REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW,,2026-06-05,JP-STYLE-09-003
+knowledge/09_EVIDENCE_AND_PRIMARY_SOURCE_CHECKLISTS.md,evidence section,blind copy,audit_term,ledger is not blind copy permission,内容確認なしにKnowledgeへ転記禁止,yes,low,yes,high,REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW,,2026-06-05,JP-STYLE-09-003
