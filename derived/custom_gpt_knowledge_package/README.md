@@ -74,6 +74,8 @@ Knowledge 13 本への日本語スタイル完全適用は、[audit/KNOWLEDGE_13
 
 round 6（2 件）では、`オーダー化`、`order化`、`safety boundary`、`facility confirmation`、`別管理`、`施設確認事項`、`quarantine` / `unresolved`、`source class` / `prescribing hierarchy` などの曖昧語を、医療従事者が何を確認し、何を判断してはいけないかが分かる表現へ修正しました（`01`/`09` のみ）。
 
+round 7（2 件）では、`guideline`、`manufacturer documents`、`summary`、`Integrated governance boundary export`、`Integrated policy boundary export` などの英語混在・抽象的な表現を、日本語医療文書として読みやすい形へ修正しました（`01`/`09` のみ）。
+
 修正は日本語補足と禁止事項の明確化に限定しています。用量、投与速度、投与可否、抗菌薬選択、VTE予防薬、抗凝固再開時期、施設採用品、看護運用、CDS発火条件は追加していません。詳細は [audit/JAPANESE_KNOWLEDGE_13_PATCH_APPLICATION_REPORT_20260605.md](audit/JAPANESE_KNOWLEDGE_13_PATCH_APPLICATION_REPORT_20260605.md)。Preview 実出力の承認は未完了であり、医療従事者向け完成文書ではありません。
 
 ## パッケージ構成

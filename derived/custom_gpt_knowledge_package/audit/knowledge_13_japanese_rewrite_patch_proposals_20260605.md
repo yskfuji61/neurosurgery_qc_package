@@ -239,3 +239,40 @@ See [JAPANESE_KNOWLEDGE_13_PATCH_APPLICATION_REPORT_20260605.md](JAPANESE_KNOWLE
 | 標準ページ構造 | 全面移行 | DEFERRED_HUMAN_REVIEW_REQUIRED | 別フェーズ |
 | Knowledge 13 文体統一 | — | DEFERRED_HUMAN_REVIEW_REQUIRED | 別フェーズ |
 | `knowledge/13` / `04` | 追加校正 | DEFERRED_HUMAN_REVIEW_REQUIRED | round 6 スコープ外 |
+
+---
+
+## Round 7 — 2026-06-05
+
+### Proposal ID: JP-STYLE-09-006
+
+- 対象ファイル: `knowledge/09_EVIDENCE_AND_PRIMARY_SOURCE_CHECKLISTS.md`
+- 内容: `国内外 guideline` → `国内外ガイドライン`；`guideline、JAPIC、manufacturer documents` → `ガイドライン、JAPIC、製造販売業者資料`；`summary` → `回答や要約`；`Integrated governance boundary export` 見出し → `この資料で判断してはいけないこと`
+- status: REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW
+- review_date: 2026-06-05
+
+### Proposal ID: JP-STYLE-01-008
+
+- 対象ファイル: `knowledge/01_START_HERE_AND_POSITIONING.md`
+- 内容: `Integrated policy boundary export` 見出し → `この資料の使用範囲と禁止事項（Runbook Commit 10）`
+- status: REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW
+- review_date: 2026-06-05
+- 備考: L122 `この資料の使用範囲と禁止事項（Stage 4）` は Round 6 済みのため `NO_CHANGE_NEEDED_AFTER_REVIEW`
+
+## Deferred — not applied in round 7
+
+| 対象 | 表現 | status | 理由 |
+|------|------|--------|------|
+| `knowledge/05` L120 | ICU 以外で routine 化 | DEFERRED_HUMAN_REVIEW_REQUIRED | スコープ外 |
+| `knowledge/04` L225 | routine で固定化 | DEFERRED_HUMAN_REVIEW_REQUIRED | スコープ外 |
+| `knowledge/04` L157 | 施設 antibiogram | DEFERRED_HUMAN_REVIEW_REQUIRED | スコープ外 |
+| `clinician-facing summary` | 全13本横断 | DEFERRED_HUMAN_REVIEW_REQUIRED | round 7 スコープ外 |
+| `knowledge/09` L33 | clinician-facing summary 見出し | DEFERRED_HUMAN_REVIEW_REQUIRED | round 7 スコープ外 |
+| `knowledge/09` L105 | guideline（未確定事項節） | DEFERRED_HUMAN_REVIEW_REQUIRED | round 7 スコープ外 |
+| `knowledge/09` L111 | Drug label source hierarchy 英語小見出し | DEFERRED_HUMAN_REVIEW_REQUIRED | round 7 スコープ外 |
+| `Integrated governance boundary export` | 他ファイル横断 | DEFERRED_HUMAN_REVIEW_REQUIRED | 02–08, 10–13 本文修正対象外 |
+| 略語初出説明 | — | DEFERRED_HUMAN_REVIEW_REQUIRED | 一括反映は別フェーズ |
+| Emergency Quick Check | 他ファイル展開 | DEFERRED_HUMAN_REVIEW_REQUIRED | 別フェーズ |
+| 標準ページ構造 | 全面移行 | DEFERRED_HUMAN_REVIEW_REQUIRED | 別フェーズ |
+| Knowledge 13 文体統一 | — | DEFERRED_HUMAN_REVIEW_REQUIRED | 別フェーズ |
+| `knowledge/13` / `04` | 追加校正 | DEFERRED_HUMAN_REVIEW_REQUIRED | round 7 スコープ外 |

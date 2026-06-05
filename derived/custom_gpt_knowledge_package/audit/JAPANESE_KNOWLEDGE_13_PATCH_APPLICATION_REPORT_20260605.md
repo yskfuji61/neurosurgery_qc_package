@@ -10,7 +10,8 @@ Round 2: JP-STYLE-01-002, JP-STYLE-03-002, JP-STYLE-05-002, JP-STYLE-08-002
 Round 3: JP-STYLE-01-003, JP-STYLE-03-003, JP-STYLE-04-001, JP-STYLE-09-001, JP-STYLE-13-001  
 Round 4: JP-STYLE-01-004, JP-STYLE-04-002, JP-STYLE-09-002, JP-STYLE-13-002  
 Round 5: JP-STYLE-01-005, JP-STYLE-09-003  
-Round 6: JP-STYLE-09-005, JP-STYLE-01-007
+Round 6: JP-STYLE-09-005, JP-STYLE-01-007  
+Round 7: JP-STYLE-09-006, JP-STYLE-01-008
 
 ## 2. 適用したpatch
 
@@ -38,6 +39,8 @@ Round 6: JP-STYLE-09-005, JP-STYLE-01-007
 | JP-STYLE-09-003 | knowledge/09_EVIDENCE_AND_PRIMARY_SOURCE_CHECKLISTS.md | REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW | 監査語・RAG語の平易化（Evidence・gap v3・出典分類・quarantine 等） |
 | JP-STYLE-09-005 | knowledge/09_EVIDENCE_AND_PRIMARY_SOURCE_CHECKLISTS.md | REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW | オーダー化・facility confirmation・安全境界・quarantine・source class の行動文化 |
 | JP-STYLE-01-007 | knowledge/01_START_HERE_AND_POSITIONING.md | REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW | 統合ガバナンス上の安全境界見出しを使用範囲と禁止事項へ；運用者向け安全境界を位置づけと禁止事項へ |
+| JP-STYLE-09-006 | knowledge/09_EVIDENCE_AND_PRIMARY_SOURCE_CHECKLISTS.md | REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW | guideline・manufacturer documents・summary の日本語化；Integrated governance 見出しを判断禁止事項へ |
+| JP-STYLE-01-008 | knowledge/01_START_HERE_AND_POSITIONING.md | REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW | Integrated policy boundary export 見出しを使用範囲と禁止事項へ |
 
 ## 3. 適用しなかったpatch
 
@@ -47,8 +50,10 @@ Round 6: JP-STYLE-09-005, JP-STYLE-01-007
 | — | knowledge/04 L225 routine で固定化 | DEFERRED_HUMAN_REVIEW_REQUIRED | JP-STYLE-04-002 は L162 のみ |
 | — | knowledge/04 L157 施設 antibiogram | DEFERRED_HUMAN_REVIEW_REQUIRED | JP-STYLE-04-002 スコープ外 |
 | — | clinician-facing summary 全13本横断 | DEFERRED_HUMAN_REVIEW_REQUIRED | round 5 スコープ外 |
-| — | knowledge/01 L114 Integrated policy boundary export | DEFERRED_HUMAN_REVIEW_REQUIRED | JP-STYLE-01-007 スコープ外（英語見出し） |
-| — | knowledge/09 L122 Integrated governance boundary export | DEFERRED_HUMAN_REVIEW_REQUIRED | JP-STYLE-09-005 スコープ外 |
+| JP-STYLE-01-008 | knowledge/01 L122 Stage 4 見出し | NO_CHANGE_NEEDED_AFTER_REVIEW | Round 6（01-007）で既に日本語化済み |
+| — | knowledge/09 L33 clinician-facing summary 見出し | DEFERRED_HUMAN_REVIEW_REQUIRED | round 7 スコープ外 |
+| — | knowledge/09 L105 guideline（未確定事項節） | DEFERRED_HUMAN_REVIEW_REQUIRED | round 7 スコープ外 |
+| — | knowledge/09 L111 Drug label source hierarchy 英語小見出し | DEFERRED_HUMAN_REVIEW_REQUIRED | round 7 スコープ外 |
 | — | Integrated governance boundary export 他ファイル横断 | DEFERRED_HUMAN_REVIEW_REQUIRED | 02–13 本文修正対象外 |
 | — | Knowledge 13 文体統一 | DEFERRED_HUMAN_REVIEW_REQUIRED | 別フェーズ |
 | — | knowledge/13 / 04 追加校正 | DEFERRED_HUMAN_REVIEW_REQUIRED | round 5 スコープ外 |
@@ -85,6 +90,7 @@ Round 6: JP-STYLE-09-005, JP-STYLE-01-007
 - 採用薬一覧、薬剤部手順、委員会承認、電子カルテ薬剤マスタのいずれか一つだけで使用可否を判断していない（09-005）。
 - CDS候補を本番仕様にしていない（09-005）。
 - 内容確認なしに Knowledge へ転記することを許可していない（09-003）。
+- ガイドライン記載だけで国内薬事、施設採用、EHR/CDS実装が確定したように見える回答や要約を作成していない（09-006）。
 
 ## 5. Knowledge upload target
 
@@ -111,7 +117,7 @@ Round 6: JP-STYLE-09-005, JP-STYLE-01-007
 
 ## 7. Validator結果
 
-**Run date:** 2026-06-05（repo-local；round 6 適用後に再実測）
+**Run date:** 2026-06-05（repo-local；round 7 適用後に再実測）
 
 | Validator | Result | Notes |
 |---|---|---|
@@ -120,7 +126,7 @@ Round 6: JP-STYLE-09-005, JP-STYLE-01-007
 | validate_abbreviation_first_use_ledger.py | PASS | abbreviation_first_use_ledger_findings=0 |
 | validate_plain_language_rewrite_ledger.py | PASS | plain_language_rewrite_ledger_findings=0 |
 | validate_japanese_preview_quality_tests.py | PASS | japanese_preview_quality_tests_findings=0 |
-| validate_unsafe_patterns.py | PASS | gate PASS; 09 L39/L99 オーダーセット登録否定境界 = REVIEW_CONTEXT（`確定しません` marker 追加） |
+| validate_unsafe_patterns.py | PASS | gate PASS; 09 L39/L99 否定境界 = REVIEW_CONTEXT；L120 EHR/CDS実装否定境界は gate RED なし |
 | validate_release_readiness.py | PASS | external_ready_candidates=0 |
 | validate_review_state_integrity.py | PASS | review_state_findings=0 |
 

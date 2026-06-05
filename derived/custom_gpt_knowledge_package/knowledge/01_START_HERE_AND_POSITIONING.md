@@ -111,7 +111,7 @@ Knowledge だけでは、次の事項を確定できません。
 1. この位置づけ文だけでは個別薬剤や個別疾患の可否を決められません。
 2. 実回答では関連する `04` から `13` の横断参照が必要です。
 
-## Integrated policy boundary export（Runbook Commit 10）
+## この資料の使用範囲と禁止事項（Runbook Commit 10）
 
 この節は、統合Vault側で定義された位置づけを、運用者向けの位置づけと禁止事項として転記したものです。処方、施設運用、Custom GPT Knowledgeへの投入可否を確定する根拠にはなりません。
 
