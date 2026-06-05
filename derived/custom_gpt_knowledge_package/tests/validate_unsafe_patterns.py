@@ -39,6 +39,9 @@ REVIEW_CONTEXT_MARKERS = (
     "禁止",
     "anti-pattern",
     "must_not_have_violations",
+    "判断するためのものではない",
+    "判断するためのものではありません",
+    "意味しない",
 )
 
 

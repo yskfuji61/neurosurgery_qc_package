@@ -1,5 +1,14 @@
 # Review Change Note
 
+## Knowledge 13 patch application pass（2026-06-05）
+
+- Applied 5 human-reviewed Japanese patches to `knowledge/01`, `03`, `05`, `08` only (no instructions edit).
+- Patches: governance boundary wording, negative knowledge Japanese gloss, emergency quick-check block, antibiogram/de-escalation gloss, threshold「必須」clarification.
+- Ledgers and [knowledge_13_japanese_rewrite_patch_proposals_20260605.md](knowledge_13_japanese_rewrite_patch_proposals_20260605.md) updated to `REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW`.
+- `validate_unsafe_patterns.py`: negation-boundary markers for emergency block (no clinical content added).
+- 8/8 targeted validators PASS; `external_ready_candidates=0`; upload target **13 files** unchanged.
+- **Not** release ready; Preview evidence still pending. See [JAPANESE_KNOWLEDGE_13_PATCH_APPLICATION_REPORT_20260605.md](JAPANESE_KNOWLEDGE_13_PATCH_APPLICATION_REPORT_20260605.md).
+
 ## Knowledge 13 Japanese style application pass（2026-06-05）
 
 - Added Knowledge 13 style prep layer: prework, runbook, plain-language / abbreviation / expression ledgers, patch proposals (proposed-only), role-based readability rules, Japanese Preview quality tests, 4 new validators.

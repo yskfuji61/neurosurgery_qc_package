@@ -127,4 +127,5 @@ tests/validate_abbreviation_first_use_ledger.py,test,no,yes,operator-side abbrev
 tests/validate_plain_language_rewrite_ledger.py,test,no,yes,operator-side plain language rewrite ledger validator
 tests/validate_japanese_preview_quality_tests.py,test,no,yes,operator-side Japanese Preview quality tests validator
 audit/JAPANESE_KNOWLEDGE_13_STYLE_APPLICATION_COMPLETION_REPORT_20260605.md,audit,no,yes,operator-side Knowledge 13 Japanese style application completion report
+audit/JAPANESE_KNOWLEDGE_13_PATCH_APPLICATION_REPORT_20260605.md,audit,no,yes,operator-side Knowledge 13 patch application report after human review
 audit/JAPANESE_MEDICAL_DOCUMENT_COMPLETION_REPORT_20260605.md,audit,no,yes,operator-side Japanese medical document completion report

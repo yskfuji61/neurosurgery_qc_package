@@ -121,7 +121,7 @@ Knowledge だけでは、次の事項を確定できません。
 4. derived export は source traceability と `human_review_required` を frontmatter に持つ summary layer に限る（Commit 10）。
 ## Integrated governance boundary export（Stage 4 — 2026-06-05）
 
-出典: integrated `00_Index/05_PMDA_添付文書遵守と適用外使用ガバナンス` および gap v3 collision gate（operator 正本）。**validation pass・ledger 登録は臨床承認・施設確定・upload safe ではない。**
+出典: integrated `00_Index/05_PMDA_添付文書遵守と適用外使用ガバナンス` および gap v3 collision gate（operator 正本）。**検証PASSや台帳登録は、臨床承認、施設確定、Custom GPT Knowledgeへの投入承認、または実患者への使用可否を意味しない。**
 
 1. **Reference corpora（upload 対象外）:** CHILD PMDA 作業 corpus（366 files）と PARENT gap v3 archive（191 files）は、合計 **557** reference files として ledger 管理されるが、本 Knowledge 13 本の代替・一括投入対象ではない。
 2. **添付文書遵守:** 用法・用量・投与間隔・投与速度・用法区分は、当該製品の最新電子添文（PMDA 製品単位）で確認できる場合に限り記載可能。reference 一般名プロファイルから数値を推測・補完しない。

@@ -81,7 +81,7 @@ not_an_institutional_procedure: true
 
 代表例: バンコマイシン。
 
-1. TDM、腎機能、施設 antibiogram を確認します。
+1. TDM、腎機能、施設・地域の薬剤感受性傾向をまとめた資料（antibiogram）を確認します。
 2. 予防投与と治療投与を混同しません。
 
 ## 抗緑膿菌 β ラクタム
@@ -95,8 +95,8 @@ not_an_institutional_procedure: true
 
 代表例: メロペネム。
 
-1. 耐性菌リスク、施設 antibiogram、感染重症度を確認します。
-2. 耐性圧や de-escalation を無視して routine 候補化しません。
+1. 耐性菌リスク、施設・地域の薬剤感受性傾向をまとめた資料（antibiogram）、感染重症度を確認します。
+2. 耐性圧や抗菌薬の狭域化（de-escalation）を無視して routine 候補化しません。
 
 ## 抗ウイルス薬
 
