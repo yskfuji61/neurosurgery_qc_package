@@ -82,6 +82,16 @@
 3. eGFR / CrCl / AKI / CKD / 透析 / CRRT、抗凝固・抗血小板・輸血・反転、TDM と採血時刻、ガイドライン・添文・院内プロトコル・CDS を混同しない。
 4. 薬剤名だけ、疾患名だけ、単一検査値だけから投与・変更・中止へ進めない。
 
+## Japanese Medical Writing（operator-side）
+
+日本語の自然さ・誤読耐性・source 過剰転用の補助基準。Pass/Fail 条件本体は上記のとおり。臨床推奨の機械置換は行わない。
+
+1. [docs/japanese_medical_writing_style_guide.md](../docs/japanese_medical_writing_style_guide.md) — 強い表現の置換方針と clinician-facing 文体。
+2. [docs/llm_answer_transfer_rules.md](../docs/llm_answer_transfer_rules.md) — Knowledge / source から回答へ転用するときの禁止と分離。
+3. [audit/japanese_expression_risk_ledger.csv](../audit/japanese_expression_risk_ledger.csv) — 表現リスクのレビュー待ち台帳（自動改稿の代替ではない）。
+4. [audit/japanese_medical_document_quality_audit.md](../audit/japanese_medical_document_quality_audit.md) — 品質軸と `READY_FOR_HUMAN_REVIEW` 判定。
+5. Preview での日本語品質は [human_reviewed_preview_examples.md](human_reviewed_preview_examples.md) の実出力レビューが必須。validator PASS は実証の代替ではない。
+
 ## Machine Scan Anchor
 
 1. operator-side validator は `manifest/custom_gpt_upload_manifest.csv` の `upload_to_custom_gpt=yes` 行だけを scan 対象にする。

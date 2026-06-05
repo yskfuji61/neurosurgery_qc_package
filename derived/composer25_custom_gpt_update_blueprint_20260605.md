@@ -238,6 +238,18 @@ Composer must classify this state as `repo_local_validated_but_evidence_pending`
 
 This blueprint must also control whether Composer's work preserves accurate, natural Japanese output. Safety gates alone are not enough. The intended Custom GPT behavior is not "answer from URL" or "return audit jargon"; it is "give a clinician-facing Japanese explanation that is useful while preserving uncertainty and escalation boundaries."
 
+The active operator-side style references are:
+
+1. `derived/custom_gpt_knowledge_package/docs/japanese_medical_writing_style_guide.md`
+2. `derived/custom_gpt_knowledge_package/docs/custom_gpt_knowledge_safety_boundary.md`
+3. `derived/custom_gpt_knowledge_package/docs/clinical_document_structure_standard.md`
+4. `derived/custom_gpt_knowledge_package/docs/llm_answer_transfer_rules.md`
+5. `derived/custom_gpt_knowledge_package/docs/emergency_reference_readability_rules.md`
+6. `derived/custom_gpt_knowledge_package/audit/japanese_expression_risk_ledger.csv`
+7. `derived/custom_gpt_knowledge_package/audit/japanese_medical_document_quality_audit.md`
+
+These files are operator-side references and must remain `upload_to_custom_gpt=no` unless the operator explicitly approves a separate upload-boundary redesign.
+
 ### Official project stance
 
 Composer must preserve these positions from the package README, `01_START_HERE_AND_POSITIONING.md`, `instructions/custom_gpt_instructions.md`, `pass_fail_criteria.md`, and `preview_test_protocol.md`:

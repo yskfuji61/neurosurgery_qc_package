@@ -1,5 +1,17 @@
 # Review Change Note
 
+## Japanese medical document operator-side pass（2026-06-05）
+
+- Added operator-side Japanese medical document layer: `docs/*` (5), `templates/*` (3), `audit/japanese_*` (4), prework + completion reports.
+- `manifest/custom_gpt_upload_manifest.csv`: all new files `upload_to_custom_gpt=no`; **Knowledge upload remains 13 files only**.
+- `manifest/reference_migration_decision_ledger.csv`: Unicode path metadata fix only.
+- `derived/composer25_custom_gpt_update_blueprint_20260605.md`: cross-references to style docs and URL-only / Japanese output policy.
+- **Not edited:** `knowledge/*.md`, `instructions/custom_gpt_instructions.md` (no automated clinical rewrite).
+- Quality audit decision: **READY_FOR_HUMAN_REVIEW** — not release ready, not clinical approval.
+- Japanese answer shape: **specified_but_not_empirically_validated** (Preview approved examples still absent).
+- `external_ready_candidates`: **0** maintained.
+- See [JAPANESE_MEDICAL_DOCUMENT_COMPLETION_REPORT_20260605.md](JAPANESE_MEDICAL_DOCUMENT_COMPLETION_REPORT_20260605.md).
+
 ## Current ledger state（2026-06-04・operator-side）
 
 - **Reference migration ledger:** **598** rows / **598** reference files（Stage 6/6C 含む）。

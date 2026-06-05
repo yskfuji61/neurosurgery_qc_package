@@ -163,3 +163,17 @@ python3 tests/report_preview_promotion_candidates.py \
 | external_ready | **0 維持**（意図的昇格なし） |
 
 **Stage 5A では promotion / release readiness の達成を宣言しない。**
+
+---
+
+## F. 日本語表現・文書品質（人間）
+
+**Related:** [JAPANESE_MEDICAL_DOCUMENT_COMPLETION_REPORT_20260605.md](JAPANESE_MEDICAL_DOCUMENT_COMPLETION_REPORT_20260605.md) · [japanese_expression_risk_ledger.csv](japanese_expression_risk_ledger.csv) · [japanese_expression_scan_report.md](japanese_expression_scan_report.md)
+
+- [ ] `japanese_expression_risk_ledger.csv` の `priority=high` および `status=HUMAN_REVIEW_REQUIRED` 行を薬剤師・医師がレビュー（自動置換しない）
+- [ ] [japanese_expression_scan_report.md](japanese_expression_scan_report.md) で `human review=yes` の knowledge 箇所を文脈確認（例: `04_DISEASE_NOTES` 中核ノート、`08_THRESHOLDS` 必須表現）
+- [ ] [templates/drug_page_template.md](../templates/drug_page_template.md) / [disease_page_template.md](../templates/disease_page_template.md) の施設運用適合性を確認
+- [ ] Preview 実出力（§B）で日本語の自然さ・誤読耐性・must-have/must-not-have を確認 — **validator PASS の代替ではない**
+- [ ] 新規 `docs/` / `templates/` / `audit/japanese_*` を Knowledge に追加していない（13本固定）
+
+**本 §F は Stage 5A exit の追加ゲートではない。** 日本語 operator-side 強化後の人間レビューキューである。

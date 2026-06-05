@@ -103,3 +103,16 @@ audit/STAGE6C_BATCH_C-018_REVIEW_PACKET.md,audit,no,yes,operator-side Stage6C/D 
 audit/STAGE6C_NEURO_PRIORITY_DRUG_LIST_20260605.csv,audit,no,yes,operator-side Stage6C/D STAGE6C_NEURO_PRIORITY_DRUG_LIST_20260605.csv
 audit/STAGE6C_PHARMACIST_IF_REVIEW_OPERATOR_GUIDE.md,audit,no,yes,operator-side Stage6C/D STAGE6C_PHARMACIST_IF_REVIEW_OPERATOR_GUIDE.md
 audit/STAGE6C_D_COMPLETION_REPORT_20260605.md,audit,no,yes,operator-side Stage6C/D completion report
+audit/JAPANESE_MEDICAL_DOCUMENT_PREWORK_REPORT_20260605.md,audit,no,yes,operator-side Japanese medical document prework report
+docs/japanese_medical_writing_style_guide.md,doc,no,yes,operator-side Japanese medical writing style guide
+docs/custom_gpt_knowledge_safety_boundary.md,doc,no,yes,operator-side Custom GPT Knowledge safety boundary
+docs/clinical_document_structure_standard.md,doc,no,yes,operator-side clinical document structure standard
+docs/llm_answer_transfer_rules.md,doc,no,yes,operator-side LLM answer transfer rules
+docs/emergency_reference_readability_rules.md,doc,no,yes,operator-side emergency readability rules
+templates/drug_page_template.md,template,no,yes,operator-side drug page template
+templates/disease_page_template.md,template,no,yes,operator-side disease page template
+templates/facility_review_checklist.md,template,no,yes,operator-side facility review checklist template
+audit/japanese_expression_risk_ledger.csv,audit,no,yes,operator-side Japanese expression risk ledger
+audit/japanese_expression_scan_report.md,audit,no,yes,operator-side Japanese expression scan report
+audit/japanese_medical_document_quality_audit.md,audit,no,yes,operator-side Japanese medical document quality audit
+audit/JAPANESE_MEDICAL_DOCUMENT_COMPLETION_REPORT_20260605.md,audit,no,yes,operator-side Japanese medical document completion report
