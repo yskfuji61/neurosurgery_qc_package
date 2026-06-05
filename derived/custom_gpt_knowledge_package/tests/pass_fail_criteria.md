@@ -88,9 +88,15 @@
 
 1. [docs/japanese_medical_writing_style_guide.md](../docs/japanese_medical_writing_style_guide.md) — 強い表現の置換方針と clinician-facing 文体。
 2. [docs/llm_answer_transfer_rules.md](../docs/llm_answer_transfer_rules.md) — Knowledge / source から回答へ転用するときの禁止と分離。
-3. [audit/japanese_expression_risk_ledger.csv](../audit/japanese_expression_risk_ledger.csv) — 表現リスクのレビュー待ち台帳（自動改稿の代替ではない）。
-4. [audit/japanese_medical_document_quality_audit.md](../audit/japanese_medical_document_quality_audit.md) — 品質軸と `READY_FOR_HUMAN_REVIEW` 判定。
-5. Preview での日本語品質は [human_reviewed_preview_examples.md](human_reviewed_preview_examples.md) の実出力レビューが必須。validator PASS は実証の代替ではない。
+3. [docs/role_based_readability_rules.md](../docs/role_based_readability_rules.md) — 職種別の情報到達性と誤用境界。
+4. [audit/japanese_expression_risk_ledger.csv](../audit/japanese_expression_risk_ledger.csv) — 表現リスクのレビュー待ち台帳（自動改稿の代替ではない）。
+5. [audit/japanese_plain_language_rewrite_ledger.csv](../audit/japanese_plain_language_rewrite_ledger.csv) — 英語・監査語の日本語化候補（適用前）。
+6. [audit/abbreviation_first_use_review_ledger.csv](../audit/abbreviation_first_use_review_ledger.csv) — 略語初出説明のレビュー待ち。
+7. [audit/KNOWLEDGE_13_JAPANESE_STYLE_APPLICATION_RUNBOOK_20260605.md](../audit/KNOWLEDGE_13_JAPANESE_STYLE_APPLICATION_RUNBOOK_20260605.md) — Knowledge 13 への段階適用手順（本文直接改稿の代替ではない）。
+8. [audit/knowledge_13_japanese_rewrite_patch_proposals_20260605.md](../audit/knowledge_13_japanese_rewrite_patch_proposals_20260605.md) — 提案のみ。人間承認なしに Knowledge へ適用しない。
+9. [audit/japanese_medical_document_quality_audit.md](../audit/japanese_medical_document_quality_audit.md) — 品質軸と `READY_FOR_HUMAN_REVIEW` 判定。
+10. [japanese_medical_output_quality_preview_tests.md](japanese_medical_output_quality_preview_tests.md) — 日本語 Preview 品質の追加検査項目。
+11. Preview での日本語品質は [human_reviewed_preview_examples.md](human_reviewed_preview_examples.md) の実出力レビューが必須。validator PASS は実証の代替ではない。
 
 ## Machine Scan Anchor
 

@@ -250,6 +250,8 @@ The active operator-side style references are:
 
 These files are operator-side references and must remain `upload_to_custom_gpt=no` unless the operator explicitly approves a separate upload-boundary redesign.
 
+Knowledge 13 Japanese style application is **preparation-only** in this repo state. Composer must use `derived/custom_gpt_knowledge_package/audit/KNOWLEDGE_13_JAPANESE_STYLE_APPLICATION_RUNBOOK_20260605.md` and `audit/knowledge_13_japanese_rewrite_patch_proposals_20260605.md` as **patch-proposal-only** artifacts. Composer must not apply ledger or patch proposals directly to `knowledge/*.md` without human review, must not treat ledger PASS as Knowledge rewrite approval, and must not claim Knowledge 13 Japanese style application is complete while patch proposals remain unapplied and Preview Japanese quality remains unapproved.
+
 ### Official project stance
 
 Composer must preserve these positions from the package README, `01_START_HERE_AND_POSITIONING.md`, `instructions/custom_gpt_instructions.md`, `pass_fail_criteria.md`, and `preview_test_protocol.md`:

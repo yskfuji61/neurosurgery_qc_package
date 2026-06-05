@@ -35,3 +35,33 @@ Avoid:
 Use:
 
 - 緊急度が高い論点であり、患者状態、禁忌、国内電子添文、施設手順、専門職確認を分けて確認する。
+
+## Emergency Quick Check Block
+
+For high-risk Knowledge files, consider adding this block near the top after human review:
+
+### 緊急時に先に確認すること
+
+- 対象病態
+- 曝露薬
+- 最終服用・投与時刻
+- 検査値
+- 処置予定
+- 禁忌・除外条件
+- 施設採用品・在庫
+- 専門医または責任医確認
+- このKnowledgeだけで判断してはいけない事項
+
+This block must not include dose, infusion speed, or CDS trigger conditions.
+
+## Priority Files
+
+Prioritize proposal review for:
+
+1. `03_HIGH_RISK_WARNINGS_AND_NEGATIVE_KNOWLEDGE.md`
+2. `04_DISEASE_NOTES.md`
+3. `05_DRUG_CLASS_AND_LAYER2_DRUG_NOTES.md`
+4. `06_PATIENT_STATE_NOTES.md`
+5. `07_PROCEDURE_AND_PERIOPERATIVE_NOTES.md`
+6. `08_THRESHOLDS_AND_CONDITIONS.md`
+7. `11_CDS_CANDIDATE_BOUNDARIES.md`

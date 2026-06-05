@@ -175,5 +175,11 @@ python3 tests/report_preview_promotion_candidates.py \
 - [ ] [templates/drug_page_template.md](../templates/drug_page_template.md) / [disease_page_template.md](../templates/disease_page_template.md) の施設運用適合性を確認
 - [ ] Preview 実出力（§B）で日本語の自然さ・誤読耐性・must-have/must-not-have を確認 — **validator PASS の代替ではない**
 - [ ] 新規 `docs/` / `templates/` / `audit/japanese_*` を Knowledge に追加していない（13本固定）
+- [ ] [KNOWLEDGE_13_JAPANESE_STYLE_APPLICATION_RUNBOOK_20260605.md](KNOWLEDGE_13_JAPANESE_STYLE_APPLICATION_RUNBOOK_20260605.md) に沿い、patch を Knowledge 本文へ**適用していない**（提案のみ）
+- [ ] [knowledge_13_japanese_rewrite_patch_proposals_20260605.md](knowledge_13_japanese_rewrite_patch_proposals_20260605.md) を人間レビュー（自動適用禁止）
+- [ ] [japanese_plain_language_rewrite_ledger.csv](japanese_plain_language_rewrite_ledger.csv) / [abbreviation_first_use_review_ledger.csv](abbreviation_first_use_review_ledger.csv) の `HUMAN_REVIEW_REQUIRED` 行を確認
+- [ ] [japanese_medical_output_quality_preview_tests.md](../tests/japanese_medical_output_quality_preview_tests.md) を Custom GPT UI 実出力と照合（§B Preview と併用）
+
+**Related (Knowledge 13):** [JAPANESE_KNOWLEDGE_13_STYLE_APPLICATION_COMPLETION_REPORT_20260605.md](JAPANESE_KNOWLEDGE_13_STYLE_APPLICATION_COMPLETION_REPORT_20260605.md)
 
 **本 §F は Stage 5A exit の追加ゲートではない。** 日本語 operator-side 強化後の人間レビューキューである。

@@ -115,4 +115,16 @@ templates/facility_review_checklist.md,template,no,yes,operator-side facility re
 audit/japanese_expression_risk_ledger.csv,audit,no,yes,operator-side Japanese expression risk ledger
 audit/japanese_expression_scan_report.md,audit,no,yes,operator-side Japanese expression scan report
 audit/japanese_medical_document_quality_audit.md,audit,no,yes,operator-side Japanese medical document quality audit
+audit/JAPANESE_KNOWLEDGE_13_STYLE_APPLICATION_PREWORK_20260605.md,audit,no,yes,operator-side Knowledge 13 Japanese style application prework
+audit/KNOWLEDGE_13_JAPANESE_STYLE_APPLICATION_RUNBOOK_20260605.md,audit,no,yes,operator-side Knowledge 13 Japanese style runbook
+audit/japanese_plain_language_rewrite_ledger.csv,audit,no,yes,operator-side Japanese plain language rewrite ledger
+audit/abbreviation_first_use_review_ledger.csv,audit,no,yes,operator-side abbreviation first-use review ledger
+audit/knowledge_13_japanese_rewrite_patch_proposals_20260605.md,audit,no,yes,operator-side proposed-only Knowledge 13 Japanese rewrite patches
+docs/role_based_readability_rules.md,doc,no,yes,operator-side role-based readability rules
+tests/japanese_medical_output_quality_preview_tests.md,test,no,yes,operator-side Japanese medical output quality Preview tests
+tests/validate_japanese_expression_ledger.py,test,no,yes,operator-side Japanese expression ledger validator
+tests/validate_abbreviation_first_use_ledger.py,test,no,yes,operator-side abbreviation first-use ledger validator
+tests/validate_plain_language_rewrite_ledger.py,test,no,yes,operator-side plain language rewrite ledger validator
+tests/validate_japanese_preview_quality_tests.py,test,no,yes,operator-side Japanese Preview quality tests validator
+audit/JAPANESE_KNOWLEDGE_13_STYLE_APPLICATION_COMPLETION_REPORT_20260605.md,audit,no,yes,operator-side Knowledge 13 Japanese style application completion report
 audit/JAPANESE_MEDICAL_DOCUMENT_COMPLETION_REPORT_20260605.md,audit,no,yes,operator-side Japanese medical document completion report

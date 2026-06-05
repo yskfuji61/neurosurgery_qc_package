@@ -1,5 +1,15 @@
 # Review Change Note
 
+## Knowledge 13 Japanese style application pass（2026-06-05）
+
+- Added Knowledge 13 style prep layer: prework, runbook, plain-language / abbreviation / expression ledgers, patch proposals (proposed-only), role-based readability rules, Japanese Preview quality tests, 4 new validators.
+- **Not edited:** `knowledge/*.md` bodies (13 files), `instructions/custom_gpt_instructions.md`; patch proposals are not applied to Knowledge without human review.
+- `manifest/custom_gpt_upload_manifest.csv`: all new files `upload_to_custom_gpt=no`; **Knowledge upload remains 13 files only**.
+- Decision: **READY_FOR_HUMAN_REVIEW** — not finished clinical document, not facility SOP, not prescription support, not CDS production spec.
+- Japanese answer shape: **specified_but_not_empirically_validated**; Knowledge 13 full style application **incomplete**.
+- `external_ready_candidates`: **0** maintained.
+- See [JAPANESE_KNOWLEDGE_13_STYLE_APPLICATION_COMPLETION_REPORT_20260605.md](JAPANESE_KNOWLEDGE_13_STYLE_APPLICATION_COMPLETION_REPORT_20260605.md).
+
 ## Japanese medical document operator-side pass（2026-06-05）
 
 - Added operator-side Japanese medical document layer: `docs/*` (5), `templates/*` (3), `audit/japanese_*` (4), prework + completion reports.

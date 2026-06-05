@@ -45,3 +45,20 @@ No automatic clinical-content rewrite was performed in this pass.
 - clinical_content_changed: no
 - human_review_required_for_selected_hits: yes
 - custom_gpt_upload_target_changed: no
+
+## Knowledge 13 Follow-Up
+
+The follow-up scan for the 13 Knowledge files found three broad classes:
+
+1. Protective wording or prohibited-answer examples that should remain unchanged unless a reviewer approves clearer Japanese.
+2. Audit/English terms that can be made easier to read by Japanese parenthetical explanation.
+3. Strong expressions that require human review before any direct Knowledge rewrite.
+
+New tracking artifacts:
+
+- `japanese_plain_language_rewrite_ledger.csv`
+- `abbreviation_first_use_review_ledger.csv`
+- `knowledge_13_japanese_rewrite_patch_proposals_20260605.md`
+- `japanese_medical_output_quality_preview_tests.md`
+
+No direct Knowledge rewrite was performed.
