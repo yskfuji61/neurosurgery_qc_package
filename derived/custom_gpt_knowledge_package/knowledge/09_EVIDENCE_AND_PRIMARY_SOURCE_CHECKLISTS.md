@@ -36,7 +36,7 @@ not_an_institutional_procedure: true
 
 ## このファイルを開く場面
 
-薬剤や対応の候補が見えてきたあとに、国内薬事、安全性情報、ガイドライン、臨床試験でどこまで確認できるかを整理するために使います。エビデンスは重要な確認材料ですが、それだけで施設採用品、処方、またはオーダー化を確定する根拠にはなりません。
+薬剤や対応の候補が見えてきたあとに、国内薬事、安全性情報、ガイドライン、臨床試験でどこまで確認できるかを整理するために使います。エビデンスは、候補を検討するための重要な材料です。ただし、エビデンスだけで院内採用、処方指示、電子カルテ上の入力可否、またはオーダーセット登録を確定しません。
 
 ## PMDA製品単位確認が未完了のgap v3参考資料（Sibling gap v3 reference）
 
@@ -96,7 +96,7 @@ not_an_institutional_procedure: true
 
 ## Evidence の使い方
 
-1. Evidence は候補の裏付けであり、施設採用品や order 化の裏付けではありません。
+1. エビデンスは、候補を検討するための重要な材料です。ただし、エビデンスだけで院内採用、処方指示、電子カルテ上の入力可否、またはオーダーセット登録を確定しません。
 2. 一次資料と施設内確認を飛ばして Evidence だけで結論にしません。
 
 ## 未確定事項・人間レビュー項目
@@ -104,21 +104,21 @@ not_an_institutional_procedure: true
 1. 最新版の改訂日は都度確認が必要です。
 2. 論文や guideline の解釈差は人間レビューで吸収してください。
 
-## 統合ポリシー上の安全境界（Runbook Commit 10）
+## 添付文書・ガイドライン・施設資料を混同しないための注意点（Runbook Commit 10）
 
-出典は、Integrated_Obsidian_Vault/12_Drug_Label_Source_Hierarchy/ および 16_Guideline_Label_Separation/ にある、確認済みの安全境界要約です。この要約には、数値、用法、同一ライン混注、側管投与の可否は含めません。
+出典は、Integrated_Obsidian_Vault/12_Drug_Label_Source_Hierarchy/ および 16_Guideline_Label_Separation/ にある、混同を避けるための確認済み要約です。この要約には、数値、用法、同一ライン混注、側管投与の可否は含めません。
 
 ### 薬剤ラベル情報の確認順序（Drug label source hierarchy）
 
 1. 国内薬事・製品単位確認は PMDA 関連資料を最優先で見る。RMP / 安全性情報は別軸で確認する。
 2. guideline、JAPIC、manufacturer documents は背景整理と照合に用い、国内薬事確認の代替にしない。
-3. formulary、薬剤部手順、委員会承認、EHR medication master は facility confirmation として別管理する。
-4. 出典分類（source class）の順序は、処方上の優先順位（prescribing hierarchy）ではありません。特定の出典分類に該当する資料があるだけでは、Knowledgeへの反映や薬剤選択を許可しません。
+3. 施設で実際に使用できるかは、採用薬一覧、薬剤部手順、委員会承認、電子カルテ薬剤マスタをそれぞれ確認する。いずれか一つに記載があるだけで、処方や運用に使えるとは判断しない。
+4. 資料の種類に順番を付けていても、それは処方上の優先順位ではありません。特定の種類の資料があるだけで、Knowledgeへの反映や薬剤選択を行ってはいけません。
 
-### Guideline と label の分離
+### ガイドライン記載と添付文書上の扱いを混同しない
 
 1. ガイドライン記載だけで国内薬事、施設採用、EHR/CDS 実装を確定したように見える summary は出さない。
-2. ガイドライン、添付文書、保険、施設採用、CDS候補を同一視する利用者向け結論は、安全上未解決の内容として扱い、回答やKnowledge反映の対象から外します（quarantine / unresolved）。
+2. ガイドライン、添付文書、保険、施設採用、CDS候補を同じものとして扱う結論は、誤用につながるおそれがあるため、回答やKnowledgeへの反映対象から外す。
 ## Integrated governance boundary export（Stage 4 — 2026-06-05）
 
 ### 製品単位添付文書（PMDA）— 用法・用量の一次確認

@@ -204,3 +204,38 @@ See [JAPANESE_KNOWLEDGE_13_PATCH_APPLICATION_REPORT_20260605.md](JAPANESE_KNOWLE
 | 標準ページ構造 | 全面移行 | DEFERRED_HUMAN_REVIEW_REQUIRED | 別フェーズ |
 | Knowledge 13 文体統一 | — | DEFERRED_HUMAN_REVIEW_REQUIRED | 別フェーズ |
 | `knowledge/13` / `04` | 追加校正 | DEFERRED_HUMAN_REVIEW_REQUIRED | round 5 スコープ外 |
+
+---
+
+## Round 6 — 2026-06-05
+
+### Proposal ID: JP-STYLE-09-005
+
+- 対象ファイル: `knowledge/09_EVIDENCE_AND_PRIMARY_SOURCE_CHECKLISTS.md`
+- 内容: `オーダー化` / `order化` を院内採用・処方指示・電子カルテ入力可否・オーダーセット登録へ分解；`facility confirmation` / `別管理` / `施設確認事項` を採用薬一覧等の個別確認文へ；`統合ポリシー上の安全境界` を混同注意点見出しへ；`Guideline と label の分離` をガイドライン記載と添付文書の混同防止へ；`quarantine / unresolved` を誤用防止の行動文へ；`source class` / `prescribing hierarchy` を資料の種類と処方優先順位の分離へ
+- status: REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW
+- review_date: 2026-06-05
+
+### Proposal ID: JP-STYLE-01-007
+
+- 対象ファイル: `knowledge/01_START_HERE_AND_POSITIONING.md`
+- 内容: `統合ガバナンス上の安全境界` 見出しを `この資料の使用範囲と禁止事項` へ；`運用者向けの安全境界` を `運用者向けの位置づけと禁止事項` へ
+- status: REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW
+- review_date: 2026-06-05
+
+## Deferred — not applied in round 6
+
+| 対象 | 表現 | status | 理由 |
+|------|------|--------|------|
+| `knowledge/05` L120 | ICU 以外で routine 化 | DEFERRED_HUMAN_REVIEW_REQUIRED | スコープ外 |
+| `knowledge/04` L225 | routine で固定化 | DEFERRED_HUMAN_REVIEW_REQUIRED | スコープ外 |
+| `knowledge/04` L157 | 施設 antibiogram | DEFERRED_HUMAN_REVIEW_REQUIRED | スコープ外 |
+| `clinician-facing summary` | 全13本横断 | DEFERRED_HUMAN_REVIEW_REQUIRED | round 6 スコープ外 |
+| `knowledge/01` L114 | Integrated policy boundary export 見出し | DEFERRED_HUMAN_REVIEW_REQUIRED | JP-STYLE-01-007 スコープ外 |
+| `knowledge/09` L122 | Integrated governance boundary export | DEFERRED_HUMAN_REVIEW_REQUIRED | JP-STYLE-09-005 スコープ外 |
+| `Integrated governance boundary export` | 他ファイル横断 | DEFERRED_HUMAN_REVIEW_REQUIRED | 02–08, 10–13 本文修正対象外 |
+| 略語初出説明 | — | DEFERRED_HUMAN_REVIEW_REQUIRED | 一括反映は別フェーズ |
+| Emergency Quick Check | 他ファイル展開 | DEFERRED_HUMAN_REVIEW_REQUIRED | 別フェーズ |
+| 標準ページ構造 | 全面移行 | DEFERRED_HUMAN_REVIEW_REQUIRED | 別フェーズ |
+| Knowledge 13 文体統一 | — | DEFERRED_HUMAN_REVIEW_REQUIRED | 別フェーズ |
+| `knowledge/13` / `04` | 追加校正 | DEFERRED_HUMAN_REVIEW_REQUIRED | round 6 スコープ外 |
