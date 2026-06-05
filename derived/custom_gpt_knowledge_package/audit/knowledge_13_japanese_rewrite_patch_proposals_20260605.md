@@ -276,3 +276,42 @@ See [JAPANESE_KNOWLEDGE_13_PATCH_APPLICATION_REPORT_20260605.md](JAPANESE_KNOWLE
 | 標準ページ構造 | 全面移行 | DEFERRED_HUMAN_REVIEW_REQUIRED | 別フェーズ |
 | Knowledge 13 文体統一 | — | DEFERRED_HUMAN_REVIEW_REQUIRED | 別フェーズ |
 | `knowledge/13` / `04` | 追加校正 | DEFERRED_HUMAN_REVIEW_REQUIRED | round 7 スコープ外 |
+
+---
+
+## Round 8 — 2026-06-05
+
+### Proposal ID: JP-STYLE-01-009
+
+- 対象ファイル: `knowledge/01_START_HERE_AND_POSITIONING.md`
+- 内容: `統合Vault側` / `転記` を節の目的説明へ；`派生成果物` を `元資料から作成した内容` へ；出典確認と人間レビュー必須の意味を維持
+- status: REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW
+- review_date: 2026-06-05
+
+### Proposal ID: JP-STYLE-09-007
+
+- 対象ファイル: `knowledge/09_EVIDENCE_AND_PRIMARY_SOURCE_CHECKLISTS.md`
+- 内容: `索引` を確認手がかりへ；`GL` 見出しをガイドラインチェックへ；`Evidence の使い方` を `エビデンスの使い方` へ
+- status: REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW
+- review_date: 2026-06-05
+
+## Deferred — not applied in round 8
+
+| 対象 | 表現 | status | 理由 |
+|------|------|--------|------|
+| `knowledge/05` L120 | ICU 以外で routine 化 | DEFERRED_HUMAN_REVIEW_REQUIRED | スコープ外 |
+| `knowledge/04` L225 | routine で固定化 | DEFERRED_HUMAN_REVIEW_REQUIRED | スコープ外 |
+| `knowledge/04` L157 | 施設 antibiogram | DEFERRED_HUMAN_REVIEW_REQUIRED | スコープ外 |
+| `clinician-facing summary` | 全13本横断 | DEFERRED_HUMAN_REVIEW_REQUIRED | round 8 スコープ外 |
+| `knowledge/09` L33 | clinician-facing summary 見出し | DEFERRED_HUMAN_REVIEW_REQUIRED | round 8 スコープ外 |
+| `knowledge/09` L105 | guideline（未確定事項節） | DEFERRED_HUMAN_REVIEW_REQUIRED | round 8 スコープ外 |
+| `knowledge/09` L111 | Drug label source hierarchy 英語小見出し | DEFERRED_HUMAN_REVIEW_REQUIRED | round 8 スコープ外 |
+| `knowledge/01` L120 | 転記しません（禁止境界文） | DEFERRED_HUMAN_REVIEW_REQUIRED | round 8 スコープ外 |
+| `knowledge/09` L89–90, L100 | Evidence 本文表記 | DEFERRED_HUMAN_REVIEW_REQUIRED | 見出し以外は round 8 スコープ外 |
+| `knowledge/09` L140 | 転記禁止境界文 | DEFERRED_HUMAN_REVIEW_REQUIRED | round 8 スコープ外 |
+| `Integrated governance boundary export` | 他ファイル横断 | DEFERRED_HUMAN_REVIEW_REQUIRED | 02–08, 10–13 本文修正対象外 |
+| 略語初出説明 | — | DEFERRED_HUMAN_REVIEW_REQUIRED | 一括反映は別フェーズ |
+| Emergency Quick Check | 他ファイル展開 | DEFERRED_HUMAN_REVIEW_REQUIRED | 別フェーズ |
+| 標準ページ構造 | 全面移行 | DEFERRED_HUMAN_REVIEW_REQUIRED | 別フェーズ |
+| Knowledge 13 文体統一 | — | DEFERRED_HUMAN_REVIEW_REQUIRED | 別フェーズ |
+| `knowledge/13` / `04` | 追加校正 | DEFERRED_HUMAN_REVIEW_REQUIRED | round 8 スコープ外 |

@@ -11,7 +11,8 @@ Round 3: JP-STYLE-01-003, JP-STYLE-03-003, JP-STYLE-04-001, JP-STYLE-09-001, JP-
 Round 4: JP-STYLE-01-004, JP-STYLE-04-002, JP-STYLE-09-002, JP-STYLE-13-002  
 Round 5: JP-STYLE-01-005, JP-STYLE-09-003  
 Round 6: JP-STYLE-09-005, JP-STYLE-01-007  
-Round 7: JP-STYLE-09-006, JP-STYLE-01-008
+Round 7: JP-STYLE-09-006, JP-STYLE-01-008  
+Round 8: JP-STYLE-01-009, JP-STYLE-09-007
 
 ## 2. 適用したpatch
 
@@ -41,6 +42,8 @@ Round 7: JP-STYLE-09-006, JP-STYLE-01-008
 | JP-STYLE-01-007 | knowledge/01_START_HERE_AND_POSITIONING.md | REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW | 統合ガバナンス上の安全境界見出しを使用範囲と禁止事項へ；運用者向け安全境界を位置づけと禁止事項へ |
 | JP-STYLE-09-006 | knowledge/09_EVIDENCE_AND_PRIMARY_SOURCE_CHECKLISTS.md | REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW | guideline・manufacturer documents・summary の日本語化；Integrated governance 見出しを判断禁止事項へ |
 | JP-STYLE-01-008 | knowledge/01_START_HERE_AND_POSITIONING.md | REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW | Integrated policy boundary export 見出しを使用範囲と禁止事項へ |
+| JP-STYLE-01-009 | knowledge/01_START_HERE_AND_POSITIONING.md | REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW | 統合Vault側・転記・派生成果物の平易化 |
+| JP-STYLE-09-007 | knowledge/09_EVIDENCE_AND_PRIMARY_SOURCE_CHECKLISTS.md | REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW | 索引・GL見出し・エビデンス見出しの平易化 |
 
 ## 3. 適用しなかったpatch
 
@@ -54,6 +57,9 @@ Round 7: JP-STYLE-09-006, JP-STYLE-01-008
 | — | knowledge/09 L33 clinician-facing summary 見出し | DEFERRED_HUMAN_REVIEW_REQUIRED | round 7 スコープ外 |
 | — | knowledge/09 L105 guideline（未確定事項節） | DEFERRED_HUMAN_REVIEW_REQUIRED | round 7 スコープ外 |
 | — | knowledge/09 L111 Drug label source hierarchy 英語小見出し | DEFERRED_HUMAN_REVIEW_REQUIRED | round 7 スコープ外 |
+| — | knowledge/01 L120 転記しません | DEFERRED_HUMAN_REVIEW_REQUIRED | round 8 スコープ外（禁止境界文） |
+| — | knowledge/09 L89–90, L100 Evidence 本文 | DEFERRED_HUMAN_REVIEW_REQUIRED | round 8 スコープ外（見出し以外） |
+| — | knowledge/09 L140 転記禁止境界文 | DEFERRED_HUMAN_REVIEW_REQUIRED | round 8 スコープ外 |
 | — | Integrated governance boundary export 他ファイル横断 | DEFERRED_HUMAN_REVIEW_REQUIRED | 02–13 本文修正対象外 |
 | — | Knowledge 13 文体統一 | DEFERRED_HUMAN_REVIEW_REQUIRED | 別フェーズ |
 | — | knowledge/13 / 04 追加校正 | DEFERRED_HUMAN_REVIEW_REQUIRED | round 5 スコープ外 |
@@ -91,6 +97,7 @@ Round 7: JP-STYLE-09-006, JP-STYLE-01-008
 - CDS候補を本番仕様にしていない（09-005）。
 - 内容確認なしに Knowledge へ転記することを許可していない（09-003）。
 - ガイドライン記載だけで国内薬事、施設採用、EHR/CDS実装が確定したように見える回答や要約を作成していない（09-006）。
+- 参考資料を、人間レビューなしに Knowledge へ直接取り込む対象にしていない（09-007）。
 
 ## 5. Knowledge upload target
 
@@ -117,7 +124,7 @@ Round 7: JP-STYLE-09-006, JP-STYLE-01-008
 
 ## 7. Validator結果
 
-**Run date:** 2026-06-05（repo-local；round 7 適用後に再実測）
+**Run date:** 2026-06-05（repo-local；round 8 適用後に再実測）
 
 | Validator | Result | Notes |
 |---|---|---|
