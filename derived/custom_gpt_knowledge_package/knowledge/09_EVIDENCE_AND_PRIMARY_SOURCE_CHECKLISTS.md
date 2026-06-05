@@ -85,7 +85,7 @@ not_an_institutional_procedure: true
 ## TICH-2 チェック
 
 1. 自然発症 ICH と TXA 関連 Evidence の確認
-2. routine 標準化には直結させない
+2. 海外資料や Evidence の記載を、日本国内での一律運用や通常使用可に直結させない
 
 ## ULTRA チェック
 

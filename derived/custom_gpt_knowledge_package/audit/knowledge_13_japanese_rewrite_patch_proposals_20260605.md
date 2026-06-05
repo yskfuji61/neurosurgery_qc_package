@@ -1,6 +1,6 @@
 # Knowledge 13 Japanese Rewrite Patch Proposals
 
-**Summary:** Round 1: 5 proposals applied 2026-06-05. Round 2: 4 additional proposals applied 2026-06-05. Deferred items remain registered below. Knowledge bodies `01`, `03`, `05`, `08` only for direct edits.
+**Summary:** Round 1: 5 proposals applied 2026-06-05. Round 2: 4 proposals applied 2026-06-05. Round 3: 5 proposals applied 2026-06-05. Deferred items remain registered below. Knowledge bodies `01`, `03`, `04`, `05`, `08`, `09`, `13` for direct edits (round 3: `01`/`03`/`04`/`09`/`13` only).
 
 See [JAPANESE_KNOWLEDGE_13_PATCH_APPLICATION_REPORT_20260605.md](JAPANESE_KNOWLEDGE_13_PATCH_APPLICATION_REPORT_20260605.md).
 
@@ -99,14 +99,51 @@ See [JAPANESE_KNOWLEDGE_13_PATCH_APPLICATION_REPORT_20260605.md](JAPANESE_KNOWLE
 - status: REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW
 - review_date: 2026-06-05
 
-## Deferred — not applied in round 2
+---
+
+## Round 3 — 2026-06-05
+
+### Proposal ID: JP-STYLE-01-003
+
+- 対象ファイル: `knowledge/01_START_HERE_AND_POSITIONING.md`
+- 内容: `upload 可否` → Custom GPT Knowledgeへの投入可否；Reference corpora / reference-only / hold の日本語補足
+- status: REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW
+- review_date: 2026-06-05
+
+### Proposal ID: JP-STYLE-03-003
+
+- 対象ファイル: `knowledge/03_HIGH_RISK_WARNINGS_AND_NEGATIVE_KNOWLEDGE.md`
+- 内容: rFVIIa 節 `routine` → `一律の候補として扱わない`
+- status: REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW
+- review_date: 2026-06-05
+
+### Proposal ID: JP-STYLE-04-001
+
+- 対象ファイル: `knowledge/04_DISEASE_NOTES.md`
+- 内容: VTE 節 `中核ノート` → 重要な確認ノート（実使用は別途確認）
+- status: REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW
+- review_date: 2026-06-05
+
+### Proposal ID: JP-STYLE-09-001
+
+- 対象ファイル: `knowledge/09_EVIDENCE_AND_PRIMARY_SOURCE_CHECKLISTS.md`
+- 内容: TICH-2 節 `routine` → 海外資料を国内一律運用に直結させない
+- status: REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW
+- review_date: 2026-06-05
+
+### Proposal ID: JP-STYLE-13-001
+
+- 対象ファイル: `knowledge/13_AUDIT_LOGS_AND_UPDATE_OPERATIONS.md`
+- 内容: `release readiness` → 公開可能状態（release readiness）＋境界文補強
+- status: REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW
+- review_date: 2026-06-05
+
+## Deferred — not applied in round 3
 
 | 対象 | 表現 | status | 理由 |
 |------|------|--------|------|
 | `knowledge/05` L120 | ICU 以外で routine 化 | DEFERRED_HUMAN_REVIEW_REQUIRED | JP-STYLE-05-002 スコープ外 |
-| `knowledge/03` L76 | routine で扱わない | DEFERRED_HUMAN_REVIEW_REQUIRED | JP-STYLE-03-002 は shortcut のみ |
-| `knowledge/04` | 中核 | DEFERRED_HUMAN_REVIEW_REQUIRED | 直接本文修正対象外 |
-| `knowledge/09` | routine | DEFERRED_HUMAN_REVIEW_REQUIRED | 直接本文修正対象外 |
-| `knowledge/13` | release readiness | DEFERRED_HUMAN_REVIEW_REQUIRED | 直接本文修正対象外 |
+| `knowledge/04` L225 | routine で固定化 | DEFERRED_HUMAN_REVIEW_REQUIRED | JP-STYLE-04-001 は VTE 中核のみ |
 | 略語初出説明 | — | DEFERRED_HUMAN_REVIEW_REQUIRED | 一括反映は別フェーズ |
 | Emergency Quick Check | 他ファイル展開 | DEFERRED_HUMAN_REVIEW_REQUIRED | 別フェーズ |
+| 標準ページ構造 | 全面移行 | DEFERRED_HUMAN_REVIEW_REQUIRED | 別フェーズ |

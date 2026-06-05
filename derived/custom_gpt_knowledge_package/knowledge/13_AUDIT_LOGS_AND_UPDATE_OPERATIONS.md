@@ -87,7 +87,7 @@ not_an_institutional_procedure: true
 2. 実運用開始前に preview 再試験と監査ログ確認が必要です。
 ## Integrated governance boundary export（Stage 4 — 2026-06-05）
 
-1. **Operator validation:** `validate_release_readiness.py` の PASS および `external_ready_candidates=0` は、外部公開・臨床承認・施設確定を意味しない。
+1. **Operator validation:** `validate_release_readiness.py` の PASS および `external_ready_candidates=0` は、公開可能状態（release readiness）の repo-local 判定であり、臨床承認、施設確定、実患者への使用可否、CDS本番仕様化を意味しない。
 2. **Ledger 557/557:** reference 追跡完走は blind copy 許可ではない（CHILD 366 + PARENT 191 files、collision/review-ready 追補含む）。
 3. **Stage 4 変更:** integrated ガバナンス（添付文書遵守・適用外原則禁止）を knowledge へ境界言語のみエクスポート。用量・TDM・CDS 確定値は含めない。
 4. **昇格禁止:** Preview 未記録での `apply_preview_promotion.py`、gap v3 の `export_status` 自動昇格、CHILD PMDA pilot の V3 流用は禁止のまま。

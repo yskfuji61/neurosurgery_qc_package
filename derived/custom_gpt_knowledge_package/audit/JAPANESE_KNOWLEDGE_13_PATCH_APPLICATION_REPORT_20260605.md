@@ -1,12 +1,13 @@
 # Japanese Knowledge 13 Patch Application Report
 
 **Date:** 2026-06-05  
-**Scope:** Human-reviewed Japanese style patches to Knowledge `01`, `03`, `05`, `08` only.
+**Scope:** Human-reviewed Japanese style patches to Knowledge `01`, `03`, `04`, `05`, `08`, `09`, `13`（round 3 で `04`/`09`/`13` を追加）。
 
 ## 1. 対象proposal
 
 Round 1: JP-STYLE-01-001, JP-STYLE-03-001, JP-EMERG-003-001, JP-STYLE-05-001, JP-STYLE-08-001  
-Round 2: JP-STYLE-01-002, JP-STYLE-03-002, JP-STYLE-05-002, JP-STYLE-08-002
+Round 2: JP-STYLE-01-002, JP-STYLE-03-002, JP-STYLE-05-002, JP-STYLE-08-002  
+Round 3: JP-STYLE-01-003, JP-STYLE-03-003, JP-STYLE-04-001, JP-STYLE-09-001, JP-STYLE-13-001
 
 ## 2. 適用したpatch
 
@@ -21,19 +22,22 @@ Round 2: JP-STYLE-01-002, JP-STYLE-03-002, JP-STYLE-05-002, JP-STYLE-08-002
 | JP-STYLE-03-002 | knowledge/03_HIGH_RISK_WARNINGS_AND_NEGATIVE_KNOWLEDGE.md | REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW | shortcut → 短絡（shortcut） |
 | JP-STYLE-05-002 | knowledge/05_DRUG_CLASS_AND_LAYER2_DRUG_NOTES.md | REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW | routine 表現を一律運用・一律候補へ（L92/L99） |
 | JP-STYLE-08-002 | knowledge/08_THRESHOLDS_AND_CONDITIONS.md | REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW | ICU以外運用可否の確認軸明確化 |
+| JP-STYLE-01-003 | knowledge/01_START_HERE_AND_POSITIONING.md | REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW | upload 可否・Reference corpora・reference-only/hold の日本語明確化 |
+| JP-STYLE-03-003 | knowledge/03_HIGH_RISK_WARNINGS_AND_NEGATIVE_KNOWLEDGE.md | REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW | rFVIIa 節 routine → 一律の候補として扱わない |
+| JP-STYLE-04-001 | knowledge/04_DISEASE_NOTES.md | REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW | VTE 節 中核 → 重要な確認ノート（実使用は別途確認） |
+| JP-STYLE-09-001 | knowledge/09_EVIDENCE_AND_PRIMARY_SOURCE_CHECKLISTS.md | REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW | TICH-2 節 routine → 海外資料を国内一律運用に直結させない |
+| JP-STYLE-13-001 | knowledge/13_AUDIT_LOGS_AND_UPDATE_OPERATIONS.md | REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW | release readiness 日本語補足＋境界文補強 |
 
 ## 3. 適用しなかったpatch
 
 | proposal_id | file | status | reason |
 |---|---|---|---|
 | — | knowledge/05 L120 ICU 以外 routine 化 | DEFERRED_HUMAN_REVIEW_REQUIRED | JP-STYLE-05-002 スコープ外 |
-| — | knowledge/03 L76 routine で扱わない | DEFERRED_HUMAN_REVIEW_REQUIRED | JP-STYLE-03-002 は shortcut のみ |
-| — | knowledge/04 中核 | DEFERRED_HUMAN_REVIEW_REQUIRED | 直接本文修正対象外 |
-| — | knowledge/09 routine | DEFERRED_HUMAN_REVIEW_REQUIRED | 直接本文修正対象外 |
-| — | knowledge/13 release readiness | DEFERRED_HUMAN_REVIEW_REQUIRED | 直接本文修正対象外 |
+| — | knowledge/04 L225 routine で固定化 | DEFERRED_HUMAN_REVIEW_REQUIRED | JP-STYLE-04-001 は VTE 中核のみ |
 | — | abbreviation_first_use_review_ledger 一括反映 | DEFERRED_HUMAN_REVIEW_REQUIRED | 略語初出説明の本文挿入は別フェーズ |
 | — | Emergency Quick Check 他ファイル展開 | DEFERRED_HUMAN_REVIEW_REQUIRED | 別フェーズ |
-| — | plain language ledger 未レビュー GLOBAL 行 | NEEDS_REVIEW | round 2 外は据え置き |
+| — | 標準ページ構造への全面移行 | DEFERRED_HUMAN_REVIEW_REQUIRED | 別フェーズ |
+| — | plain language ledger 未レビュー GLOBAL 行 | NEEDS_REVIEW | round 3 外は据え置き |
 
 ## 4. 医療安全上の確認
 
@@ -49,6 +53,11 @@ Round 2: JP-STYLE-01-002, JP-STYLE-03-002, JP-STYLE-05-002, JP-STYLE-08-002
 - 処方指示、投与指示、休薬・再開指示を追加していない。
 - validator PASS や台帳登録を臨床承認として扱っていない。
 - 抗菌薬広域化・ICU運用の施設確定は追加していない（08-002 の看護観察体制・責任医・薬剤部は確認軸のみ）。
+- ICU以外での運用可否を確定していない。
+- 抗菌薬選択・広域化可否・狭域化実施条件を確定していない。
+- VTE予防薬や抗凝固再開時期を確定していない（04-001 は確認ノート表現のみ）。
+- 海外GL記載から国内一律運用・通常使用可への変換を追加していない。
+- release ready、clinical approved、facility approved への昇格をしていない（13-001 は否定境界のみ）。
 
 ## 5. Knowledge upload target
 
@@ -65,12 +74,15 @@ Round 2: JP-STYLE-01-002, JP-STYLE-03-002, JP-STYLE-05-002, JP-STYLE-08-002
 - 看護手順ではない。
 - CDS 本番仕様ではない。
 - 実患者への適用可否は、最新電子添文、国内ガイドライン、患者背景、施設採用品、施設手順、責任医・薬剤部確認が必要。
-- Knowledge 13 本への日本語スタイル完全適用は未完了（04/09/13、05-L120、03-L76 routine、略語一括、Emergency 他ファイル展開は残存）。
+- Knowledge 13 本への日本語スタイル完全適用は未完了（05-L120、04-L225 routine、略語一括、Emergency 他ファイル展開、標準ページ構造全面移行は残存）。
+- 略語初出説明の一括反映は未完了。
+- 他ファイルへの Emergency Quick Check Block 展開は未完了。
+- 薬剤別・病態別の標準ページ構造への全面移行は未完了。
 - Preview 実出力の日本語品質承認は未完了。
 
 ## 7. Validator結果
 
-**Run date:** 2026-06-05（repo-local；round 2 適用後に再実測）
+**Run date:** 2026-06-05（repo-local；round 3 適用後に再実測）
 
 | Validator | Result | Notes |
 |---|---|---|

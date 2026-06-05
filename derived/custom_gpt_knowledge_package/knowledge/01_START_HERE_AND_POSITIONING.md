@@ -113,7 +113,7 @@ Knowledge だけでは、次の事項を確定できません。
 
 ## Integrated policy boundary export（Runbook Commit 10）
 
-この節は、統合Vault側で定義された位置づけを、運用者向けの安全境界として転記したものです。処方・施設運用・upload 可否の確定根拠にはなりません。
+この節は、統合Vault側で定義された位置づけを、運用者向けの安全境界として転記したものです。処方、施設運用、Custom GPT Knowledgeへの投入可否を確定する根拠にはなりません。
 
 1. ワークスペース sibling の PMDA reference corpus（366 files）は、製品単位 source register の作業用正本であり、本 Knowledge 13 本の代替ではない。
 2. reference 側の `pmda_resolved_count` や register 更新は、repo-local の追跡事実であり、Custom GPT Knowledgeへの投入承認や施設採用品の確定を意味しない。
@@ -123,7 +123,7 @@ Knowledge だけでは、次の事項を確定できません。
 
 出典: integrated `00_Index/05_PMDA_添付文書遵守と適用外使用ガバナンス` および gap v3 collision gate（operator 正本）。**検証PASSや台帳登録は、臨床承認、施設確定、Custom GPT Knowledgeへの投入承認、または実患者への使用可否を意味しない。**
 
-1. **Reference corpora（upload 対象外）:** CHILD PMDA 作業 corpus（366 files）と PARENT gap v3 archive（191 files）は、合計 **557** reference files として ledger 管理されるが、本 Knowledge 13 本の代替・一括投入対象ではない。
+1. **参考資料群（Reference corpora：Knowledge投入対象外）:** CHILD PMDA 作業 corpus（366 files）と PARENT gap v3 archive（191 files）は、合計 **557** reference files として ledger 管理されるが、本 Knowledge 13 本の代替・一括投入対象ではない。
 2. **添付文書遵守:** 用法・用量・投与間隔・投与速度・用法区分は、当該製品の最新電子添文（PMDA 製品単位）で確認できる場合に限り記載可能。reference 一般名プロファイルから数値を推測・補完しない。
 3. **適用外使用:** 添付文書の承認範囲を超える使用を、医師の個別判断なしに標準治療・推奨・標準オーダーとして提示しない（原則禁止）。
-4. **Gap v3:** 神経腫瘍・下垂体・造影/手技・CSF/IIH・血管内・痙縮・CNS 感染などは **reference-only / hold**。疾患ノート本文への無断マージ禁止。
+4. **Gap v3:** 神経腫瘍・下垂体・造影/手技・CSF/IIH・血管内・痙縮・CNS 感染などは **参考資料扱い / 投入保留（reference-only / hold）**。疾患ノート本文への無断マージ禁止。

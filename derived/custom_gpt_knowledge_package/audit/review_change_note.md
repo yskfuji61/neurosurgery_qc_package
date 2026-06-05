@@ -1,5 +1,13 @@
 # Review Change Note
 
+## Knowledge 13 patch round 3（2026-06-05）
+
+- Applied 5 additional human-reviewed Japanese patches to `knowledge/01`, `03`, `04`, `09`, `13` only (no instructions edit).
+- Patches: JP-STYLE-01-003 (upload 可否 / Reference corpora / reference-only hold), JP-STYLE-03-003 (rFVIIa routine), JP-STYLE-04-001 (VTE 中核), JP-STYLE-09-001 (TICH-2 routine), JP-STYLE-13-001 (release readiness boundary).
+- Deferred without Knowledge body edit: `05` L120 routine, `04` L225 routine, abbreviation bulk apply, Emergency block expansion, standard page structure migration.
+- 8/8 targeted validators PASS (post round 3); `external_ready_candidates=0`; upload target **13 files** unchanged.
+- **Not** release ready; Preview evidence still pending. See [JAPANESE_KNOWLEDGE_13_PATCH_APPLICATION_REPORT_20260605.md](JAPANESE_KNOWLEDGE_13_PATCH_APPLICATION_REPORT_20260605.md).
+
 ## Knowledge 13 patch round 2（2026-06-05）
 
 - Applied 4 additional human-reviewed Japanese patches to `knowledge/01`, `03`, `05`, `08` only (no instructions edit).
