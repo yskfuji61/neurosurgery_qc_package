@@ -30,7 +30,7 @@ not_an_institutional_procedure: true
 
 このファイルは、Knowledge 内の候補や caution を最終確認するための一次資料・Evidence チェックリストをまとめます。
 
-## clinician-facing summary
+## 医療従事者向け要約（clinician-facing summary）
 
 このファイルは、候補をそのまま正当化するための一覧ではなく、何を確認したいときにどの資料を見るべきかを整理するためのガイドです。PMDA、RMP、国内外 guideline、RCT は役割が異なるため、確認目的を分けて参照する前提で使います。
 
@@ -111,7 +111,7 @@ not_an_institutional_procedure: true
 1. 国内薬事・製品単位確認は PMDA 関連資料を最優先で見る。RMP / 安全性情報は別軸で確認する。
 2. guideline、JAPIC、manufacturer documents は背景整理と照合に用い、国内薬事確認の代替にしない。
 3. formulary、薬剤部手順、委員会承認、EHR medication master は facility confirmation として別管理する。
-4. source class の順序は prescribing hierarchy ではない。source class の存在だけで derived export や薬剤選択を許可しない。
+4. 出典分類（source class）の順序は、処方上の優先順位（prescribing hierarchy）ではない。source class の存在だけで derived export や薬剤選択を許可しない。
 
 ### Guideline と label の分離
 

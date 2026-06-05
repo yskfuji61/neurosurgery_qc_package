@@ -7,7 +7,8 @@
 
 Round 1: JP-STYLE-01-001, JP-STYLE-03-001, JP-EMERG-003-001, JP-STYLE-05-001, JP-STYLE-08-001  
 Round 2: JP-STYLE-01-002, JP-STYLE-03-002, JP-STYLE-05-002, JP-STYLE-08-002  
-Round 3: JP-STYLE-01-003, JP-STYLE-03-003, JP-STYLE-04-001, JP-STYLE-09-001, JP-STYLE-13-001
+Round 3: JP-STYLE-01-003, JP-STYLE-03-003, JP-STYLE-04-001, JP-STYLE-09-001, JP-STYLE-13-001  
+Round 4: JP-STYLE-01-004, JP-STYLE-04-002, JP-STYLE-09-002, JP-STYLE-13-002
 
 ## 2. 適用したpatch
 
@@ -27,17 +28,23 @@ Round 3: JP-STYLE-01-003, JP-STYLE-03-003, JP-STYLE-04-001, JP-STYLE-09-001, JP-
 | JP-STYLE-04-001 | knowledge/04_DISEASE_NOTES.md | REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW | VTE 節 中核 → 重要な確認ノート（実使用は別途確認） |
 | JP-STYLE-09-001 | knowledge/09_EVIDENCE_AND_PRIMARY_SOURCE_CHECKLISTS.md | REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW | TICH-2 節 routine → 海外資料を国内一律運用に直結させない |
 | JP-STYLE-13-001 | knowledge/13_AUDIT_LOGS_AND_UPDATE_OPERATIONS.md | REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW | release readiness 日本語補足＋境界文補強 |
+| JP-STYLE-01-004 | knowledge/01_START_HERE_AND_POSITIONING.md | REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW | PMDA参考資料群・出典登録作業の日本語補足 |
+| JP-STYLE-04-002 | knowledge/04_DISEASE_NOTES.md | REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW | antibiogram 日本語補足（L162；個別培養結果と分離） |
+| JP-STYLE-09-002 | knowledge/09_EVIDENCE_AND_PRIMARY_SOURCE_CHECKLISTS.md | REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW | clinician-facing 見出し；source class / prescribing hierarchy 日本語補足 |
+| JP-STYLE-13-002 | knowledge/13_AUDIT_LOGS_AND_UPDATE_OPERATIONS.md | REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW | clinician-facing 見出し；package → Knowledge package（文書群） |
 
 ## 3. 適用しなかったpatch
 
 | proposal_id | file | status | reason |
 |---|---|---|---|
 | — | knowledge/05 L120 ICU 以外 routine 化 | DEFERRED_HUMAN_REVIEW_REQUIRED | JP-STYLE-05-002 スコープ外 |
-| — | knowledge/04 L225 routine で固定化 | DEFERRED_HUMAN_REVIEW_REQUIRED | JP-STYLE-04-001 は VTE 中核のみ |
+| — | knowledge/04 L225 routine で固定化 | DEFERRED_HUMAN_REVIEW_REQUIRED | JP-STYLE-04-002 は L162 のみ |
+| — | knowledge/04 L157 施設 antibiogram | DEFERRED_HUMAN_REVIEW_REQUIRED | JP-STYLE-04-002 スコープ外 |
+| — | clinician-facing summary 全13本横断 | DEFERRED_HUMAN_REVIEW_REQUIRED | round 4 は 09/13 のみ |
 | — | abbreviation_first_use_review_ledger 一括反映 | DEFERRED_HUMAN_REVIEW_REQUIRED | 略語初出説明の本文挿入は別フェーズ |
 | — | Emergency Quick Check 他ファイル展開 | DEFERRED_HUMAN_REVIEW_REQUIRED | 別フェーズ |
 | — | 標準ページ構造への全面移行 | DEFERRED_HUMAN_REVIEW_REQUIRED | 別フェーズ |
-| — | plain language ledger 未レビュー GLOBAL 行 | NEEDS_REVIEW | round 3 外は据え置き |
+| — | plain language ledger 未レビュー GLOBAL 行 | NEEDS_REVIEW | round 4 外は据え置き |
 
 ## 4. 医療安全上の確認
 
@@ -58,6 +65,9 @@ Round 3: JP-STYLE-01-003, JP-STYLE-03-003, JP-STYLE-04-001, JP-STYLE-09-001, JP-
 - VTE予防薬や抗凝固再開時期を確定していない（04-001 は確認ノート表現のみ）。
 - 海外GL記載から国内一律運用・通常使用可への変換を追加していない。
 - release ready、clinical approved、facility approved への昇格をしていない（13-001 は否定境界のみ）。
+- PMDA参考資料群を Knowledge 本文の代替または一括投入対象にしていない（01-004）。
+- 出典分類を処方優先順位に変換していない（09-002 は否定境界のみ）。
+- clinician-facing summary の日本語化は見出し補足のみであり、臨床内容を変更していない（09-002 / 13-002）。
 
 ## 5. Knowledge upload target
 
@@ -78,11 +88,12 @@ Round 3: JP-STYLE-01-003, JP-STYLE-03-003, JP-STYLE-04-001, JP-STYLE-09-001, JP-
 - 略語初出説明の一括反映は未完了。
 - 他ファイルへの Emergency Quick Check Block 展開は未完了。
 - 薬剤別・病態別の標準ページ構造への全面移行は未完了。
+- `clinician-facing summary` の全 13 本横断統一は未完了（round 4 は `09`/`13` のみ）。
 - Preview 実出力の日本語品質承認は未完了。
 
 ## 7. Validator結果
 
-**Run date:** 2026-06-05（repo-local；round 3 適用後に再実測）
+**Run date:** 2026-06-05（repo-local；round 4 適用後に再実測）
 
 | Validator | Result | Notes |
 |---|---|---|

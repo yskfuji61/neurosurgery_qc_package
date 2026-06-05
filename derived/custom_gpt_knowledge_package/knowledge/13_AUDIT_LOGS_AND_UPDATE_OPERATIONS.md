@@ -30,13 +30,13 @@ not_an_institutional_procedure: true
 
 このファイルは、Knowledge package の更新契機、監査ログ、人間レビュー運用をまとめます。
 
-## clinician-facing summary
+## 医療従事者向け要約（clinician-facing summary）
 
 このファイルは、運用台帳を置くためだけの場所ではありません。Knowledge package を安全に使い続けるには、一次資料更新、施設運用変更、Preview fail、AI 誤答事例を検知した時点で見直しが必要であり、その変更理由を追跡できる状態を保つために使います。
 
 ## なぜ更新と監査が必要か
 
-この package は静的な完成物ではなく、情報更新と回答品質の変化に影響を受けます。監査ログは形式的な記録ではなく、どの変更が safety boundary や回答品質に影響したかを後から説明するための証跡です。
+このKnowledge package（文書群）は静的な完成物ではなく、一次資料の更新や回答品質の変化に影響を受けます。監査ログは形式的な記録ではなく、どの変更が safety boundary や回答品質に影響したかを後から説明するための証跡です。
 
 ## 更新トリガー
 

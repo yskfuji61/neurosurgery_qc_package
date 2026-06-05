@@ -1,5 +1,13 @@
 # Review Change Note
 
+## Knowledge 13 patch round 4（2026-06-05）
+
+- Applied 4 additional human-reviewed Japanese patches to `knowledge/01`, `04`, `09`, `13` only (no instructions edit).
+- Patches: JP-STYLE-01-004 (PMDA reference corpus), JP-STYLE-04-002 (antibiogram L162), JP-STYLE-09-002 (clinician-facing heading / source class), JP-STYLE-13-002 (clinician-facing heading / package wording).
+- Deferred: `clinician-facing summary` cross-13 unification, `04` L157 antibiogram, `05` L120 / `04` L225 routine, abbreviation bulk, Emergency expansion, standard page structure.
+- 8/8 targeted validators PASS (post round 4); `external_ready_candidates=0`; upload target **13 files** unchanged.
+- **Not** release ready; Preview evidence still pending. See [JAPANESE_KNOWLEDGE_13_PATCH_APPLICATION_REPORT_20260605.md](JAPANESE_KNOWLEDGE_13_PATCH_APPLICATION_REPORT_20260605.md).
+
 ## Knowledge 13 patch round 3（2026-06-05）
 
 - Applied 5 additional human-reviewed Japanese patches to `knowledge/01`, `03`, `04`, `09`, `13` only (no instructions edit).

@@ -5,7 +5,7 @@ GLOBAL,style_rule,upload safe,audit_term,upload eligibility wording,Knowledge投
 GLOBAL,style_rule,reference-only,audit_term,reference parking status,参考資料扱い,yes,low,yes,high,REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW,,2026-06-05,JP-STYLE-01-003 applied knowledge/01 L129
 GLOBAL,style_rule,hold,audit_term,export hold status,投入保留,yes,low,yes,high,REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW,,2026-06-05,JP-STYLE-01-003 applied knowledge/01 L129
 GLOBAL,style_rule,negative knowledge,audit_term,safety misread prevention,誤読防止用の陰性知識（negative knowledge）,yes,low,yes,medium,REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW,,2026-06-05,Applied in knowledge/03 (JP-STYLE-03-001)
-GLOBAL,style_rule,clinician-facing summary,audit_term,summary section heading,医療従事者向け要約,yes,low,yes,medium,NEEDS_REVIEW,,,
+GLOBAL,style_rule,clinician-facing summary,audit_term,summary section heading,医療従事者向け要約（clinician-facing summary）,yes,low,yes,medium,REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW,,2026-06-05,JP-STYLE-09-002 knowledge/09; JP-STYLE-13-002 knowledge/13
 GLOBAL,style_rule,source corpus,audit_term,source package wording,元資料群,yes,low,yes,medium,NEEDS_REVIEW,,,
 GLOBAL,style_rule,derived export,audit_term,derived package wording,派生成果物,yes,low,yes,medium,NEEDS_REVIEW,,,
 GLOBAL,style_rule,migration ledger,audit_term,traceability ledger,移行判断台帳,yes,low,yes,medium,NEEDS_REVIEW,,,
@@ -18,7 +18,7 @@ GLOBAL,style_rule,routine,clinical_english,routine treatment/operation,一律運
 GLOBAL,style_rule,order set,clinical_english,EHR order grouping,オーダーセット,yes,low,yes,high,NEEDS_REVIEW,,,
 GLOBAL,style_rule,reversal,clinical_english,anticoagulant reversal context,中和・拮抗・代替対応,conditional,medium,yes,high,HUMAN_REVIEW_REQUIRED,,,
 GLOBAL,style_rule,de-escalation,clinical_english,antimicrobial narrowing,抗菌薬の狭域化（de-escalation）,conditional,medium,yes,medium,REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW,,2026-06-05,Applied in knowledge/05 (JP-STYLE-05-001)
-GLOBAL,style_rule,antibiogram,clinical_english,facility susceptibility data,施設・地域の薬剤感受性傾向をまとめた資料（antibiogram）,yes,low,yes,medium,REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW,,2026-06-05,Applied in knowledge/05 (JP-STYLE-05-001)
+GLOBAL,style_rule,antibiogram,clinical_english,facility susceptibility data,施設・地域の薬剤感受性傾向をまとめた資料（antibiogram）,yes,low,yes,medium,REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW,,2026-06-05,JP-STYLE-05-001 knowledge/05; JP-STYLE-04-002 knowledge/04 L162
 GLOBAL,style_rule,high-risk,audit_term,risk classification,高リスク,yes,low,yes,medium,NEEDS_REVIEW,,,
 GLOBAL,style_rule,must-have,audit_term,Preview required element,必須確認項目,yes,low,yes,medium,NEEDS_REVIEW,,,
 GLOBAL,style_rule,must-not-have,audit_term,Preview forbidden element,禁止回答項目,yes,low,yes,medium,NEEDS_REVIEW,,,
@@ -34,4 +34,17 @@ knowledge/01_START_HERE_AND_POSITIONING.md,Integrated policy boundary export,ope
 knowledge/01_START_HERE_AND_POSITIONING.md,Integrated policy boundary export,upload safe,audit_term,upload safe residual in policy section,Custom GPT Knowledgeへの投入承認,yes,low,yes,high,REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW,,2026-06-05,JP-STYLE-01-002
 knowledge/01_START_HERE_AND_POSITIONING.md,Integrated policy boundary export,upload 可否,audit_term,upload eligibility residual wording,Custom GPT Knowledgeへの投入可否,yes,low,yes,high,REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW,,2026-06-05,JP-STYLE-01-003
 knowledge/01_START_HERE_AND_POSITIONING.md,Integrated governance boundary export,Reference corpora,audit_term,reference corpora heading,参考資料群（Reference corpora：Knowledge投入対象外）,yes,low,yes,medium,REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW,,2026-06-05,JP-STYLE-01-003
+GLOBAL,style_rule,sibling,audit_term,workspace sibling reference wording,ワークスペース内の参考資料群,yes,low,yes,medium,REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW,,2026-06-05,JP-STYLE-01-004 applied knowledge/01 L118
+GLOBAL,style_rule,reference corpus,audit_term,PMDA reference corpus wording,PMDA参考資料群（reference corpus）,yes,low,yes,medium,REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW,,2026-06-05,JP-STYLE-01-004 applied knowledge/01 L118
+GLOBAL,style_rule,source register,audit_term,product-level source register wording,製品単位の出典登録作業,yes,low,yes,medium,REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW,,2026-06-05,JP-STYLE-01-004 applied knowledge/01 L118
+GLOBAL,style_rule,source class,audit_term,source classification ordering,出典分類（source class）,yes,low,yes,high,REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW,,2026-06-05,JP-STYLE-09-002 applied knowledge/09 L114
+GLOBAL,style_rule,prescribing hierarchy,audit_term,prescribing priority ordering,処方上の優先順位（prescribing hierarchy）,yes,low,yes,high,REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW,,2026-06-05,JP-STYLE-09-002 applied knowledge/09 L114
+GLOBAL,style_rule,package,audit_term,knowledge package wording,Knowledge package（文書群）,yes,low,yes,medium,REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW,,2026-06-05,JP-STYLE-13-002 applied knowledge/13 L39
+knowledge/04_DISEASE_NOTES.md,感染制御・標準化しない事項,antibiogram,clinical_english,antibiogram without Japanese gloss in infection section,施設・地域の薬剤感受性傾向をまとめた資料（antibiogram）,yes,low,yes,medium,REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW,,2026-06-05,JP-STYLE-04-002
+knowledge/09_EVIDENCE_AND_PRIMARY_SOURCE_CHECKLISTS.md,見出し,clinician-facing summary,audit_term,summary section heading,医療従事者向け要約（clinician-facing summary）,yes,low,yes,medium,REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW,,2026-06-05,JP-STYLE-09-002
+knowledge/09_EVIDENCE_AND_PRIMARY_SOURCE_CHECKLISTS.md,Drug label source hierarchy,source class,audit_term,source class ordering boundary,出典分類（source class）,yes,low,yes,high,REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW,,2026-06-05,JP-STYLE-09-002
+knowledge/09_EVIDENCE_AND_PRIMARY_SOURCE_CHECKLISTS.md,Drug label source hierarchy,prescribing hierarchy,audit_term,prescribing hierarchy boundary,処方上の優先順位（prescribing hierarchy）,yes,low,yes,high,REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW,,2026-06-05,JP-STYLE-09-002
+knowledge/13_AUDIT_LOGS_AND_UPDATE_OPERATIONS.md,見出し,clinician-facing summary,audit_term,summary section heading,医療従事者向け要約（clinician-facing summary）,yes,low,yes,medium,REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW,,2026-06-05,JP-STYLE-13-002
+knowledge/13_AUDIT_LOGS_AND_UPDATE_OPERATIONS.md,医療従事者向け要約,package,audit_term,package wording in summary,Knowledge package（文書群）,yes,low,yes,medium,REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW,,2026-06-05,JP-STYLE-13-002
+knowledge/01_START_HERE_AND_POSITIONING.md,Integrated policy boundary export,sibling / reference corpus / source register,audit_term,PMDA reference corpus boundary,PMDA参考資料群・出典登録作業の正本,yes,low,yes,high,REVISED_AND_APPLIED_AFTER_HUMAN_REVIEW,,2026-06-05,JP-STYLE-01-004
 knowledge/09_EVIDENCE_AND_PRIMARY_SOURCE_CHECKLISTS.md,evidence section,blind copy,audit_term,ledger is not blind copy permission,文脈確認なしの転記,yes,low,yes,high,NEEDS_REVIEW,,,
